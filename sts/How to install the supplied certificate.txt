@@ -1,0 +1,15 @@
+﻿Open the MMC
+Please add the "Certificates" snap-in
+When prompted, select the "Computer Account" store
+When promoted, select the "Local computer" option
+Expand the Certificates (Local computer) | Personal | Certificates node and right click to open the context menu
+Select All Tasks | Import
+Navigate to and select the STS.pfx file that is part of this project
+The password is "token server stub"
+Place all certificates in the Personal | Certificates node when asked
+Select the "Token Server Stub" certificate that is now listed, right click, and select "Copy"
+Expand the Certificates (Local computer) | Trusted People | Certificates node and right click to open the context menu
+Paste the certificate to the location
+
+Perform the above steps to do this on the Atlantis dev certificate. (Atlantis.pfx in the binaries folder)
+The password is "Atlantis Dev"

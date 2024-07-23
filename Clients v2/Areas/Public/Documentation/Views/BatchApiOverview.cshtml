@@ -1,0 +1,47 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@using (var container = Html.Layout().Container())
+{
+  <hr/>
+  <div class="heading-block" style="margin-bottom: 40px;">
+    <h2>Automated Batch Processing Overview</h2>
+  </div>
+
+  using (var row = container.Row())
+  {
+    using (row.Column(10))
+    {
+      <div style="margin-bottom: 30px;">
+        <h3>Accurate Append Gives You Options</h3>
+        <p>Accurate Append’s batch processing system allows users to automate file processing without doing the work of programming. Once your batch automation is set up, processing your list is simple and easy. After receipt, our system will process your file and return the results when complete.</p>
+        <p>Our system supports two methods for submitting files:</p>
+        <h3>Secure FTP</h3>
+        <p>Submit a file using SFTP client such as FileZilla, WinSCP or Viper FTP. Secure FTP is the most secure way of posting files to our system because it uses an encrypted connection to our system that works similarly to HTTPS web browsers.</p>
+        <p style="font-weight: bold;">Benefits & Compromises</p>
+        <ul>
+          <li>Process files up to 1 million records.</li>
+          <li>Most secure; uses encrypted connection to our servers.</li>
+          <li>Most reliable; files are posted directly by user to our system.</li>
+          <li>Requires SFTP client software that can be download and used for free.</li>
+          <li>Results need to be retrieved from the system.</li>
+          <li>Best option for programmatic integration into technical systems.</li>
+        </ul>
+        <p>For more information about submitting batch files via Secure FTP, <a href="@Url.Action("FtpBatchApi", "Documentation", new {Area = "Public"})">click here</a></p>
+        <h3>Email</h3>
+        <p>Submit a file by sending an email with your file attached to a special mailbox on our system.</p>
+        <p style="font-weight: bold;">Benefits & Compromises</p>
+        <ul>
+          <li>Process files up to 25,000 records.</li>
+          <li>Less secure; uses clear text email to submit files.</li>
+          <li>Less reliable; sometimes messages and files are caught in, or delayed by, SPAM filters. </li>
+          <li>Most convenient; submit files through email and automatically receive your processed data in an email reply from our system in as little as a few minutes - 24/7. </li>
+          <li>Best option for submitting files from a mobile phone.</li>
+        </ul>
+        <p>For more information about submitting batch files via email, <a href="@Url.Action("SmtpBatchApi", "Documentation", new {Area = "Public"})">click here</a></p>
+      </div>
+    }
+  }
+}

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AccurateAppend.Websites.Clients"
+                   namespace="AccurateAppend.Websites.Clients.Areas.Order.Csv.Messages">
+
+  <class name="CsvCartData">
+    <id name="Id"
+        type="Guid"
+        column="Id">
+      <generator class="assigned" />
+    </id>
+    <property name="Originator" />
+    <property name="OriginalMessageId" />
+    <property name="CartId"
+              type="Guid"
+              unique="true"
+              not-null="true" />
+    <property name="UserId"
+              type="Guid"
+              unique="false"
+              not-null="true" />
+    <property name="HasHeaderRow"
+              type="Boolean" />
+    <property name="ColumnMap"
+              type="XDoc"
+              not-null="false" />
+    <property name="Delimiter"
+              type="Char"
+              not-null="false" />
+  </class>
+<!--
+https://nhibernate.info/doc/nhibernate-reference/mapping.html#mapping-types
+-->
+</hibernate-mapping>

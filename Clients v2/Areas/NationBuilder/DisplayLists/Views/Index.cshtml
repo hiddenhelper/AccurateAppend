@@ -1,0 +1,125 @@
+﻿@using AccurateAppend.Websites.Clients.Areas.Shared.Views
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.NationBuilder.DisplayLists.Models.SelectListModel
+
+<style>
+    .search-conainer .k-autocomplete {
+      margin-bottom: 5px;
+      padding: 3px;
+      width: 400px;
+    }
+</style>
+
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List", true),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation"))
+
+
+<div class="append-block">
+
+    @using (var container = Html.Layout().Container())
+    {
+        Html.RenderPartial("~/Areas/Shared/Views/_CartTab.cshtml", CartTabActive.NationBuilder);
+        <div class="tab-content">
+            <div class="tab-pane show active" id="nationbuilder-tab" role="tabpanel" aria-labelledby="home-tab">
+                <div class="heading">
+                    <h2>Nation Builder List</h2>
+                </div>
+                <div class="content-holder">
+                    @using (var row = container.Row())
+                    {
+                        using (row.Column(12))
+                        {
+                            <h2 style="margin-bottom: 20px;">Select a list below to view processing options and pricing</h2>
+
+                            <div class="form-group" id="nationSelectHolder">
+                                <label>Displaying Lists for: </label>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="alert alert-danger alert-dismissable" style="display: none; font-size: .8em; margin: 20px 0 20px 0;" id="error">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <span></span>
+                            </div>
+
+                            <div class="alert alert-warning alert-dismissable" style="display: none; font-size: .8em; margin: 20px 0 60px 0;" id="warning">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <span></span>
+                            </div>
+
+                            <div id="listDisplay" class="table-block">
+                                <div class="heading-box">
+                                    <h3>NationBuilder Lists</h3>
+                                    <div class="p-2 pull-right">
+                                        <input id="listNames" class="form-control" />
+                                        <button id="clearFilter" class="btn btn-primary large">Clear</button>
+                                    </div>
+                                </div>
+
+                                <div id="grid" class="builder-list"></div>
+                            </div>
+                            <input type="hidden" id="selectedListName" />
+                            <input type="hidden" id="selectedListId" />
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<style scoped="">
+
+    .heading-box .k-widget {
+      margin-bottom: 10px;
+    }
+
+    #listDisplay .jcf-select {
+      width: 400px;
+    }
+</style>
+
+@section HeadContent
+{
+
+    <script id="responsive-column-template" type="text/x-kendo-template">
+        <p class="col-template-val"><strong>Id : </strong> #= id # </p>
+        <strong>Name</strong>
+        <p class="col-template-val">#= name #</p>
+        <p class="col-template-val"><strong>Count : </strong> #=kendo.toString(count, "n0")#</p>
+        <p class="col-template-val">
+            <a href="##" onClick="displayListView.cmdClick(event)">Get Estimate<i class="icon-arrow-right"></i></a>
+        </p>
+    </script>
+
+    <script src="@Url.Content("~/Scripts/typings/HttpStatusCode.js")"></script>
+    <script src="@Url.Content("~/Areas/NationBuilder/DisplayLists/Scripts/index.js")"></script>
+
+    <script type="text/javascript">
+
+    maxListSize = @Model.MaximumListSize;
+    initializeView(
+      {
+        GetListNameJson_DisplayLists_NationBuilder_Url:
+          "@Url.Action("GetListNamesJson", "DisplayLists", new {area = "NationBuilder"})",
+        Index_DisplayLists_NationBuilder_Url:
+          "@Url.Action("Index", "DisplayLists", new {area = "NationBuilder", Model.CartId})",
+        Index_Renew_NationBuilder_Url: "@Url.Action("Index", "Renew", new {area = "NationBuilder"})",
+        CheckRegistrationValidToken_DisplayLists_NationBuilder_Url:
+          "@Url.Action("CheckRegistrationValidToken", "DisplayLists", new {area = "NationBuilder"})",
+        GetListsJson_DisplayLists_NationBuilder_Url:
+          "@Url.Action("GetListsJson", "DisplayLists", new {area = "NationBuilder"})",
+        GetNationsForUserJson_DisplayLists_NationBuilder_Url:
+          '@Url.Action("GetNationsForUserJson", "DisplayLists", new {area = "NationBuilder"})',
+        CartId: '@Model.CartId',
+        Profile_Nations_Url: '@Url.Action("Index", "Nation", new {area = "Profile"})',
+      });
+
+    </script>
+}

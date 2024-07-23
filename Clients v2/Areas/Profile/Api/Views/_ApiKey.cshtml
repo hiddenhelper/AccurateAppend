@@ -1,0 +1,22 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Profile.Api.Models.ApiDetailsModel
+
+@using (Html.Forms().BeginFormRow())
+{
+    using (Html.Forms().BeginInputHolder())
+    {
+        @Html.LabelFor(x => x.Key, new { value = "Your Api Key" })
+        <div id="to-copy" style="width: 500px">@Model.Key</div>
+    }
+}
+
+@using (Html.Forms().BeginFormRow())
+{
+    using (Html.Forms().BeginInputHolder())
+    {
+        <label>Documentation</label>
+        <p>
+            <a href="http://docs.accurateappend.com/reference">http://docs.accurateappend.com</a>
+        </p>
+    }
+}

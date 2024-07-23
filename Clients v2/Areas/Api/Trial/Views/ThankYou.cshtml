@@ -1,0 +1,21 @@
+﻿
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+
+@Html.Layout().Promo("Request Trial API KEY")
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+        using (row.Column(width: 12, style: "margin: 30px 0;"))
+        {
+            <h2>Thank you for requesting an API trial key</h2>
+            <p style="margin-top: 20px;">Your trial key will be emailed to the email address you entered during the registration process. Please verify that the email address is correct and check your junk mail folder if you do not get it in a few minutes. Or contact <a href="http://www.accurateappend.com/get-in-touch">customer support</a> if you encounter a problem.</p>
+            <h4 style="margin-top: 20px;">HELPFUL LINKS</h4>
+            <ul>
+                <li><a href="http://docs.accurateappend.com">API Documentation</a></li>
+                <li><a href="https://www.accurateappend.com/data-append-api">API Product Information</a></li>
+            </ul>
+        }
+    }
+}

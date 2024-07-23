@@ -1,0 +1,69 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.LeadPhilanthropy.Signup.Models.LeadPhilanthropyCreateAccountModel
+
+<style>
+  .gradient-down {
+    background: linear-gradient(to top, #0065ab, #2c3983);
+    background-position: center;
+    padding-bottom: 3em;
+  }
+</style>
+
+<section class="promo-section">
+    <div class="bg-stretch" id="bg-stretch1542001375637735"></div>
+    <div></div>
+    @using (var container = Html.Layout().Container())
+    {
+        using (var row = container.Row("gradient-down"))
+        {
+            using (row.Column(7))
+            {
+    <h1 style="margin-bottom: 25px; text-align: left;">Data accuracy made easier.</h1>
+                <img src="/Content/AccurateAppend_v7/images/LeadPhilanthropy/LEAD_logo white transparent.png" style="height: 166px; width: 500px;" />
+            }
+
+            using (row.Column(5))
+            {
+                <div class="get-started">
+                    <div class="heading-block">
+                        <h2>Start Appending Instantly</h2>
+                        <p>Enter your email address to create a free account and instantly receive a quote.</p>
+                    </div>
+                    @using (Html.Forms().BeginForm("Index", "Signup", new { area = "LeadPhilanthropy" }))
+                    {
+                        @Html.HiddenFor(m => m.PublicKey)
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control required", placeholder = "Email" })
+                            @Html.ValidationMessageFor(a => a.Email, string.Empty)
+                        }
+
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            <input type="submit" value="Get Started" />
+                        }
+                    }
+                </div>
+            }
+        }
+    }
+
+</section>
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(12, Target.Md))
+    {
+      <ul class="ticks" style="margin: 40px 0 40px 0; margin-left: 20px;">
+        <li>Self-service portal. No contracts. Pay with credit card.</li>
+        <li>Data required for research is limited to name, address, phone or email.</li>
+        <li>Services include: Phone - both landline and cell, Line Type, Email, Address, NCOA & CASS, Wealth Screening, Consumer Information - annual Income, HOH, DOB, etc.</li>
+        <li>Increase your success by conducting more frequent research projects</li>
+        <li>Save time and money by verifying that your list has correct phone and postal contact info</li>
+        <li>Results automatically uploaded to your Box account and also available as a separate .csv download.</li>
+      </ul>
+    }
+  }
+}

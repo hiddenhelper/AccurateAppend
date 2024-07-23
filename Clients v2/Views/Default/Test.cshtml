@@ -1,0 +1,209 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+    Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+@Html.Layout().Promo("Dashboard")
+
+
+@model AccurateAppend.Websites.Clients.Controllers.TestViewModel
+
+<h2>Test</h2>
+@this.Html.Buttons().PrimaryButton("test button", "Current", "Order", new { test = 123 })
+@this.Html.Buttons().PrimaryButtonLarge("test button", "Current", "Order")
+@this.Html.Buttons().SecondaryButton("test button", "Current", "Order")
+@using (this.Html.Buttons().BeginButtonHolder(ButtonHolderType.Button))
+{
+    @Html.Buttons().PrimaryButton("test button", "Current", "Order", new { test = 321 })
+}
+
+<h2 class="page-heading">Testing Alert Html Helpers</h2>
+@using (var container = this.Html.Layout().Container())
+{
+  using (var pageRow = container.Row())
+  {
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Primary("Primary")
+    }
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Primary(Html.Buttons().PrimaryButton("test button", "Current", "Order", new { test = 321 }))
+    }
+  }
+  using (var pageRow = container.Row())
+  {
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Success("Success")
+    }
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Success(Html.Buttons().PrimaryButton("test button", "Current", "Order", new { test = 321 }))
+    }
+  }
+  using (var pageRow = container.Row())
+  {
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Warning("Warning")
+    }
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Warning(Html.Buttons().PrimaryButton("test button", "Current", "Order", new { test = 321 }))
+    }
+  }
+  using (var pageRow = container.Row())
+  {
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Danger("Danger")
+    }
+    using (pageRow.Column())
+    {
+      @Html.Alerts().Danger(Html.Buttons().PrimaryButton("test button", "Current", "Order", new { test = 321 }))
+    }
+  }
+}
+
+    @using (var container = this.Html.Layout().Container())
+    {
+        using (var pageRow = container.Row())
+        {
+            using (pageRow.Column())
+            {
+                <h2 class="page-heading">Testing Form Html Helpers (fluent)</h2>
+                using (Html.Forms().BeginForm())
+                {
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.FullName)
+                        @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.FullName)
+                    }
+                    using (var row = container.Row())
+                    {
+                        using (row.Column(target: Target.Lg))
+                        {
+                            using (Html.Forms().BeginFormRow())
+                            {
+                                @Html.LabelFor(x => x.EmailAddress)
+                                @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.EmailAddress)
+                            }
+                        }
+                        using (row.Column(target: Target.Lg))
+                        {
+                            using (Html.Forms().BeginFormRow())
+                            {
+                                @Html.LabelFor(x => x.PhoneNumber)
+                                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+                            }
+                        }
+                    }
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.Comments)
+                        @Html.TextAreaFor(x => x.Comments, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Comments)
+                    }
+
+                    <input type="submit" value="Send Message">
+                }
+            }
+        }
+    }
+
+    <hr />
+
+
+    @using (PageLayoutHtmlHelper.BootstrapContainer.BeginContainer(this.Html))
+    {
+        using (PageLayoutHtmlHelper.BootstrapRow.BeginRow(this.Html))
+        {
+            using (PageLayoutHtmlHelper.BootstrapColumn.BeginColumn(this.Html))
+            {
+                <h2 class="page-heading">Testing Form Html Helpers (static)</h2>
+                using (Html.Forms().BeginForm())
+                {
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.FullName)
+                        @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.FullName)
+                    }
+                    using (PageLayoutHtmlHelper.BootstrapRow.BeginRow(this.Html))
+                    {
+                        using (PageLayoutHtmlHelper.BootstrapColumn.BeginColumn(this.Html, target: Target.Lg))
+                        {
+                            using (Html.Forms().BeginFormRow())
+                            {
+                                @Html.LabelFor(x => x.EmailAddress)
+                                @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.EmailAddress)
+                            }
+                        }
+                        using (PageLayoutHtmlHelper.BootstrapColumn.BeginColumn(this.Html, target: Target.Lg))
+                        {
+                            using (Html.Forms().BeginFormRow())
+                            {
+                                @Html.LabelFor(x => x.PhoneNumber)
+                                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+                            }
+                        }
+                    }
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.Comments)
+                        @Html.TextAreaFor(x => x.Comments, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Comments)
+                    }
+
+                    <input type="submit" value="Send Message">
+                }
+            }
+        }
+    }
+
+    <hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h2 class="page-heading">Testing Form Html Helpers (old)</h2>
+      @using (Html.Forms().BeginForm())
+      {
+        using (Html.Forms().BeginFormRow())
+        {
+          @Html.LabelFor(x => x.FullName)
+          @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+          @Html.ValidationMessageFor(x => x.FullName)
+        }
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            @using (Html.Forms().BeginFormRow())
+            {
+              @Html.LabelFor(x => x.EmailAddress)
+              @Html.TextBoxFor(x => x.EmailAddress, new { @class = "form-control" })
+              @Html.ValidationMessageFor(x => x.EmailAddress)
+            }
+          </div>
+          <div class="col-12 col-lg-6">
+            @using (Html.Forms().BeginFormRow())
+            {
+              @Html.LabelFor(x => x.PhoneNumber)
+              @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+            }
+          </div>
+        </div>
+        using (Html.Forms().BeginFormRow())
+        {
+          @Html.LabelFor(x => x.Comments)
+          @Html.TextAreaFor(x => x.Comments, new { @class = "form-control" })
+          @Html.ValidationMessageFor(x => x.Comments)
+        }
+
+        <input type="submit" value="Send Message">
+      }
+    </div>
+  </div>
+</div>

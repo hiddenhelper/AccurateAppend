@@ -1,0 +1,27 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Profile.Api.Models.ApiDetailsModel
+
+@Html.Layout().Promo("My Profile")
+
+
+<div class="profile-block">
+  <div class="container">
+    @Html.Partial("~/Areas/Profile/Shared/_ProfileNavigation.cshtml", "manage-api")
+    <div class="tab-content">
+      <div class="tab-pane fade active show account-information" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <h2>Realtime API Information</h2>
+        <div class="col-block">
+          <form>
+            @Html.Partial("~/Areas/Profile/Api/Views/_ApiKey.cshtml", this.Model)
+          </form>
+        </div>
+        <h2>Batch API Information</h2>
+        <div class="col-block">
+          <form>
+            @Html.Partial("~/Areas/Profile/Api/Views/_FtpUser.cshtml", this.Model)
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

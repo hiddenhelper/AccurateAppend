@@ -1,0 +1,76 @@
+﻿@using AccurateAppend.Security
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+<footer id="footer">
+    <div class="container">
+        <div class="top-footer">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-8">
+                    <div class="nav-block">
+                        <div class="nav-holder">
+                            <h4>Our Products</h4>
+                            <ul>
+                                <li><a href="http://www.accurateappend.com/email-append">Email Append</a></li>
+                                <li><a href="http://www.accurateappend.com/phone-append">Phone Append</a></li>
+                                <li><a href="http://www.accurateappend.com/lead-validation">Lead Validation</a></li>
+                                <li><a href="http://www.accurateappend.com/data-append-api">API</a></li>
+                                <li><a href="http://www.accurateappend.com/data-append">All Services</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-holder">
+                            <h4>Who Are We</h4>
+                            <ul>
+                                <li><a href="http://www.accurateappend.com/about">About</a></li>
+                                <li><a href="#">Site Map</a></li>
+                                <li><a href="http://twitter.com/accurate_append">Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-holder">
+                            <h4>Legal</h4>
+                            <ul>
+                                <li>
+                                    <a href="https://www.accurateappend.com/privacy-policy">Privacy and Data Security Policy</a>
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Terms of Use", "ToC", new { Controller = "Legal", Area = "Public" })
+                                </li>
+                                <li>
+                                    <a href="https://www.accurateappend.com/privacy-opt-out">Opt-out</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nav-holder">
+
+                            <h4>Contact Us</h4>
+                            @{
+                                var site = SiteCache.Cache.First(s => s.ApplicationId == ApplicationExtensions.AccurateAppendId);
+                            }
+                            Phone: @site.PrimaryPhone.ToString()<br>
+                            Business Hours: 9 AM - 4PM PST<br>
+                            Monday through Friday<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="btn-holder">
+                        @if (!this.User.Identity.IsAuthenticated)
+                        {
+                            @Html.Buttons().PrimaryButton("Register Now!", "Index", "SignUp", new { Area = "Public" })
+                            @Html.Buttons().SecondaryButton("Login", "Login", "Direct", new { area = "Authentication" })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="logo"><img src="@Url.Content("~/Content/AccurateAppend_v7/images/logo-white.png")" alt="" width="358" height="58"></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <span class="copyright">@DateTime.Now.Year @site.Title. All Rights Reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Control: @Environment.MachineName -->

@@ -1,0 +1,126 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Authentication.Direct.Models.DirectLoginModel
+
+@Html.Layout().Promo("Login")
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+        using (row.Column(6, Target.Md, "margin-top: 30px;"))
+        {
+            MvcHtmlString message = null;
+            if (TempData["ErrorMessage"] != null)
+            {
+                var builder = new TagBuilder("div");
+                builder.AddCssClass("alert alert-danger");
+                builder.AddStyle("margin: 20px 0 20px 0");
+                builder.MergeAttribute("style", "font-size: .8em;");
+                builder.SetInnerText(TempData["ErrorMessage"] as String);
+
+                message = new MvcHtmlString(builder.ToString());
+            }
+
+            @(message ?? new MvcHtmlString(String.Empty))
+
+            message = null;
+            if (TempData["InfoMessage"] != null)
+            {
+                var builder = new TagBuilder("div");
+                builder.AddCssClass("alert alert-info");
+                builder.AddStyle("margin: 20px 0 20px 0");
+                builder.MergeAttribute("style", "font-size: .8em;");
+                builder.SetInnerText(TempData["InfoMessage"] as String);
+
+                message = new MvcHtmlString(builder.ToString());
+            }
+
+            @(message ?? new MvcHtmlString(String.Empty))
+            
+            using (Html.Forms().BeginForm("LogIn", "Direct"))
+            {
+                using (Html.Forms().BeginFormRow())
+                {
+                    @Html.LabelFor(x => x.UserName, new { @class = "required" })
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                }
+
+                using (Html.Forms().BeginFormRow("mt-2"))
+                {
+                    @Html.LabelFor(x => x.Password, new { @class = "required" })
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                }
+
+                using (Html.Forms().BeginFormRow("mt-2"))
+                {
+                    @Html.Recaptcha().RenderControl(new { style = "margin-top: 20px;" })
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        <input type="submit" class="btn btn-default" id="submitBtn" disabled="disabled" value="Submit" />
+                    }
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        <p class="mt-4">@Html.ActionLink("Reset Password", "Request", "ResetPassword", new { area = "Authentication" }, null)</p>
+                        <p>Don't have an account? @Html.ActionLink("Register", "Index", "Signup", new { area = "Public" }, null)</p>
+                    }
+                }
+
+                @Html.HiddenFor(m => m.RememberMe)
+                @Html.HiddenFor(m => m.RedirectTo)
+                @Html.HiddenFor(m => m.AllowExternalLogin)
+            }
+        }
+
+        using (row.Column(2, Target.Md, "margin-top: 30px;"))
+        {
+            <div class="vertical-separator-200 d-none d-md-block">
+            </div>
+        }
+
+        using (row.Column(4, Target.Md, "margin-top: 30px;"))
+        {
+            if (Model.AllowExternalLogin)
+            {
+                <label>Login using Facebook, Google, or Linked-In</label>
+
+                using (Html.Forms().BeginFormRow("mb-4"))
+                {
+                    @Html.Buttons().PrimaryButtonLarge("Facebook", "Login", "Facebook", new { area = "Authentication" })
+
+                    <div style="padding-left: 10px; display: inline;"></div>
+
+                    @Html.Buttons().PrimaryButtonLarge("Google+", "Login", "Google", new { area = "Authentication" })
+
+                    <div style="padding-left: 10px; display: inline;"></div>
+
+                    @Html.Buttons().PrimaryButtonLarge("Linked-In", "Login", "LinkedIn", new { area = "Authentication" })
+                }
+            }
+        }
+    }
+}
+
+<script type="text/javascript">
+    var imNotARobot = function () {
+        console.info("reCaptcha was verified");
+        $("#submitBtn").prop('disabled', false);
+    };
+    var tooSlow = function () {
+        console.info("reCaptcha has expired");
+        $("#submitBtn").prop('disabled', true);
+    };
+</script>
+
+@section HeadContent
+{
+    @(this.Html.Recaptcha().GenerateScript())
+}

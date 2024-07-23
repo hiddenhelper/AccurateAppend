@@ -1,0 +1,262 @@
+﻿// INDIVIDUAL PURCHASES
+        //buysMaleMerchandise: KnockoutObservable<boolean>;
+        //buysFemaleMerchandise: KnockoutObservable<boolean>;
+        //buysHobbyMerchandise: KnockoutObservable<boolean>;
+        //buysGardeningFarmSupplies: KnockoutObservable<boolean>;
+        //buysBooks: KnockoutObservable<boolean>;
+        //buysGourmetFoodAccessories: KnockoutObservable<boolean>;
+        //buysMailOrder: KnockoutObservable<boolean>;
+        //buysOnline: KnockoutObservable<boolean>;
+        //buysWomensApparel: KnockoutObservable<boolean>;
+        //buysWomensApparelPetite: KnockoutObservable<boolean>;
+        //buysWomensApparelPlusSizes: KnockoutObservable<boolean>;
+        //buysWomensApparelYoung: KnockoutObservable<boolean>;
+        //buysMensApparel: KnockoutObservable<boolean>;
+        //buysMensApparelBigAndTall: KnockoutObservable<boolean>;
+        //buysMensApparelYoung: KnockoutObservable<boolean>;
+        //buysChildrensApparel: KnockoutObservable<boolean>;
+        //buysChildrensApparelInfantsToddlers: KnockoutObservable<boolean>;
+        //buysChildrenLearningToys: KnockoutObservable<boolean>;
+        //buysChildrensBabyCare: KnockoutObservable<boolean>;
+        //buysChildrensSchoolSupplies: KnockoutObservable<boolean>;
+        //buysChildrensGeneral: KnockoutObservable<boolean>;
+        //buysChildrensInterests: KnockoutObservable<boolean>;
+
+        // INVESTING / FINANCE GROUPING
+        //investmentsFinanceGrouping: KnockoutObservable<boolean>;
+        //investmentsActive: KnockoutObservable<boolean>;
+        //investmentsForeign: KnockoutObservable<boolean>;
+        //investingActive: KnockoutObservable<boolean>;
+        //investmentsPersonal: KnockoutObservable<boolean>;
+        //investmentsRealEstate: KnockoutObservable<boolean>;
+        //investmentsStocksBonds: KnockoutObservable<boolean>;
+
+ // DONOR
+        //donationsContributions: KnockoutObservable<boolean>;
+        //donationsMailOrder: KnockoutObservable<boolean>;
+        //donatestoCharitableCauses: KnockoutObservable<boolean>;
+        //donatestoAnimalWelfare: KnockoutObservable<boolean>;
+        //donatestoArtsCultural: KnockoutObservable<boolean>;
+        //donatestoChildrens: KnockoutObservable<boolean>;
+        //donatestoEnvironmentWildlife: KnockoutObservable<boolean>;
+        //donatestoHealth: KnockoutObservable<boolean>;
+        //donatestoInternationalAid: KnockoutObservable<boolean>;
+        //donatestoPolitical: KnockoutObservable<boolean>;
+        //donatestoPoliticalConservative: KnockoutObservable<boolean>;
+        //donatestoPoliticalLiberal: KnockoutObservable<boolean>;
+        //donatestoReligious: KnockoutObservable<boolean>;
+        //donatestoVeterans: KnockoutObservable<boolean>;
+        //donatestoOther: KnockoutObservable<boolean>;
+        //donatestoCommunityCharities: KnockoutObservable<boolean>;
+        //donatestoPolitics: KnockoutObservable<boolean>;
+        //donatestoCommunityInvolvement: KnockoutObservable<boolean>;
+        //donatestoEnvironmentalIssues: KnockoutObservable<boolean>;
+        //donatestoPoliticalCharity: KnockoutObservable<boolean>;
+        //donatestoCommunityCharity: KnockoutObservable<boolean>;
+
+        
+
+        //// INTERESTS - PERSONAL -- CURRENLTY USED IN DEMOGRAPHIC_INTERESTS
+        //interestedInValues: KnockoutObservable<boolean>;
+        //interestedInOpportunities: KnockoutObservable<boolean>;
+        //interestedInNewsAndFinancial: KnockoutObservable<boolean>;
+        //interestedInAutomobiles: KnockoutObservable<boolean>;
+        //interestedInReading: KnockoutObservable<boolean>;
+        //interestedInMembershipClub: KnockoutObservable<boolean>;
+        //interestedInDIY: KnockoutObservable<boolean>;
+        //interestedInExercise: KnockoutObservable<boolean>;
+        //interestedInHomeDecorating: KnockoutObservable<boolean>;
+        //interestedInOutdoors: KnockoutObservable<boolean>;
+        //interestedInOutdoorSports: KnockoutObservable<boolean>;
+        //interestedInPhotography: KnockoutObservable<boolean>;
+        //aviation: KnockoutObservable<boolean>;
+        //interestedInTravel: KnockoutObservable<boolean>;
+        //interestInReligiousMagazine: KnockoutObservable<boolean>;
+        //interestedInBusinessTravel: KnockoutObservable<boolean>;
+        //personSmoker: KnockoutObservable<boolean>; // check this one
+        //healthMedical: KnockoutObservable<boolean>;
+        //interestedInHealthAndBeauty: KnockoutObservable<boolean>;
+        //interestedInBeautyCosmetics: KnockoutObservable<boolean>;
+        //interestedInJewelry: KnockoutObservable<boolean>;
+        //interestedInLuggage: KnockoutObservable<boolean>;
+        //interestedInParenting: KnockoutObservable<boolean>;
+        //interestedInGrandchildren: KnockoutObservable<boolean>;
+        //interestedInChristianity: KnockoutObservable<boolean>;
+        //interestedInHorses: KnockoutObservable<boolean>;
+        //interestedInCareerImprovement: KnockoutObservable<boolean>;
+        //interestedInPets: KnockoutObservable<boolean>;
+
+        //// INTERESTS - READING
+        //interestedInBooksAndMagazines: KnockoutObservable<boolean>;
+        //interestedInBooksAndMusicBooks: KnockoutObservable<boolean>;
+        //interestedInBooksAndMusicBooksAudio: KnockoutObservable<boolean>;
+
+        //// INTERESTS - READING GROUPING -- NOT CURRENTLY USED
+        //interestedInReadingGrouping: KnockoutObservable<boolean>;
+        //interestedInReadingGeneral: KnockoutObservable<boolean>;
+        //interestedInReadingReligiousInspirational: KnockoutObservable<boolean>;
+        //interestedInReadingScienceFiction: KnockoutObservable<boolean>;
+        //interestedInReadingMagazines: KnockoutObservable<boolean>;
+        //interestedInReadingAudioBooks: KnockoutObservable<boolean>;
+
+        //// INTERESTS - READING - OTHER
+        //interestedInHistoryMilitary: KnockoutObservable<boolean>;
+        //interestedInCurrentAffairsPolitics: KnockoutObservable<boolean>;
+        //interestedInReligiousInspirational: KnockoutObservable<boolean>;
+        //interestedInScienceSpace: KnockoutObservable<boolean>;
+        //interestedInMagazines: KnockoutObservable<boolean>;
+        //interestedInEducationOnline: KnockoutObservable<boolean>;
+        //interestedInGaming: KnockoutObservable<boolean>;
+        //interestedInComputingHomeOfficeGeneral: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //interestedInDVDsVideos: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //interestedInElectronicsandComputingTVVideoMovieWatcher: KnockoutObservable<boolean>;
+        //interestedInElectronicsComputingAndHomeOffice: KnockoutObservable<boolean>;
+        //interestedInHighEndAppliances: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //intendToPurchaseHDTVSatelliteDish: KnockoutObservable<boolean>;
+        //interestedInMusicHomeStereo: KnockoutObservable<boolean>;
+        //interestedInMusicPlayer: KnockoutObservable<boolean>;
+        //interestedInMusicCollector: KnockoutObservable<boolean>;
+        //interestedInMusicAvidListener: KnockoutObservable<boolean>;
+        //interestedInMovieCollector: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //interestedInTVCable: KnockoutObservable<boolean>;
+        //interestedInGamesVideoGames: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //interestedInTVSatelliteDish: KnockoutObservable<boolean>;
+        //interestedInComputers: KnockoutObservable<boolean>;
+        //interestedInGamesComputerGames: KnockoutObservable<boolean>;
+        //interestedInConsumerElectronics: KnockoutObservable<boolean>;
+        //interestedInMovieMusicGrouping: KnockoutObservable<boolean>; // single grouping, no other attributes
+        //interestedInElectronicsComputersGrouping: KnockoutObservable<boolean>;
+        //interestedInTelecommunications: KnockoutObservable<boolean>;
+        //interestedInTheaterPerformingArts: KnockoutObservable<boolean>;
+        //interestedInArts: KnockoutObservable<boolean>;
+        //interestedInMusicalinstruments: KnockoutObservable<boolean>;
+        //interestedInGamesBoardGamesPuzzles: KnockoutObservable<boolean>;
+        //interestedInGamingCasino: KnockoutObservable<boolean>;
+        
+        //// INTERESTS - COLLECTABLES
+        //artsAntiquesAntiques: KnockoutObservable<boolean>; // interested in antiques
+        //artsAntiquesArt: KnockoutObservable<boolean>; // interested in art
+        //collectiblesArts: KnockoutObservable<boolean>; // interested in collecting art
+        //collectiblesAntiques: KnockoutObservable<boolean>; // interested in collecting antiques
+        //interestedInCollectiblesGeneral: KnockoutObservable<boolean>;
+        //interestedInCollectiblesStamps: KnockoutObservable<boolean>;
+        //interestedInCollectiblesCoins: KnockoutObservable<boolean>;
+        //interestedInCollectorAvid: KnockoutObservable<boolean>;
+        //interestedInCollectiblesandAntiquesGrouping: KnockoutObservable<boolean>;
+        //interestedInCollectiblesSportsMemorabilia: KnockoutObservable<boolean>;
+        //interestedInMilitaryMemorabiliaWeaponry: KnockoutObservable<boolean>;
+        //interestedInLifestylesInterestsandPassionsCollectibles: KnockoutObservable<boolean>;
+
+        //interestedInAutowork: KnockoutObservable<boolean>;
+        //interestedInSewingKnittingNeedlework: KnockoutObservable<boolean>;
+        //interestedInWoodworking: KnockoutObservable<boolean>;
+        //interestedInHousePlants: KnockoutObservable<boolean>;
+        //interestedInCrafts: KnockoutObservable<boolean>;
+        //interestedInHomeandGarden: KnockoutObservable<boolean>;
+        //interestedInGardening: KnockoutObservable<boolean>;
+        //interestedInGardening2: KnockoutObservable<boolean>;
+        //interestedInHomeImprovement: KnockoutObservable<boolean>;
+        //interestedInHomeImprovementGrouping: KnockoutObservable<boolean>;
+        //interestedInPhotographyAndVideoEquipment: KnockoutObservable<boolean>;
+        //interestedInHomeFurnishingsDecorating: KnockoutObservable<boolean>;
+        //interestedInIntendtoPurchaseHomeImprovement: KnockoutObservable<boolean>;
+
+        //// INTERESTS - FOOD / WINE
+        //interestedInFoodWines: KnockoutObservable<boolean>;
+        //interestedInCooking: KnockoutObservable<boolean>;
+        //interestedInCookingGourmet: KnockoutObservable<boolean>;
+        //interestedInFoodsNatural: KnockoutObservable<boolean>;
+        //interestedInCookingFoodGrouping: KnockoutObservable<boolean>;
+
+        //// INTERESTS - TRAVEL
+        //interestedInTravelGrouping: KnockoutObservable<boolean>;
+        //tyravelGeneral: KnockoutObservable<boolean>;
+        //travelDomestic: KnockoutObservable<boolean>;
+        //travelInternational: KnockoutObservable<boolean>;
+        //travelCruiseVacations: KnockoutObservable<boolean>;
+        
+        //interestedInHomeLiving: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //interestedInDIYLiving: KnockoutObservable<boolean>;
+        //interestedInSportyLiving: KnockoutObservable<boolean>;
+        //interestedInUpscaleLiving: KnockoutObservable<boolean>;
+        //interestedInCulturalArtisticLiving: KnockoutObservable<boolean>;
+        //interestedInHighbrow: KnockoutObservable<boolean>;
+        //interestedInHighTechLiving: KnockoutObservable<boolean>;
+        //interestedInCommonLiving: KnockoutObservable<boolean>;
+        //interestedInProfessionalLiving: KnockoutObservable<boolean>;
+        //interestedInBroaderLiving: KnockoutObservable<boolean>;
+        
+        //// INTERESTS - OUTDOORS
+        //interestedInCampingHiking: KnockoutObservable<boolean>;
+        //interestedInHuntingShooting: KnockoutObservable<boolean>;
+        //interestedInSportsGrouping: KnockoutObservable<boolean>;
+        //interestedInOutdoorsGrouping: KnockoutObservable<boolean>;
+
+        //// INTERESTS - FITNESS
+        //interestedInExerciseHealthGrouping: KnockoutObservable<boolean>;
+        //interestedInExerciseRunningJogging: KnockoutObservable<boolean>;
+        //interestedInExerciseWalking: KnockoutObservable<boolean>;
+        //interestedInExerciseAerobic: KnockoutObservable<boolean>;
+        
+        //// INTERESTS - SPORTS
+        //golf: KnockoutObservable<boolean>;
+        //boatingSailing: KnockoutObservable<boolean>;
+        //hunting: KnockoutObservable<boolean>;
+        //fishing: KnockoutObservable<boolean>;
+        //interestedInTennis: KnockoutObservable<boolean>;
+        //interestedInSnowskiing: KnockoutObservable<boolean>;
+        //interestedInMotorcycling: KnockoutObservable<boolean>;
+        //interestedInNascar: KnockoutObservable<boolean>;
+        //interestedInScubaDiving: KnockoutObservable<boolean>;
+        //interestedInSportsandLeisure: KnockoutObservable<boolean>;
+        //interestedInSpectatorSportsAutoMotorcycleRacing: KnockoutObservable<boolean>;
+        //// ReSharper disable once InconsistentNaming
+        //interestedInSpectatorSportsTVSports: KnockoutObservable<boolean>;
+        //interestedInSpectatorSportsFootballinterestedIn: KnockoutObservable<boolean>;
+        //interestedInSpectatorSportsBaseball: KnockoutObservable<boolean>;
+        //interestedInSpectatorSportsBasketball: KnockoutObservable<boolean>;
+        //interestedInSpectatorSportsHockey: KnockoutObservable<boolean>;
+        //interestedInSpectatorSportsSoccer: KnockoutObservable<boolean>;
+        
+        //interestedInDietingWeightLoss: KnockoutObservable<boolean>;
+        //interestedInSelfImprovement: KnockoutObservable<boolean>;
+        //interestedInAutomotiveAutoPartsAndAccessories: KnockoutObservable<boolean>;
+
+		// FINANCIAL - CREDIT RATING
+//creditRating: KnockoutObservable<boolean>;
+//financeNumberOfLinesOfCredit: KnockoutObservable<boolean>;
+//financeCreditRangeOfNewCredit: KnockoutObservable<boolean>;
+
+// FINANCIAL - CREDIT CARD
+//financeHasCreditCard: KnockoutObservable<boolean>;
+//financeHasGoldOrPlatniumCard: KnockoutObservable<boolean>;
+//financeHasPremiumCreditCard: KnockoutObservable<boolean>;
+//financeHasUpscaleRetailCard: KnockoutObservable<boolean>;
+//financeHasBankCard: KnockoutObservable<boolean>;
+//financeHasGasDeptRetailCard: KnockoutObservable<boolean>;
+//financeHasAmericanExpressCard: KnockoutObservable<boolean>;
+//financeHasAmericanExpressGoldPremium: KnockoutObservable<boolean>;
+//financeHasDiscoverGoldPremium: KnockoutObservable<boolean>;
+//financeHasDiscoverRegular: KnockoutObservable<boolean>;
+//financeHasGasolineOrRetailCardRegular: KnockoutObservable<boolean>;
+//financeHasGasolineOrRetailCardGoldPremium: KnockoutObservable<boolean>;
+//financeHasMastercardGoldPremium: KnockoutObservable<boolean>;
+//financeHasMastercardRegular: KnockoutObservable<boolean>;
+//financeHasVisaGoldPremium: KnockoutObservable<boolean>;
+//financeHasVisaRegular: KnockoutObservable<boolean>;
+//financeCreditCardIndicator: KnockoutObservable<boolean>;
+//financeBankCardHolder: KnockoutObservable<boolean>;
+//financeGasDepartmentRetailCardHolder: KnockoutObservable<boolean>;
+//financeTravelAndEntertainmentCardHolder: KnockoutObservable<boolean>;
+//financeCreditCardholderOther: KnockoutObservable<boolean>;
+//financePremiumCardHolder: KnockoutObservable<boolean>;
+//financeUpscaleDepartmentStore: KnockoutObservable<boolean>;
+//financeCreditCardUser: KnockoutObservable<boolean>;
+//financeCreditCardNewIssue: KnockoutObservable<boolean>;
+//financeBankCardPresentInHouseHold: KnockoutObservable<boolean>;

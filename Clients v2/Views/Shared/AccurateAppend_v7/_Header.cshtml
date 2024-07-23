@@ -1,0 +1,61 @@
+﻿@using AccurateAppend.Core.IdentityModel
+@using AccurateAppend.Security
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  var site = SiteCache.Cache.First(s => s.ApplicationId == WellKnownIdentifiers.AccurateAppendId);
+}
+<header id="header">
+  <div class="top-panel">
+    @using (Html.Layout().Container())
+    {
+      <ul>
+        <li>
+          <a href="tel:@site.PrimaryPhone.Value">@site.PrimaryPhone.ToString()</a>
+        </li>
+        <li>
+          @{
+            if (this.User.Identity.IsAuthenticated)
+            {
+              @Html.Buttons().TopNavButton("Log Out", "Index", routeValues: new {controller = "LogOff", area = "Authentication"})
+            }
+            else
+            {
+              @Html.Buttons().TopNavButton("Log In", "Login", routeValues: new {controller = "Direct", area = "Authentication"})
+            }
+          }
+        </li>
+      </ul>
+      {
+        if (this.User.Identity.IsAuthenticated)
+        {
+          @Html.Buttons().ProfileButton("My Profile", "Index", "Contact", new {Area = "Profile"})
+        }
+        else
+        {
+          @Html.Buttons().PrimaryButton("Register Now!", "Index", "SignUp", new {Area = "Public"})
+        }
+      }
+    }
+  </div>
+  @using (Html.Layout().Container())
+  {
+    using (Html.Nav().BeginNavBar())
+    {
+      using (Html.Nav().BeginNavBarList())
+      {
+        if (this.User.Identity.IsAuthenticated)
+        {
+          @Html.Nav().NavBarLink(Html.Buttons().PrimaryButtonLarge("Append a list", "Start", "Csv", new { Area = "Order" }))
+          @Html.Nav().NavBarLink("Dashboard", "Index", "Current", new { Area = "Order" })
+          @Html.Nav().NavBarDirectLink("Help", "https://www.accurateappend.com/get-in-touch")
+        }
+        else
+        {
+          @Html.Nav().NavBarDirectLink("API", "https://www.accurateappend.com/data-append-api")
+          @Html.Nav().NavBarDirectLink("Services", "https://www.accurateappend.com/data-append")
+        }
+        @Html.Nav().NavBarDirectLink("Contact Us", "https://www.accurateappend.com/get-in-touch")
+      }
+    }
+  }
+</header>

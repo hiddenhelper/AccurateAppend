@@ -1,0 +1,60 @@
+.carousel {
+	padding:38px 0 41px;
+}
+
+.carousel .slides {
+	margin:0 0 40px;
+	padding:0;
+	list-style:none;
+}
+
+.carousel .slides:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+
+.carousel .slides li {
+	position:relative;
+}
+
+.carousel .ico {
+	position:absolute;
+	top:0;
+	right:49px;
+}
+
+.carousel .block {
+	overflow:hidden;
+	padding:5px 190px 0 4px;
+	color:#666;
+	font-size:24px;
+	line-height:31px;
+}
+
+.carousel .block.fixed {
+	padding:5px 4px 0;
+}
+
+.carousel .block.fixed .img {
+	float:right;
+}
+
+.carousel h2 {
+	margin:0 0 13px;
+	color:#333;
+	font:36px/39px opensans-bold,Helvetica,sans-serif;
+}
+
+.carousel h2 span {
+	display:block;
+}
+
+.carousel .block p {
+	margin:0 0 0 2px;
+}
+
+.checkbox-label {
+	font-size: 14px;
+	text-align: left;
+}

@@ -1,0 +1,24 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.Shared.Models.OrderProductsViewPresenter
+
+<div data-bind="visible: filteredProductsByCategory('Phone').length === 1">
+  <div class="heading-box">
+    <h3>Phone Append Services</h3>
+    <p style="margin-top: 7px;">Enhance your list by adding fresh phone numbers.</p>
+  </div>
+  <div class="main-table" style="margin-bottom: 20px;">
+    <table>
+      <thead>
+      <tr>
+        <th class="d-none d-sm-table-cell">Description</th>
+        <th class="d-none d-sm-table-cell">Matches/Cost</th>
+        <th class="d-none d-sm-table-cell">Include</th>
+        <th class="d-sm-none">List Details</th>
+      </tr>
+      </thead>
+      <tbody data-bind="foreach: filteredProductsByCategory('Phone')">
+      <tr data-bind="css: { selected: includeInOrder() }, template: { name: 'product-row' }"></tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

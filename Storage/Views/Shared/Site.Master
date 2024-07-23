@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="System.Web.Mvc.Html" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="/Content/css/styles.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- header -->
+    <%
+        this.Html.RenderPartial("Header"); %>
+    <!-- header -->
+    
+    <!-- container -->
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    <!-- container -->
+
+    <!-- footer -->
+    <%
+        this.Html.RenderPartial("Footer"); %>
+    <!-- footer -->
+
+</body>
+</html>

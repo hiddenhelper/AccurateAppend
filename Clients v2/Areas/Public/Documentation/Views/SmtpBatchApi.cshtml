@@ -1,0 +1,40 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@using (var container = Html.Layout().Container())
+{
+  <hr/>
+  <div class="heading-block" style="margin-bottom: 40px;">
+    <h2>Email Batch Processing Setup & Overview</h2>
+  </div>
+
+  using (var row = container.Row())
+  {
+    using (row.Column(10))
+    {
+  <div style="margin-bottom: 30px;">
+      <p>
+          Accurate Append’s batch processing system allows users to automate file processing without doing the work of programming. Submit files containing up to 25,000 records directly to our system from your email. Once your batch account is set up, processing your contact list is as easy as sending an email to file to Accurate Append for appending and enhancement. After receipt, our system will process your file and return the results when complete.
+      </p>
+      <p>
+          A subscription is required to access our automated batch system, so please contact sales or customer support to acquire access.
+      </p>
+      <h4>Step 1: Setup & Credentials</h4>
+      <p>No credentials are needed to submit files via email, but customer support does need to enable your account to accept files. In addition, each email address that will submit files for appending will need to be authorized for your account. This step needs to be handled by your account representative prior to submitting files.</p>
+      <h4>Step 2: Create New Message</h4>
+      <p>
+          From any email client application like Outlook or Gmail, create a new message and attach the file you want to process. Files can be .csv or Excel and only the first tab will be processed. The message must be sent from the main account holder's email or other email addresses that have been authorized by the account holder and attached to your account by customer support.
+      </p>
+      <h4>Step 3: Edit subject line</h4>
+      <p>Our system can accomodate multiple products, including email append, phone append and custom products. When customer support activates the Email Batch Processing feature for your account, they will provide a tokens that you will include in the subject lines of email messages you submit. The process run on your file will depend on the token passed in the subject line.</p>
+      <h4>Step 4: Send Message</h4>
+      <p>Send the message to files@accurateappend.com. The message must be sent from the main account holder's address, or an address associated with the account. Upon receipt of your message, our system will immediately process your file.</p>
+      <h4>Step 5: Results</h4>
+      <p>When your file is finished processing, our system will return the file and a processing report to the sender's address.</p>
+      <p style="margin-bottom: 30px;">All files processed via email can also viewed in your <a href="@Url.Action("Index", "Current", new {Area = "Order"})">Accurate Append Dashboard</a>. You can check progress, and even download the results and processing reports.</p>
+  </div>
+    }
+  }
+}

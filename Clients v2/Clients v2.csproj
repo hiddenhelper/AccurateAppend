@@ -1,0 +1,1534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88181548-14D5-4052-906C-2FEDBEBBCFF0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccurateAppend.Websites.Clients</RootNamespace>
+    <AssemblyName>AccurateAppend.Websites.Clients</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccurateAppend.Accounting, Version=3.9.7465.12882, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Accounting.3.9.7465.12882\lib\net48\AccurateAppend.Accounting.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ChargeProcessing, Version=1.0.7440.26991, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ChargeProcessing.Core.1.0.7440.26991\lib\net48\AccurateAppend.ChargeProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ChargeProcessing.Contracts, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ChargeProcessing.Contracts.1.1.0\lib\net48\AccurateAppend.ChargeProcessing.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ColumnMapper, Version=3.1.7440.25474, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ColumnMapper.3.1.7440.25474\lib\net48\AccurateAppend.ColumnMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ColumnMapper.LocalData, Version=1.0.7440.25476, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ColumnMapper.LocalData.1.0.7440.25476\lib\net48\AccurateAppend.ColumnMapper.LocalData.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core, Version=5.0.7464.24414, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Common.5.0.7464.24414\lib\netstandard2.0\AccurateAppend.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Collections, Version=2.0.7464.24416, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Collections.2.0.7464.24416\lib\netstandard2.0\AccurateAppend.Core.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.ComponentModel, Version=1.1.7464.24415, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-ComponentModel.1.1.7464.24415\lib\net48\AccurateAppend.Core.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Configuration, Version=1.0.7453.20010, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Configuration.1.0.7453.20010\lib\net48\AccurateAppend.Core.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.CustomerManagement.Contracts, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-CustomerManagement.Contracts.1.0.3\lib\net48\AccurateAppend.CustomerManagement.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Data, Version=3.5.7464.24418, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Data.3.5.7464.24418\lib\net48\AccurateAppend.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobManagement.Contracts, Version=1.3.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobManagement.Contracts.1.3.1.3\lib\net48\AccurateAppend.JobManagement.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing, Version=3.5.7453.20008, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.3.5.7453.20008\lib\net48\AccurateAppend.JobProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing.Orchestration, Version=1.2.7464.15138, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.Orchestration.1.2.7464.15138\lib\net48\AccurateAppend.JobProcessing.Orchestration.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing.Orchestration.LocalData, Version=1.0.7453.20011, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.Orchestration.LocalData.1.0.7453.20011\lib\net48\AccurateAppend.JobProcessing.Orchestration.LocalData.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Messaging, Version=1.4.7334.19215, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Messaging.1.4.7334.19215\lib\net48\AccurateAppend.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Operations, Version=1.0.7440.27154, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Operations.Core.1.0.7440.27154\lib\net48\AccurateAppend.Operations.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Operations.Contracts, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Operations.Contracts.1.0.0.8\lib\net48\AccurateAppend.Operations.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Plugin.Storage, Version=1.0.7440.25241, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-PluginStorage.1.0.7440.25241\lib\net48\AccurateAppend.Plugin.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Security, Version=3.5.7464.24419, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Security.3.5.7464.24419\lib\net48\AccurateAppend.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Standardization, Version=1.0.7457.22841, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Standardization.1.0.7457.22841\lib\netstandard2.0\AccurateAppend.Standardization.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ZenDesk, Version=1.0.7459.16072, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ZenDesk.Integration.1.0.7459.16072\lib\net48\AccurateAppend.ZenDesk.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ZenDesk.Contracts, Version=1.2.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ZenDesk.Contracts.1.2.0.3\lib\net48\AccurateAppend.ZenDesk.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Box.V2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ddda8fe64dde1ac3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Box.V2.3.22.0\lib\net45\Box.V2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DAL, Version=2.14.7457.22841, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DAL.2.14.7457.22841\lib\net48\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DataStreams, Version=5.27.0.0, Culture=neutral, PublicKeyToken=9c9b03c227e1bea6, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataStreams.5.27.0\lib\net452\DataStreams.dll</HintPath>
+    </Reference>
+    <Reference Include="DQS, Version=2.0.7457.22842, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DQS.2.0.7457.22842\lib\net48\DQS.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EventLogger, Version=1.12.7440.24332, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventLogger.1.12.7440.24332\lib\net48\EventLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="EventLogger.AzureQueue, Version=1.0.7440.24336, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventLogger.Azure.1.0.7440.24336\lib\net48\EventLogger.AzureQueue.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImpressionWise, Version=1.1.7451.23269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImpressionWise.1.1.7451.23269\lib\net471\ImpressionWise.dll</HintPath>
+    </Reference>
+    <Reference Include="Integration.NationBuilder, Version=3.7.7440.26840, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Integration-NationBuilder.3.7.7440.26840\lib\net48\Integration.NationBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2019.7.0.21100, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2019.7.0\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2019.1.3.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2019.1.3\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.NET-Encryption-Library, Version=1.15.0.0, Culture=neutral, PublicKeyToken=dccbd7ce7d6a58c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\KellermanEncryption.4.0.0.0\lib\net4\KellermanSoftware.NET-Encryption-Library.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SqlServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SqlServer.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=3.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.3.0.4\lib\net461\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.6.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.6.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.6.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.19\lib\net461\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NServiceBus.Callbacks, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.Callbacks.2.0.2\lib\net452\NServiceBus.Callbacks.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.6.5.8\lib\net452\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.NHibernate, Version=7.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.NHibernate.7.2.5\lib\net452\NServiceBus.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.CastleWindsor, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.6.1.1\lib\net452\NServiceBus.ObjectBuilder.CastleWindsor.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Transport.SqlServer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.SqlServer.3.1.4\lib\net452\NServiceBus.Transport.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Serializers.Newtonsoft.Json, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.Newtonsoft.Json.1.5.1\lib\net452\RestSharp.Serializers.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.6.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UltimateBounceInspector, Version=3.0.818.737, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateBounceInspector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UltimateCommon, Version=3.0.818.737, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UltimateEmailValidator, Version=3.0.818.737, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateEmailValidator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UltimateMail, Version=3.0.818.737, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateMail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UltimateProxy, Version=3.0.818.737, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateProxy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UltimateTemplateEngine, Version=3.0.818.737, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateTemplateEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XVerify, Version=1.1.7451.23270, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XVerify.1.1.7451.23270\lib\net48\XVerify.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\shared code\listbuilder\scripts\Attributes formatted in TypeScript but not used in scripts.txt">
+      <Link>Areas\ListBuilder\Scripts\Attributes formatted in TypeScript but not used in scripts.txt</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\DemographicsTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Enums.js">
+      <Link>Areas\ListBuilder\Scripts\Enums.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\FinancesTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\GeographyTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Index.js">
+      <Link>Areas\ListBuilder\Scripts\Index.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\InterestsTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\ListCriteriaViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Objects.js">
+      <Link>Areas\ListBuilder\Scripts\Objects.js</Link>
+    </Content>
+    <Content Include="App_Data\_donotdelete.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\ListBuilder\Order\Views\Confirmation.cshtml" />
+    <Content Include="Areas\ListBuilder\Order\Views\FromListBuilder.cshtml" />
+    <Content Include="Areas\ListBuilder\Order\Views\ThankYou.cshtml" />
+    <Content Include="Areas\ListBuilder\web.config" />
+    <Content Include="Areas\ListBuilder\CriteriaBuilder\Views\Index.cshtml" />
+    <Content Include="..\shared code\listbuilder\scripts\DemographicsTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\DemographicsTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\Enums.js.map">
+      <Link>Areas\ListBuilder\Scripts\Enums.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\FinancesTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\FinancesTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\GeographyTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\GeographyTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\Index.js.map">
+      <Link>Areas\ListBuilder\Scripts\Index.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\InterestsTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\InterestsTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\ListCriteriaViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\ListCriteriaViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\shared code\listbuilder\scripts\Objects.js.map">
+      <Link>Areas\ListBuilder\Scripts\Objects.js.map</Link>
+    </Content>
+    <Content Include="Areas\NationBuilder\DataQualityAssessment\Views\Request.cshtml" />
+    <Content Include="..\Shared Code\Templates\OrderDetail.html.config">
+      <Link>Areas\Order\Bills\Templates\OrderDetail.html.config</Link>
+    </Content>
+    <Content Include="Areas\LeadPhilanthropy\web.config" />
+    <Content Include="Areas\LeadPhilanthropy\Signup\Views\Index.cshtml" />
+    <None Include="Areas\NationBuilder\AuthHandler\NationBuilder Intergration Info.txt" />
+    <Content Include="Areas\NationBuilder\DisplayLists\Scripts\Index.js" />
+    <Content Include="Areas\NationBuilder\Order\Scripts\SelectList.js" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\ACCUSEND_W_INPUT_EMAIL_VERIFICATION.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\ACCUSEND_W_INPUT_EMAIL_VERIFICATION.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\CASS.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\CASS.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\DEMOGRAHICS.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\DEMOGRAHICS.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\EMAIL_BASIC_NO_SUPRESSION_W_VERIFICATION.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\EMAIL_BASIC_NO_SUPRESSION_W_VERIFICATION.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_REV_PREM.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_REV_PREM.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\EMAIL_VER_DELIVERABLE.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\EMAIL_VER_DELIVERABLE.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\NCOA48.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\NCOA48.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\EMAIL_BASIC_REV.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\EMAIL_BASIC_REV.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_BUS_DA.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_BUS_DA.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_MOB.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_MOB.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_DA.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_DA.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_PREM.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\PHONE_PREM.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\UNIFIED_REV_ALL.description.html" />
+    <Content Include="Areas\NationBuilder\Pricing\Product Descriptions\UNIFIED_REV_ALL.html" />
+    <Content Include="Areas\NationBuilder\Renew\Views\Index.cshtml" />
+    <Content Include="Areas\NationBuilder\DisplayLists\Views\NoLists.cshtml" />
+    <Content Include="Areas\NationBuilder\DataQualityAssessment\Views\ThankYou.cshtml" />
+    <Content Include="Areas\NationBuilder\Order\Views\OrderReceived.cshtml" />
+    <Content Include="Areas\Order\Box\Scripts\Box.js" />
+    <Content Include="Areas\Order\Shared\Scripts\Confirmation.js" />
+    <Content Include="Areas\Order\Automation\Scripts\SelectRule.js" />
+    <Content Include="Areas\Order\Bills\Scripts\Index.js" />
+    <Content Include="Areas\Order\Current\Views\Index.cshtml" />
+    <Content Include="Areas\NationBuilder\Order\Scripts\Confirmation.js" />
+    <Content Include="Areas\Order\Current\Scripts\Index.js" />
+    <EmbeddedResource Include="Areas\Order\Csv\Messages\CsvSalesSaga.hbm.xml" />
+    <Content Include="Areas\Order\Shared\Scripts\IdentifyColumns.js" />
+    <Content Include="Areas\Order\Shared\Scripts\Upload.js" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\ACCUSEND_W_INPUT_EMAIL_VERIFICATION.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\ACCUSEND_W_INPUT_EMAIL_VERIFICATION.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\CASS.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\CASS.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\DEMOGRAHICS.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\DEMOGRAHICS.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\EMAIL_BASIC_NO_SUPRESSION_W_VERIFICATION.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\EMAIL_BASIC_NO_SUPRESSION_W_VERIFICATION.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\EMAIL_BASIC_REV.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\EMAIL_BASIC_REV.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\EMAIL_VER_DELIVERABLE.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\EMAIL_VER_DELIVERABLE.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\NCOA48.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\NCOA48.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_BUS_DA.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_BUS_DA.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_MOB.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_MOB.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_DA.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_DA.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_PREM.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_PREM.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_REV_PREM.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\PHONE_REV_PREM.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\UNIFIED_REV_ALL.description.html" />
+    <Content Include="Areas\Order\Pricing\Product Descriptions\UNIFIED_REV_ALL.html" />
+    <Content Include="Areas\Profile\Card\Scripts\index.js" />
+    <Content Include="Areas\Profile\SocialMediaLogin\Scripts\index.js" />
+    <Content Include="Content\AccurateAppend_v7\images\BatchApi\FielZilla_sitemanager.png" />
+    <Content Include="Content\AccurateAppend_v7\images\BatchApi\FileZilla_screen1.png" />
+    <Content Include="Content\AccurateAppend_v7\images\BatchApi\FileZilla_screen2.png" />
+    <Content Include="Areas\Public\NewClientRegistration\Scripts\Create.js" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo.png" />
+    <Content Include="Content\AccurateAppend_v7\images\chris-small-headshot.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Map Fields.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Order Complete.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Order Summary.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Orders.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Register.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Select Products.png" />
+    <Content Include="Content\AccurateAppend_v7\images\HowItWorks\Upload File.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-Api.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-download.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-SocialMediaLogin.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-upload.png" />
+    <Content Include="Content\AccurateAppend_v7\images\info-circle-outline-50.png" />
+    <Content Include="Content\AccurateAppend_v7\images\jimmy-small-headshot.png" />
+    <Content Include="Content\AccurateAppend_v7\images\KendoUi\coloricons-sprite.png" />
+    <Content Include="Content\AccurateAppend_v7\images\LeadPhilanthropy\LEAD_logo white transparent.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon4-active.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon4.png" />
+    <Content Include="Content\AccurateAppend_v7\images\NationBuilder_Account_Setup\nationbuilder_screen1.png" />
+    <Content Include="Content\AccurateAppend_v7\images\NationBuilder_Account_Setup\nationbuilder_screen2.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\ico-01.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\ico-02.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\ico-03.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\ico-facebook.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\ico-twitter.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\logo-01.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\logo-02.png" />
+    <Content Include="Content\AccurateAppend_v7\images\Receipts\logo.png" />
+    <Content Include="Content\AccurateAppend_v7\images\steve-small-headshot.png" />
+    <Content Include="Areas\Profile\Api\Views\_ApiKey.cshtml" />
+    <Content Include="Areas\NationBuilder\Order\Views\Products.cshtml" />
+    <Content Include="Areas\Order\Csv\Views\Products.cshtml" />
+    <Content Include="Areas\ListBuilder\Order\Views\Products.cshtml" />
+    <Content Include="Content\Files\FTP_public.key.zip" />
+    <Content Include="Areas\Public\HowItWorks\Views\Index.cshtml" />
+    <Content Include="Areas\Order\Shared\Views\_OrderPills.cshtml" />
+    <Content Include="Areas\Shared\Views\_CartTab.cshtml" />
+    <Content Include="Areas\Order\Automation\Views\Upload.cshtml" />
+    <Content Include="Areas\Order\Automation\Views\ProcessFile.cshtml" />
+    <Content Include="Areas\Order\Shared\Views\_UploadFile.cshtml" />
+    <Content Include="Areas\Order\Automation\Views\IdentifyColumns.cshtml" />
+    <Content Include="Areas\Order\Shared\Views\_ProcessFileAwaiter.cshtml" />
+    <Content Include="Areas\Order\Automation\Views\Confirmation.cshtml" />
+    <Content Include="Areas\Order\Shared\Scripts\Confirmation.js.map" />
+    <Content Include="Areas\Order\Shared\Views\ThankYou.cshtml" />
+    <Content Include="Areas\Order\Csv\Views\Confirmation.cshtml" />
+    <Content Include="Configuration\Box.config" />
+    <Content Include="Areas\Profile\SocialMediaLogin\Views\Invite.cshtml" />
+    <Content Include="Areas\Order\Box\Views\SelectList.cshtml" />
+    <Content Include="Areas\Order\Box\Views\ProcessFile.cshtml" />
+    <None Include="Content\AccurateAppend_v7\images\icon-blank.psd" />
+    <Content Include="Configuration\Charge Context Components.config" />
+    <Content Include="Areas\Public\Documentation\Views\ProcessingCodes.cshtml" />
+    <Content Include="Configuration\Sales Context Components.config" />
+    <Content Include="Configuration\Operations Context Components.config" />
+    <Content Include="Areas\Public\OptOut\Views\Index.cshtml" />
+    <Content Include="Areas\Profile\Api\Views\_FtpUser.cshtml" />
+    <Content Include="Areas\Public\Documentation\Views\FtpBatchApi.cshtml" />
+    <Content Include="Areas\Public\Documentation\Views\NationBuilder_Account_Setup.cshtml" />
+    <Content Include="Areas\Public\Documentation\Views\BatchApi_FileFormatting.cshtml" />
+    <Content Include="Areas\Public\Documentation\Views\SmtpBatchApi.cshtml" />
+    <Content Include="Areas\Public\Documentation\Views\BatchApiOverview.cshtml" />
+    <Content Include="Areas\Order\Bills\Views\Index.cshtml" />
+    <Content Include="Areas\Public\Documentation\Views\BatchApi_FileFormatting_Header.cshtml" />
+    <Content Include="Areas\Order\Automation\Views\SelectRule.cshtml" />
+    <Content Include="Areas\Order\Automation\Scripts\SelectRule.js.map" />
+    <None Include="Content\web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Content\Shared\images\circular loading-button.gif" />
+    <Content Include="Content\Shared\images\Chris.png" />
+    <Content Include="Content\Shared\images\circular loading.gif" />
+    <Content Include="Scripts\AccurateAppend.DatePicker.js" />
+    <Content Include="Scripts\AccurateAppend.StringFormatting.js" />
+    <Content Include="Scripts\app\shared\DisplayProducts.js" />
+    <Content Include="Scripts\app\shared\Util.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Order\Shared\Scripts\IdentifyColumns.js.map" />
+    <Content Include="Areas\NationBuilder\Order\Scripts\Confirmation.js.map" />
+    <Content Include="Areas\NationBuilder\Order\Scripts\SelectList.js.map" />
+    <Content Include="Areas\NationBuilder\DisplayLists\Scripts\Index.js.map" />
+    <Content Include="Areas\Public\NewClientRegistration\Scripts\Create.js.map" />
+    <Content Include="Areas\Public\ContactUs\Views\Index.cshtml" />
+    <Content Include="Areas\Order\Shared\Scripts\Upload.js.map" />
+    <Content Include="Areas\JobProcessing\web.config" />
+    <Content Include="Areas\Profile\SocialMediaLogin\Views\Index.cshtml" />
+    <Content Include="Areas\Profile\SocialMediaLogin\Scripts\index.js.map" />
+    <Content Include="Areas\Profile\web.config" />
+    <Content Include="Areas\Order\web.config" />
+    <Content Include="Areas\Profile\Api\Views\Index.cshtml" />
+    <Content Include="Scripts\app\shared\DisplayProducts.js.map" />
+    <Content Include="Scripts\AccurateAppend.DatePicker.js.map" />
+    <Content Include="EmailTemplates\New_Linked_Logon.Html.config" />
+    <Content Include="EmailTemplates\AlternateCredentialsInviteMessage.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
+    <Content Include="Scripts\kendo-upload.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Areas\Order\Csv\Views\IdentifyColumns.cshtml" />
+    <Content Include="Areas\Order\Csv\Views\Upload.cshtml" />
+    <Content Include="Areas\Public\Payment\Views\Update.cshtml" />
+    <Content Include="Areas\Public\Payment\Views\ThankYou.cshtml" />
+    <Content Include="Content\2020\all.css" />
+    <Content Include="Content\2020\images\bg-arc-box.gif" />
+    <Content Include="Content\2020\images\bg-btn.gif" />
+    <Content Include="Content\2020\images\bg-footer.gif" />
+    <Content Include="Content\2020\images\bg-gallery.gif" />
+    <Content Include="Content\2020\images\bg-heading.jpg" />
+    <Content Include="Content\2020\images\bg-mark.gif" />
+    <Content Include="Content\2020\images\bg-row.gif" />
+    <Content Include="Content\2020\images\bg-switcher.png" />
+    <Content Include="Content\2020\images\bg-tab-box.gif" />
+    <Content Include="Content\2020\images\bg-tab-content.jpg" />
+    <Content Include="Content\2020\images\bg-tabs.gif" />
+    <Content Include="Content\2020\images\bg-textarea.gif" />
+    <Content Include="Content\2020\images\bg-title.gif" />
+    <Content Include="Content\2020\images\bg-wrapper.gif" />
+    <Content Include="Content\2020\images\btn-get.png" />
+    <Content Include="Content\2020\images\bullet.gif" />
+    <Content Include="Content\2020\images\divider.gif" />
+    <Content Include="Content\2020\images\img1.gif" />
+    <Content Include="Content\2020\images\img2.png" />
+    <Content Include="Content\2020\images\logo.png" />
+    <Content Include="Content\2020\images\none.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\css\bootstrap.css" />
+    <Content Include="Content\AccurateAppend_v6.1\css\styles.css" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bold.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bolditalic.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-italic.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-light.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-regular.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibold.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibolditalic.svg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-01.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-02.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-03.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-04.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-05.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-06.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-07.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrow-08.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\arrows.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-01.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-02.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-03.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-04.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-05.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-06.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-07.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-08.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-block-09.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-checkbox.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-close.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-edit.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-icon-2.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-pager-01.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-pager.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\bg-triangles.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\building-icon.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\cass-icon.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\default-icon.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\default.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\demographics-append.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\doc.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\dropdown-arrow.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\email-append-action.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\email-append.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\email-verify.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-01.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-02.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-03.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-04.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-05.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-06.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-07.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\ico-08.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-01.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-02.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-03.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-04.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-05.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-06.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-08.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-09.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-10.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-11.jpg" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-12.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-13.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-14.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-15.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-16.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-17.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-18.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-19.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\img-20.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\jpg.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-01.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-02.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-03.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-04.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-05.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-06.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-mobile.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\logo-tablet.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\mail-icon-2.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\mail-icon.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\move-mobile-column.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\move-phone-line.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\pdf.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\phone-append.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\phone.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\reverse-phone.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\robo.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sep-01.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sep-02.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sep-03.gif" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sort_asc.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sort_asc_disabled.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sort_both.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sort_desc.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\sort_desc_disabled.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\text.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\worldicon.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\xls.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\zip.png" />
+    <Content Include="Content\AccurateAppend_v7\css\bootstrap.css" />
+    <Content Include="Content\AccurateAppend_v7\css\bootstrap.min.css" />
+    <Content Include="Content\AccurateAppend_v7\css\kendo-ui.css" />
+    <Content Include="Content\AccurateAppend_v7\css\main.css" />
+    <Content Include="Content\AccurateAppend_v7\fonts\icomoon.svg" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-NationBuilder.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon1-active.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon1.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon2-active.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon2.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon3-active.png" />
+    <Content Include="Content\AccurateAppend_v7\images\list-icon3.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-AccountInformation.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-Bills.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-PaymentInformation.png" />
+    <Content Include="Content\AccurateAppend_v7\images\icon-PasswordChange.png" />
+    <Content Include="Content\AccurateAppend_v7\images\logo-white.png" />
+    <Content Include="Content\AccurateAppend_v7\images\logo.png" />
+    <Content Include="Content\AccurateAppend_v7\images\promo-img1.jpg" />
+    <Content Include="Content\AccurateAppend_v7\js\bootstrap.min.js" />
+    <Content Include="Content\AccurateAppend_v7\js\dropzone.js" />
+    <Content Include="Content\AccurateAppend_v7\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\AccurateAppend_v7\js\jquery.inputmask.bundle.js" />
+    <Content Include="Content\AccurateAppend_v7\js\jquery.main.js" />
+    <Content Include="Content\Shared\images\default.png" />
+    <Content Include="Content\Shared\images\doc.png" />
+    <Content Include="Content\Shared\images\jpg.png" />
+    <Content Include="Content\Shared\images\loader_white.gif" />
+    <Content Include="Content\Shared\images\pdf.png" />
+    <Content Include="Content\Shared\images\text.png" />
+    <Content Include="Content\Shared\images\xls.png" />
+    <Content Include="Content\Shared\images\zip.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Controllers.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\2020\images\Receipts\ico-01.png" />
+    <Content Include="Content\2020\images\Receipts\ico-02.png" />
+    <Content Include="Content\2020\images\Receipts\ico-03.png" />
+    <Content Include="Content\2020\images\Receipts\ico-facebook.png" />
+    <Content Include="Content\2020\images\Receipts\ico-twitter.png" />
+    <Content Include="Content\2020\images\Receipts\logo-01.png" />
+    <Content Include="Content\2020\images\Receipts\logo-02.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\ico-01.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\ico-02.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\ico-03.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\ico-facebook.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\ico-twitter.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\logo-01.png" />
+    <Content Include="Content\AccurateAppend_v6.1\images\Receipts\logo-02.png" />
+    <Content Include="Content\Shared\images\Alec.png" />
+    <Content Include="Content\Shared\images\Jimmy.png" />
+    <Content Include="Content\Shared\images\Steve.png" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-regular.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-regular.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-regular.woff" />
+    <Content Include="Areas\Public\web.config" />
+    <Content Include="Areas\NationBuilder\web.config" />
+    <Content Include="Areas\Public\Signup\Views\Index.cshtml" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bold.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bold.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bold.eot" />
+    <Content Include="Content\Files\AA_public.key.zip" />
+    <Content Include="Content\Files\Processing options for NationBuilder users.pdf" />
+    <Content Include="EmailTemplates\ApiTrialWelcomeMessage.config" />
+    <Content Include="EmailTemplates\OrderSubmittedCsv.html.config" />
+    <Content Include="EmailTemplates\OrderSubmittedNationBuilder.html.config" />
+    <Content Include="EmailTemplates\PasswordReset.html.config" />
+    <Content Include="EmailTemplates\PaymentInfoUpdated.html.config" />
+    <Content Include="EmailTemplates\PaymentInfoUpdated.config" />
+    <Content Include="EmailTemplates\Signature.html.config" />
+    <Content Include="EmailTemplates\Signature.config" />
+    <Content Include="EmailTemplates\Welcome_Classic.Text.config" />
+    <Content Include="EmailTemplates\Welcome_NationBuilder.Html.config" />
+    <Content Include="Configuration\Bus.config" />
+    <Content Include="Areas\Authentication\web.config" />
+    <Content Include="Areas\Authentication\Direct\Views\Login.cshtml" />
+    <Content Include="Areas\_ViewStart.cshtml" />
+    <Content Include="Areas\Authentication\ResetPassword\Views\Request.cshtml" />
+    <Content Include="Areas\Authentication\ResetPassword\Views\RequestSent.cshtml" />
+    <Content Include="Areas\Authentication\ResetPassword\Views\Update.cshtml" />
+    <Content Include="Areas\Authentication\ResetPassword\Views\ResetPasswordSuccess.cshtml" />
+    <Content Include="Areas\Authentication\Shared\Views\LinkAccounts.cshtml" />
+    <Content Include="Areas\Authentication\NewPassword\Views\Index.cshtml" />
+    <Content Include="Areas\Authentication\NewPassword\Views\Success.cshtml" />
+    <Content Include="Areas\Public\File\Views\Upload.cshtml" />
+    <Content Include="Areas\Profile\Card\Views\Index.cshtml" />
+    <Content Include="Areas\Profile\Contact\Views\Index.cshtml" />
+    <Content Include="Areas\NationBuilder\Signup\Views\Index.cshtml" />
+    <Content Include="Areas\NationBuilder\Signup\Views\ThankYou.cshtml" />
+    <Content Include="Configuration\NationBuilder.config" />
+    <Content Include="Areas\Profile\Password\Views\Index.cshtml" />
+    <Content Include="Areas\NationBuilder\DisplayLists\Views\Index.cshtml" />
+    <Content Include="Areas\Profile\Nation\Views\Index.cshtml" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\FontAwesome.otf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bolditalic.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bolditalic.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-bolditalic.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-italic.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-italic.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-italic.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-light.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-light.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-light.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibold.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibold.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibold.woff" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibolditalic.eot" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibolditalic.ttf" />
+    <Content Include="Content\AccurateAppend_v6.1\fonts\opensans-semibolditalic.woff" />
+    <Content Include="Configuration\Public Ordering.config" />
+    <Content Include="Configuration\ListBuilder.config" />
+    <Content Include="Areas\Order\Csv\Views\ProcessFile.cshtml" />
+    <Content Include="Areas\Api\Trial\Views\RequestTrial.cshtml" />
+    <Content Include="Areas\Api\Trial\Views\ThankYou.cshtml" />
+    <Content Include="Areas\NationBuilder\Order\Views\SelectList.cshtml" />
+    <Content Include="Areas\NationBuilder\Order\Views\Confirmation.cshtml" />
+    <Content Include="Areas\Public\Legal\Views\ToC.cshtml" />
+    <Content Include="Areas\Profile\Shared\_ProfileNavigation.cshtml" />
+    <Content Include="EmailTemplates\Welcome_Public.Html.config" />
+    <Content Include="Content\AccurateAppend_v7\fonts\icomoon.eot" />
+    <Content Include="Content\AccurateAppend_v7\fonts\icomoon.json" />
+    <Content Include="Content\AccurateAppend_v7\fonts\icomoon.ttf" />
+    <Content Include="Content\AccurateAppend_v7\fonts\icomoon.woff" />
+    <None Include="Properties\PublishProfiles\TEST.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\typings\HttpStatusCode.js" />
+    <Content Include="Views\Shared\OrderPaymentForm.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v6.1\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\AccurateAppend_v6.1\_Header.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v6.1\_Footer.cshtml" />
+    <Content Include="Castle.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Castle.Debug.config">
+      <DependentUpon>Castle.config</DependentUpon>
+    </Content>
+    <Content Include="Castle.Release.config">
+      <DependentUpon>Castle.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Areas\Public\NewClientRegistration\Views\Create.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v6.1\_Terms.cshtml" />
+    <Content Include="Views\Shared\2020Connect\_Terms.cshtml" />
+    <Content Include="Views\Shared\DisplayProducts.cshtml" />
+    <Content Include="Views\Shared\2020Connect\_Layout.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v7\_Footer.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v7\_Header.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v7\_Layout.cshtml" />
+    <Content Include="Views\Shared\AccurateAppend_v7\_Terms.cshtml" />
+    <Content Include="Views\Default\Test.cshtml" />
+    <Content Include="Views\Shared\_Upload.cshtml" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\kendo-upload.js.map" />
+    <Content Include="Scripts\typings\HttpStatusCode.js.map" />
+    <Content Include="Views\Shared\_DisplayOrderInformation.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="Views\Shared\_DisplayPaymentForm.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared Code\Configuration\ControllerCache.cs">
+      <Link>Configuration\ControllerCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Configuration\ControllersInstaller.cs">
+      <Link>Configuration\ControllersInstaller.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Configuration\RouteValueDictionary Extensions.cs">
+      <Link>Configuration\RouteValueDictionary Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Configuration\WindsorControllerFactory.cs">
+      <Link>Configuration\WindsorControllerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Templates\OrderDetailHtml.cs">
+      <Link>Areas\Order\Bills\Templates\OrderDetailHtml.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\AccountCreatedEventBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Automation Order Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BusBootstrapper.cs" />
+    <Compile Include="App_Start\CallbackHub.cs" />
+    <Compile Include="App_Start\ContainerBootstrapper.cs" />
+    <Compile Include="App_Start\ControllerRegistrationBootstrapper.cs" />
+    <Compile Include="App_Start\CreateCsvJobCommandBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\CreateListBuilderCartCommandBootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\CreatePaymentProfile Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Csv Order Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\FIleLocationsBootstrapper.cs" />
+    <Compile Include="App_Start\GenerateListCommand Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Lead Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\LoggingConfig.cs" />
+    <Compile Include="App_Start\MvcBootstrapper.cs" />
+    <Compile Include="App_Start\NB Order Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\OwinBoot.cs" />
+    <Compile Include="App_Start\Public Ordering Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\PublicLogonEventBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RazorConfig.cs" />
+    <Compile Include="App_Start\RequestTrialCommandBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\ResetClientHistorgramCommandBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SendPasswordUpdateRequestCommandBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\ToggleNationAccessCommandBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Trial\EmailFactory.cs" />
+    <Compile Include="Areas\Api\Trial\Messages\RequestTrialCommand.cs" />
+    <Compile Include="Areas\Api\Trial\Messages\RequestTrialCommandHandler.cs" />
+    <Compile Include="Areas\Api\Trial\Models\ApiSignupModel.cs" />
+    <Compile Include="Areas\Api\Trial\TrialController.cs" />
+    <Compile Include="Areas\Authentication\AuthenticationAreaRegistration.cs" />
+    <Compile Include="Areas\Authentication\Direct\Controller.cs" />
+    <Compile Include="Areas\Authentication\Direct\Models\DirectLoginModel.cs" />
+    <Compile Include="Areas\Authentication\Google\Controller.cs" />
+    <Compile Include="Areas\Authentication\Google\GoogleSecurityConfiguration.cs" />
+    <Compile Include="Areas\Authentication\LinkedIn\Controller.cs" />
+    <Compile Include="Areas\Authentication\LinkedIn\LinkedInSecurityConfiguration.cs" />
+    <Compile Include="Areas\Authentication\LogOff\Controller.cs" />
+    <Compile Include="Areas\Authentication\Messages\EmailFactory.cs" />
+    <Compile Include="Areas\Order\Box\Controller.cs" />
+    <Compile Include="Areas\Order\Box\Messages\BoxTransferCompletedEvent.cs" />
+    <Compile Include="Areas\Order\Box\Messages\TransferBoxFileCommand.cs" />
+    <Compile Include="Areas\Order\Box\Messages\TransferBoxFileCommandHandler.cs" />
+    <Compile Include="Areas\Order\Box\Models\ProcessFileModel.cs" />
+    <Compile Include="Areas\Order\Box\Models\SelectListModel.cs" />
+    <Compile Include="Areas\Order\Shared\Models\UploadRequestModel.cs" />
+    <Compile Include="Areas\Profile\Refresh\Controller.cs" />
+    <Compile Include="Areas\Profile\SocialMediaLogin\Messages\EmailFactory.cs" />
+    <Compile Include="Areas\Profile\SocialMediaLogin\Messages\InviteUserCommand.cs" />
+    <Compile Include="Areas\Profile\SocialMediaLogin\Messages\SendEmailForInviteUserCommandHandler.cs" />
+    <Compile Include="Areas\Profile\SocialMediaLogin\Models\InviteUserModel.cs" />
+    <Compile Include="Areas\Public\Invite\Controller.cs" />
+    <Compile Include="Security\ExternalLoginAddedEvent.cs" />
+    <Compile Include="Areas\Authentication\Messages\SendEmailForExternalLoginAddedEventHandler.cs" />
+    <Compile Include="Areas\Authentication\NewPassword\Controller.cs" />
+    <Compile Include="Areas\Authentication\NewPassword\Models\ForcedPasswordChangeModel.cs" />
+    <Compile Include="Areas\Authentication\Shared\Models\LoginModel.cs" />
+    <Compile Include="Areas\Authentication\Facebook\Controller.cs" />
+    <Compile Include="Areas\Authentication\Facebook\FacebookSecurityConfiguration.cs" />
+    <Compile Include="Areas\Authentication\ResetPassword\Models\LocalPasswordModel.cs" />
+    <Compile Include="Areas\Authentication\Shared\Models\LinkModel.cs" />
+    <Compile Include="Areas\Authentication\SingleUse\Controller.cs" />
+    <Compile Include="Areas\Box\IGeneratedToken.cs" />
+    <Compile Include="Areas\Box\AuthHandler\Token.cs" />
+    <Compile Include="Areas\Box\BoxRegistration Query Extensions.cs" />
+    <Compile Include="Areas\Box\BoxRegistrationConfiguration.cs" />
+    <Compile Include="Areas\Box\BoxRegistration.cs" />
+    <Compile Include="Areas\Box\BoxApi\Controller.cs" />
+    <Compile Include="Areas\Box\BoxApi\IdentifiedOAuthSession.cs" />
+    <Compile Include="Areas\Box\BoxAreaRegistration.cs" />
+    <Compile Include="Areas\Controller Extensions.cs" />
+    <Compile Include="Areas\CreateAccountModelBase.cs" />
+    <Compile Include="Areas\FileBasedProductHelpService.cs" />
+    <Compile Include="Areas\IProductHelpService.cs" />
+    <Compile Include="Areas\JobProcessing\AutomationRules\Controller.cs" />
+    <Compile Include="Areas\JobProcessing\JobProcessingAreaRegistration.cs" />
+    <Compile Include="Areas\JobProcessing\MatchReport\Controller.cs" />
+    <Compile Include="Areas\Box\AccessPoint.cs" />
+    <Compile Include="Areas\Box\AuthHandler\BoxConfiguration.cs" />
+    <Compile Include="Areas\Box\AuthHandler\ConfigurationSelector.cs" />
+    <Compile Include="Areas\Box\AuthHandler\Controller.cs" />
+    <Compile Include="Areas\LeadPhilanthropy\LeadPhilanthropyRegistration.cs" />
+    <Compile Include="Areas\LeadPhilanthropy\Signup\Controller.cs" />
+    <Compile Include="Areas\LeadPhilanthropy\Signup\Models\LeadPhilanthropyCreateAccountModel.cs" />
+    <Compile Include="Areas\ListBuilder\Api\Controller.cs" />
+    <Compile Include="Areas\ListBuilder\BuildList\Controller.cs" />
+    <Compile Include="Areas\ListBuilder\BuildList\Messaging\GenerateListCommandHandler.cs" />
+    <Compile Include="Areas\ListBuilder\BuildList\Messaging\GenerateListCommand.cs" />
+    <Compile Include="Areas\ListBuilder\CriteriaBuilder\Controller.cs" />
+    <Compile Include="Areas\ListBuilder\GenerateListCount\Controller.cs" />
+    <Compile Include="Areas\ListBuilder\ListBuilderAreaRegistration.cs" />
+    <Compile Include="Areas\ListBuilder\Messaging\CartCreatedEvent.cs" />
+    <Compile Include="Areas\ListBuilder\Messaging\CreateListBuilderCartCommand.cs" />
+    <Compile Include="Areas\ListBuilder\Messaging\CreateListBuilderCartCommandHandler.cs" />
+    <Compile Include="Areas\ListBuilder\Order\Controller.cs" />
+    <Compile Include="Areas\ListBuilder\Order\Models\GeneratedFileOrderModel.cs" />
+    <Compile Include="Areas\ListBuilder\Order\Models\GenerateListModel.cs" />
+    <Compile Include="Areas\ListBuilder\Order\Models\OrderConfirmationViewPresenter.cs" />
+    <Compile Include="Areas\ListBuilder\Pricing\Controller.cs" />
+    <Compile Include="Areas\Membership Utilities.cs" />
+    <Compile Include="Areas\NationBuilder\AuthHandler\ConfigurationSelector.cs" />
+    <Compile Include="Areas\NationBuilder\AuthHandler\Controller.cs" />
+    <Compile Include="Areas\NationBuilder\AccessPoint.cs" />
+    <Compile Include="Areas\NationBuilder\AuthHandler\NationBuilderConfiguration.cs" />
+    <Compile Include="Areas\NationBuilder\ChangeAccess\ChangeAccessController.cs" />
+    <Compile Include="Areas\NationBuilder\ChangeAccess\Messages\ToggleNationAccessCommand.cs" />
+    <Compile Include="Areas\NationBuilder\ChangeAccess\Messages\ToggleNationAccessCommandHandler.cs" />
+    <Compile Include="Areas\NationBuilder\DataQualityAssessment\Models\ConsultationRequestModel.cs" />
+    <Compile Include="Areas\NationBuilder\DisplayLists\Controller.cs" />
+    <Compile Include="Areas\NationBuilder\DataQualityAssessment\DataQualityAssessmentController.cs" />
+    <Compile Include="Areas\NationBuilder\DisplayLists\Models\SelectListModel.cs" />
+    <Compile Include="Areas\NationBuilder\NationBuilderAreaRegistration.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Controller.cs" />
+    <Compile Include="Areas\NationBuilder\Order\GoogleAnalytics.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\CartExpiredTimeout.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\CreateNationBuilderCartCommand.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\ListSelectedEvent.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\NationBuilderOrderExpiredEvent.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\EnterQuoteForNationBuilderOrderCommand.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\NationBuilderCartCreatedEvent.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\NationBuilderCartData.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\NationBuilderSalesSaga.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\ProductQuote.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\QuoteCreatedEvent.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\SelectListForCartCommand.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\SubmitNationBuilderOrderCommand.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\ZenSellHandler.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Models\NationBuilderOrderModel.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Models\NewCartModel.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Models\OrderConfirmationViewPresenter.cs" />
+    <Compile Include="Areas\NationBuilder\Pricing\Controller.cs" />
+    <Compile Include="Areas\NationBuilder\Renew\Controller.cs" />
+    <Compile Include="Areas\NationBuilder\Signup\Controller.cs" />
+    <Compile Include="Areas\Authentication\ResetPassword\ResetPasswordController.cs" />
+    <Compile Include="Areas\Authentication\ResetPassword\Models\ResetPasswordModel.cs" />
+    <Compile Include="Areas\NationBuilder\Signup\EmailFactory.cs" />
+    <Compile Include="Areas\NationBuilder\Signup\Models\NationBuilderCreateAccountModel.cs" />
+    <Compile Include="Areas\OrderControllerBase.cs" />
+    <Compile Include="Areas\Order\Analyzers\AddressSuitabilityObserver.cs" />
+    <Compile Include="Areas\Order\Analyzers\AnalyzerSource.cs" />
+    <Compile Include="Areas\Order\Analyzers\FieldMap.cs" />
+    <Compile Include="Areas\Order\Analyzers\MustContainOperationSuitabilityObserver.cs" />
+    <Compile Include="Areas\Order\Analyzers\OperationSuitabilityObserver.cs" />
+    <Compile Include="Areas\Order\Analyzers\PartyBasedOperationSuitabilityObserver.cs" />
+    <Compile Include="Areas\Order\Analyzers\UnaryBasedOperationSuitabilityObserver.cs" />
+    <Compile Include="Areas\Order\Automation\Controller.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\AnalyzeManifestCsvFileCommand.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\AutomationCartData.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\CartExpiredTimeout.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\AutomationCartCreatedEvent.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\AutomationOrderExpiredEvent.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\AutomationOrderPlacedEvent.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\QuoteCreatedEvent.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\CreateAutomationCartCommand.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\AutomationSalesSaga.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\SelectManifestForCartCommand.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\SubmitAutomationOrderCommand.cs" />
+    <Compile Include="Areas\Order\Automation\Messages\ZenSellHandler.cs" />
+    <Compile Include="Areas\Order\Automation\Models\AutomationUploadOrderModel.cs" />
+    <Compile Include="Areas\Order\Automation\Models\DisplayAutomationsModel.cs" />
+    <Compile Include="Areas\Order\Automation\Models\MapColumnsModel.cs" />
+    <Compile Include="Areas\Order\Automation\Models\MappedColumnsModel.cs" />
+    <Compile Include="Areas\Order\Automation\Models\OrderConfirmationViewPresenter.cs" />
+    <Compile Include="Areas\Order\Bills\Controller.cs" />
+    <Compile Include="Areas\Order\Bills\Templates\OrderDetailHtml.Resource.cs" />
+    <Compile Include="Areas\Order\CartApi\Controller.cs" />
+    <Compile Include="Areas\Order\Csv\Controller.cs" />
+    <Compile Include="Areas\Order\Csv\Models\OrderConfirmationViewPresenter2.cs" />
+    <Compile Include="Areas\Order\Current\Controller.cs" />
+    <Compile Include="Areas\Order\DownloadUsage\Controller.cs" />
+    <Compile Include="Areas\JobProcessing\Download\Controller.cs" />
+    <Compile Include="Areas\Order\FileSampler.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\AnalyzeRawCsvFileCommand.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\ColumnMapCsvOrderCommand.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CreateCsvCartCommand.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CartExpiredTimeout.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CsvCartCreatedEvent.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CsvCartData.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CsvOrderExpiredEvent.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CsvOrderPlacedEvent.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\CsvSalesSaga.cs" />
+    <Compile Include="Messages\Csv\EmailHtml.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\EnterQuoteForCsvOrderCommand.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\FileUploadedEvent.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\ProductQuote.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\QuoteCreatedEvent.cs" />
+    <Compile Include="Messages\Csv\SendEmailForOrderPlacedEventHandler.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\SubmitCsvOrderCommand.cs" />
+    <Compile Include="Areas\Order\Csv\Messages\ZenSellHandler.cs" />
+    <Compile Include="Areas\Order\Csv\Models\ClientUploadOrderModel.cs" />
+    <Compile Include="Areas\Order\Csv\Models\MapColumnsViewPresenter.cs" />
+    <Compile Include="Areas\Order\Shared\Models\ProcessFileModel.cs" />
+    <Compile Include="Areas\Order\OrderAreaRegistration.cs" />
+    <Compile Include="Areas\Order\Pricing\Controller.cs" />
+    <Compile Include="Areas\PricingControllerBase.cs" />
+    <Compile Include="Areas\Profile\Alerts\Controller.cs" />
+    <Compile Include="Areas\Profile\Api\Controller.cs" />
+    <Compile Include="Areas\Profile\Api\Models\ApiDetailsModel.cs" />
+    <Compile Include="Areas\Profile\Card\Controller.cs" />
+    <Compile Include="Areas\Profile\Card\Messaging\CallbackForPaymentProfileCreatedEventHandler.cs" />
+    <Compile Include="Areas\Profile\Card\Models\PaymentDetailsModel.cs" />
+    <Compile Include="Areas\Profile\PricingApi\Controller.cs" />
+    <Compile Include="Areas\Profile\SocialMediaLogin\Controller.cs" />
+    <Compile Include="Areas\Profile\WalletApi\Controller.cs" />
+    <Compile Include="Areas\Public\Documentation\Controller.cs" />
+    <Compile Include="Areas\Public\HowItWorks\Controller.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Messages\CreateLeadCommandHandler.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Messages\SendAlertForLeadCreatedEvent.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Messages\SyncToZenSalesCommand.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Messages\SyncToZenSalesHandler.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Models\FormStackLeadViewModel.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Models\GoogleLeadViewModel.cs" />
+    <Compile Include="Areas\Public\LeadsApi\Models\NameLookupBinder.cs" />
+    <Compile Include="Areas\Public\Legal\LegalController.cs" />
+    <Compile Include="Areas\Public\NewClientRegistration\EmailFactory.cs" />
+    <Compile Include="Areas\Public\OptOut\Messaging\OptOutCommand.cs" />
+    <Compile Include="Areas\Public\OptOut\Messaging\OptOutCommandHandler.cs" />
+    <Compile Include="Areas\Public\OptOut\Models\OptOutModel.cs" />
+    <Compile Include="Areas\Public\OptOut\OptOutController.cs" />
+    <Compile Include="Areas\Public\Payment\Controller.cs" />
+    <Compile Include="Areas\Public\Payment\Models\PaymentDetailsModel.cs" />
+    <Compile Include="Areas\Shared\Models\Order Models.cs" />
+    <Compile Include="Areas\Shared\Models\OrderPaymentViewPresenter.cs" />
+    <Compile Include="Areas\Shared\Models\OrderProductsViewPresenter.cs" />
+    <Compile Include="Areas\Shared\Models\PaymentDetailsModel.cs" />
+    <Compile Include="Areas\Profile\Contact\Controller.cs" />
+    <Compile Include="Areas\Profile\Contact\Models\ContactDetailsModel.cs" />
+    <Compile Include="Areas\Profile\Password\Models\PasswordDetailsModel.cs" />
+    <Compile Include="Areas\Profile\Nation\Controller.cs" />
+    <Compile Include="Areas\Profile\Password\Controller.cs" />
+    <Compile Include="Areas\Profile\ProfileAreaRegistration.cs" />
+    <Compile Include="Areas\Public\File\Controller.cs" />
+    <Compile Include="Areas\Public\File\EmailFactory.cs" />
+    <Compile Include="Areas\Public\Signup\Controller.cs" />
+    <Compile Include="Areas\Public\PublicAreaRegistration.cs" />
+    <Compile Include="Areas\Public\Signup\EmailFactory.cs" />
+    <Compile Include="Areas\Public\Signup\Models\PublicCreateAccountModel.cs" />
+    <Compile Include="Areas\Shared\Models\ProductModel.cs" />
+    <Compile Include="Areas\Shared\Views\CartTabActive.cs" />
+    <Compile Include="Areas\SupportedProductCategory.cs" />
+    <Compile Include="Areas\SupportedProductHelper.cs" />
+    <Compile Include="Areas\ZenSellCartBase.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Areas\Public\ContactUs\ContactUsController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Public\LeadsApi\LeadsApiController.cs" />
+    <Compile Include="Areas\Public\NewClientRegistration\NewClientRegistrationController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="DataContext.cs" />
+    <Compile Include="Data\BatchOrder.cs" />
+    <Compile Include="Data\BatchOrderConfiguration.cs" />
+    <Compile Include="Data\DirectClientOrder.cs" />
+    <Compile Include="Data\DirectClientOrderConfiguration.cs" />
+    <Compile Include="Data\NationBuilderOrder.cs" />
+    <Compile Include="Data\NationBuilderOrderConfiguration.cs" />
+    <Compile Include="Data\Order.cs" />
+    <Compile Include="Data\OrderConfiguration.cs" />
+    <Compile Include="Data\OrderExtensions.cs" />
+    <Compile Include="Data\OrderType.cs" />
+    <Compile Include="Data\ReadContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\JSLogger.cs" />
+    <Compile Include="HtmlHelpers\Recaptcha.cs" />
+    <Compile Include="HtmlHelpers\Styles\AlertsHelper.cs" />
+    <Compile Include="HtmlHelpers\Styles\BootstrapColumn.cs" />
+    <Compile Include="HtmlHelpers\Styles\BootstrapContainer.cs" />
+    <Compile Include="HtmlHelpers\Styles\BootstrapRow.cs" />
+    <Compile Include="HtmlHelpers\Styles\ButtonHolderType.cs" />
+    <Compile Include="HtmlHelpers\Styles\ButtonHtmlHelper.cs" />
+    <Compile Include="HtmlHelpers\Styles\ButtonType.cs" />
+    <Compile Include="HtmlHelpers\GoogleAnalytics.cs" />
+    <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
+    <Compile Include="HtmlHelpers\Styles\FormHtmlHelper.cs" />
+    <Compile Include="HtmlHelpers\Styles\MvcElement.cs" />
+    <Compile Include="HtmlHelpers\Styles\NavigationHtmlHelper.cs" />
+    <Compile Include="HtmlHelpers\Styles\PageLayoutHtmlHelper.cs" />
+    <Compile Include="HtmlHelpers\Styles\Step.cs" />
+    <Compile Include="HtmlHelpers\Styles\Target.cs" />
+    <Compile Include="HtmlHelpers\TagBuilder Extensions.cs" />
+    <Compile Include="HtmlHelpers\VisiStatPixel.cs" />
+    <Compile Include="HtmlHelpers\ZenDesk.cs" />
+    <Compile Include="HttpContextUtils.cs" />
+    <Compile Include="LayoutManager.cs" />
+    <Compile Include="Messages\Accounts\CreateHistogramForAccountCreatedEvent.cs" />
+    <Compile Include="Areas\Profile\Card\Messaging\SendEmailForCardUpdatedEventHandler.cs" />
+    <Compile Include="Areas\Authentication\ResetPassword\Messages\SendPasswordUpdateRequestCommand.cs" />
+    <Compile Include="Areas\Authentication\ResetPassword\Messages\SendPasswordUpdateRequestCommandHandler.cs" />
+    <Compile Include="Messages\Accounts\CreateZenSellContactForAccountCreatedEvent.cs" />
+    <Compile Include="Messages\Accounts\NullReverseFileProxyFactory.cs" />
+    <Compile Include="Messages\Accounts\SendWelcomeEmailForAccountCreatedEventHandler.cs" />
+    <Compile Include="Messages\Csv\CsvOrderData.cs" />
+    <Compile Include="Messages\Csv\CsvOrderProcessingSaga.cs" />
+    <Compile Include="Messages\NationBuilder\NationBuilderOrderData.cs" />
+    <Compile Include="Messages\NationBuilder\NationBuilderOrderProcessingSaga.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\NationBuilderOrderPlacedEvent.cs" />
+    <Compile Include="Areas\NationBuilder\Order\Messages\SendEmailForNationBuilderOrderPlacedHandler.cs" />
+    <Compile Include="Messages\Sales\SyncCompletedDealsToZenSell.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\SeoHelper.cs" />
+    <Compile Include="Security\MembershipServiceObserver.cs" />
+    <Compile Include="Security\PublicLogonEvent.cs" />
+    <Compile Include="Security\ZenSellHandler.cs" />
+    <Compile Include="UploadRequestBuilder.cs" />
+    <Compile Include="Utilities\ResourceFileProxy.cs" />
+    <Compile Include="RestrictUrlAttribute.cs" />
+    <Compile Include="Security\AccountMembershipService.cs" />
+    <Compile Include="Security\AccountSignupService.cs" />
+    <Compile Include="Security\ExternalLogonConfiguration.cs" />
+    <Compile Include="Security\ExternalLogonResult.cs" />
+    <Compile Include="Security\LogonResult.cs" />
+    <Compile Include="Security\RequestContextHelper.cs" />
+    <Compile Include="Utilities\ResourceFileProxyFactory.cs" />
+    <Compile Include="Validation\BooleanAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\NationBuilder\AuthHandler\Models\" />
+    <Folder Include="Areas\Profile\Alerts\Views\" />
+    <Folder Include="Areas\Public\Documentation\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain Model\Domain Model.csproj">
+      <Project>{c9215a3f-d551-4d8f-917a-059cd7fef197}</Project>
+      <Name>Domain Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ListBuilder\ListBuilder.csproj">
+      <Project>{550c8250-071f-4742-bdef-1f77f50b423b}</Project>
+      <Name>ListBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sales.Contracts\Sales.Contracts.csproj">
+      <Project>{807E31EF-D930-4EC0-A06C-06096E1EB59D}</Project>
+      <Name>Sales.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sales\Sales.csproj">
+      <Project>{c0f0b875-9e8d-43c1-99aa-d050fe6256be}</Project>
+      <Name>Sales</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\DemographicsTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\DemographicsTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\Enums.ts">
+      <Link>Areas\ListBuilder\Scripts\Enums.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\FinancesTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\FinancesTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\GeographyTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\GeographyTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\Index.ts">
+      <Link>Areas\ListBuilder\Scripts\Index.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\InterestsTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\InterestsTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\ListCriteriaViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\ListCriteriaViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\shared code\listbuilder\scripts\Objects.ts">
+      <Link>Areas\ListBuilder\Scripts\Objects.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Areas\NationBuilder\Order\Scripts\Confirmation.ts" />
+    <TypeScriptCompile Include="Areas\NationBuilder\Order\Scripts\SelectList.ts" />
+    <TypeScriptCompile Include="Areas\Order\Shared\Scripts\Confirmation.ts" />
+    <TypeScriptCompile Include="Areas\Order\Automation\Scripts\SelectRule.ts" />
+    <TypeScriptCompile Include="Areas\Order\Bills\Scripts\Index.ts" />
+    <TypeScriptCompile Include="Areas\Order\Current\Scripts\Index.ts" />
+    <TypeScriptCompile Include="Areas\Order\Shared\Scripts\IdentifyColumns.ts" />
+    <TypeScriptCompile Include="Areas\Order\Box\Scripts\Box.ts" />
+    <TypeScriptCompile Include="Areas\Order\Shared\Scripts\Upload.ts" />
+    <TypeScriptCompile Include="Areas\Profile\Card\Scripts\index.ts" />
+    <TypeScriptCompile Include="Areas\Profile\SocialMediaLogin\Scripts\index.ts" />
+    <TypeScriptCompile Include="Areas\Public\NewClientRegistration\Scripts\Create.ts" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.DatePicker.ts" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.StringFormatting.ts" />
+    <TypeScriptCompile Include="Scripts\app\shared\DisplayProducts.ts" />
+    <TypeScriptCompile Include="Areas\NationBuilder\DisplayLists\Scripts\Index.ts" />
+    <TypeScriptCompile Include="Scripts\app\shared\Util.ts" />
+    <TypeScriptCompile Include="Scripts\kendo-upload.ts" />
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\HttpStatusCode.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.cookie\jquery.cookie.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\kendo-ui\kendo-ui.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\underscore\underscore.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\NServiceBus.6.5.8\analyzers\dotnet\cs\NServiceBus.Core.Analyzer.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50830</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50830</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\DQS.2.0.7457.22842\build\DQS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DQS.2.0.7457.22842\build\DQS.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)Shared Code\ListBuilder\Scripts\*.js" "$(SolutionDir)Clients v2\Areas\ListBuilder\Scripts"
+copy "$(SolutionDir)Shared Code\Templates\*.config" "$(SolutionDir)Clients v2\Areas\Order\Bills\Templates"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\DQS.2.0.7457.22842\build\DQS.targets" Condition="Exists('..\packages\DQS.2.0.7457.22842\build\DQS.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

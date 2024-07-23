@@ -1,0 +1,36 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@using (var container = Html.Layout().Container())
+{
+  <hr/>
+  <div class="heading-block" style="margin-bottom: 40px;">
+    <h2>How to Connect to Your Nation Builder Account</h2>
+  </div>
+
+  using (var row = container.Row())
+  {
+    using (row.Column(10))
+    {
+      <div style="margin-bottom: 30px;">
+        <p>
+          Our popular NationBuilder app connects your Accurate Append account directly to Nation Builder so you can append and enhance your data directly in your nation, and without importing and exporting.
+        </p>
+        <p>The instructions below assume you have an existing Accurate Append account. If you don't have an account, then <a href="@Url.Action("Index", "Signup", new {Area = "NationBuilder"})" target="_blank">click here</a> to register.</p>
+        <h4>Step 1</h4>
+        <p><a href="@Url.Action("Index", "Renew", new {Area = "NationBuilder"})" target="_blank">Click here</a> to display the Connect to Nation Builder screen.</p>
+        <h4>Step 2</h4>
+        <p>Enter your nation slug in the form and click Next.</p>
+        <img src="/Content/AccurateAppend_v7/images/NationBuilder_Account_Setup/nationbuilder_screen1.png" style="height: 60%; width: 60%;"/>
+        <h4>Step 3</h4>
+        <p>You will be sent to the logon screen for your individual nation. Enter your credentials to log and click "Authorize" to authorize Accurate Append to connect to Nation Builder </p>
+        <img src="/Content/AccurateAppend_v7/images/NationBuilder_Account_Setup/nationbuilder_screen2.png" style="height: 60%; margin-bottom: 10px; width: 60%;"/>
+        <p>
+          After clicking Authorize you will be re-directed back to your Accurate Append account where you can view your Nation Builders lists and submit an order.
+        </p>
+      </div>
+    }
+  }
+}

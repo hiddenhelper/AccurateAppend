@@ -1,0 +1,32 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.Order.Shared.Models.UploadRequestModel
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="heading">
+      <h2>Upload a List</h2>
+    </div>
+    <div class="content-holder">
+      <div class="row">
+        <div class="col-8 col-md-8">
+          <h2 style="margin-bottom: 20px;">Please select the file you would like to process.</h2>
+          <p>During the next step, processing options and a free quote will be displayed.</p>
+          <script id="fileTemplate" type="text/x-kendo-template">
+                    <span class='k-progress'></span>
+                    <div class='file-wrapper'>
+                        <span class='file-icon #=addExtensionClass1(files[0].extension)#'></span>
+                        <div>Name: #=name# <button type='button' class='k-upload-action'></button></div>
+                    </div>
+                </script>
+          <div>
+            <input name="files" id="files" type="file" />
+            @if (this.Model.BoxUpload != null)
+            {
+              <a class="btn btn-outline-secondary" href="@this.Model.BoxUpload">Upload from Box.com</a>
+            }
+          </div>
+        </div>
+        <div class="col-4 col-md-8">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

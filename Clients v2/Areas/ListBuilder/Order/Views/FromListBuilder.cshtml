@@ -1,0 +1,38 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.ListBuilder.Order.Models.GenerateListModel
+<section class="page-tab">
+  <div class="container" style="background-color: #ffffff;">
+    <div class="row">
+      <p style="margin: 10px 0 20px 0; text-align: left;" id="processing">
+        We are currently generating your requested list. <img src="~/Content/Shared/images/loader_white.gif" alt="processing" />
+      </p>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var timer;
+
+    $(function() {
+      console.log("Rendering wait for @this.Model.PublicKey");
+      timer = window.setInterval("checkProgress()", 3000);
+    });
+
+    function checkProgress() {
+      console.log("Checking progress");
+      $.ajax(
+        {
+          type: "GET",
+          url: "@this.Model.CheckUrl",
+          success: function (result) {
+            console.log("Is complete:" + result.Complete);
+
+            if (result.Complete) {
+              window.clearInterval(timer);
+
+              document.title = "Generated";
+              $("#processing").hide();
+              window.location.href = "@this.Model.NextUrl";
+            }
+          }
+        });
+    }
+  </script>
+</section>

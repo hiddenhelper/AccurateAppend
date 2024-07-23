@@ -1,0 +1,80 @@
+﻿@using AccurateAppend.Core
+@using AccurateAppend.Websites.Clients.HtmlHelpers
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Authentication.Shared.Models.LinkModel
+
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+        using (row.Column(12))
+        {
+            if (ViewData.ModelState.SelectMany(s => s.Value.Errors).Any())
+            {
+                var div = new TagBuilder("div");
+                div.AddCssClass("alert alert-danger");
+                div.AddStyle("font-size: .8em;");
+                div.SetInnerText(ViewData.ModelState.SelectMany(s => s.Value.Errors.Select(e => e.ErrorMessage)).First());
+
+                @(new MvcHtmlString(div.ToString()))
+            }
+        }
+    }
+
+    using (var row = container.Row())
+    {
+        using (row.Column())
+        {
+            <h2> Your @Model.Provider.GetDescription() Logon Is New To Accurate Append</h2>
+            <p style="text-align: left">
+                Looks like your @Model.Provider.GetDescription() account is new to us. In order to properly understand who you are, we'll require you to sign in to your existing Accurate Append
+                account using your email address and password. Don't worry, this is a one time action and once we know who you are, we'll never bother you about it again.
+            </p>
+        }
+
+        using (row.Column())
+        {
+            using (Html.Forms().BeginForm(this.Model.Postback.ActionName, this.Model.Postback.ControllerName, new {Area = this.Model.Postback.AreaName}, FormMethod.Get))
+            {
+                @Html.HiddenFor(m => m.ExternalIdentifier)
+                @Html.HiddenFor(m => m.Provider)
+                @Html.HiddenFor(m => m.RedirectTo)
+                @Html.HiddenFor(m => m.DisplayName)
+
+                using (Html.Forms().BeginFormRow())
+                {
+                  <a href="https://www.accurateappend.com/privacy-policy" target = "_new">Read our privacy policy</a>
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    @Html.LabelFor(m => m.UserName, new { @class = "required" })
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", id = "email" })
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    @Html.LabelFor(m => m.Password, new { @class = "required" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "email" })
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    <div class="checkbox" style="margin-top:10px;">
+                        @Html.CheckBoxFor(m => m.AggreeToTerms, new { id = "terms" })
+                        @Html.LabelFor(m => m.AggreeToTerms, " I agree To Terms and Conditions", new { @class = "checkbox-label" })
+                    </div>
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        <input type="submit" value="Submit">
+                    }
+                }
+            }
+        }
+    }
+}

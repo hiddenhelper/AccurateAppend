@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8"/>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    function sendSales() {
+      $.ajax({
+          method: "POST",
+          url: "http://localhost:50830/Public/LeadsApi/FormStack",
+          data: {
+            "Company": "A Company Name",
+            "Name": "James Zimmerman",
+              "Email": "email@address.com",
+              "Phone": "9997774444",
+              "Comments": "This is a test",
+              "Ip": "127.0.0.1",
+              "HandshakeKey": "CF1311A0-6332-4CF1-A2E2-3B02AA64771D",
+              "Product Interest": "email",
+              "Estimated Record Count": "Less than 4,000 records",
+              "Request Type": "Sales / Pricing"
+          }
+        })
+        .done(function(msg) {
+          alert("Data Saved: " + msg);
+        });
+    }
+  </script>
+</head>
+<body>
+<form>
+  <input type="submit" value="SALES" onclick="sendSales()">
+</form>
+
+</body>
+</html>

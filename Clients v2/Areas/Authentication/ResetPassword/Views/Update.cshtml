@@ -1,0 +1,81 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Authentication.ResetPassword.Models.LocalPasswordModel
+
+@Html.Layout().Promo("Reset Password")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(8, style: "padding: 30px 0 30px 0"))
+    {
+      MvcHtmlString message = null;
+      if (!Model.IsValid)
+      {
+        var div = new TagBuilder("div");
+        div.AddCssClass("alert alert-danger");
+        div.SetInnerText("We're sorry but the link is expired or inactive. Please go to the log in page and request another reset.");
+        message = new MvcHtmlString(div.ToString());
+      }
+      @(message ?? MvcHtmlString.Empty)
+
+      if (Model.IsValid)
+      {
+        <p>Please enter your new password in the form below.</p>
+        using (Html.Forms().BeginForm("Update", "ResetPassword", FormMethod.Post))
+        {
+          using (var r = container.Row())
+          {
+            using (r.Column())
+            {
+              using (Html.Forms().BeginFormRow())
+              {
+                @Html.LabelFor(x => x.NewPassword, new {@class = "required"})
+                @Html.PasswordFor(x => x.NewPassword, new {@class = "form-control", style = "width: 350px;"})
+                @Html.ValidationMessageFor(x => x.NewPassword)
+              }
+            }
+          }
+
+          using (var r = container.Row())
+          {
+            using (r.Column(style: "padding-top: 20px;"))
+            {
+              using (Html.Forms().BeginFormRow())
+              {
+                @Html.LabelFor(x => x.ConfirmPassword, new {@class = "required"})
+                @Html.PasswordFor(x => x.ConfirmPassword, new {@class = "form-control", style = "width: 350px;"})
+                @Html.ValidationMessageFor(x => x.ConfirmPassword)
+              }
+            }
+          }
+
+          using (var r = container.Row())
+          {
+            using (r.Column(style: "padding-top: 10px;"))
+            {
+              using (Html.Forms().BeginFormRow())
+              {
+                {
+                  var submit = new TagBuilder("input");
+                  submit.AddCssClass("btn btn-primary");
+                  submit.MergeAttribute("value", "Reset Password");
+                  submit.MergeAttribute("type", "submit");
+
+                  if (!Model.IsValid)
+                  {
+                    submit.MergeAttribute("disabled", "disabled");
+                  }
+                  @(new MvcHtmlString(submit.ToString()))
+                }
+              }
+            }
+          }
+          @Html.HiddenFor(a => a.PublicKey)
+          @Html.HiddenFor(a => a.IsValid)
+        }
+      }
+    }
+  }
+}
+

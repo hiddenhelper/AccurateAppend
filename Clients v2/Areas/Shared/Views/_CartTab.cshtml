@@ -1,0 +1,180 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.Shared.Views.CartTabActive
+@using System.Diagnostics
+@using AccurateAppend.Core.IdentityModel
+@using AccurateAppend.Security
+@using AccurateAppend.Websites.Clients.Areas.Shared.Views
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    @*
+        Currently this is just the duplicated logic extracted from the views but at least collecting the trash here helps out
+    *@
+    
+  @{
+    const String CsvText = "Upload your existing list to quickly add new phone numbers, verified email addresses and demographic lifestyle attributes.";
+    const String NationBuilderText = "Add new phone numbers, email addresses and demographic attributes to any list in your Nation Builder account.";
+    const String AutomationText = "Enhance your lists new phone numbers, verified email addresses and demographic lifestyle attributes using custom products.";
+  }
+  <!-- #region CSV -->
+    @if (Model == CartTabActive.Csv)
+    {
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">
+          <label>
+            <div class="heading-box">
+              <input type="radio" id="appendStart">
+              <h2>Upload a List</h2>
+
+            </div>
+            <div class="text-holder">
+              <p>@CsvText</p>
+            </div>
+          </label>
+        </a>
+      </li>
+
+      if (User.Identity.IsNationBuilderAccount())
+      {
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false"
+             onclick="window.location.replace('@Url.Action("Start", "Order", new {Area = "NationBuilder"})')">
+            <label>
+              <div class="heading-box">
+                <input type="radio">
+                <h2>Nation Builder List</h2>
+              </div>
+              <div class="text-holder">
+                <p>@NationBuilderText</p>
+              </div>
+            </label>
+          </a>
+        </li>
+      }
+
+      if (User.Identity.HasAutoProcessingRules())
+      {
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false"
+             onclick="window.location.replace('@Url.Action("Start", "Automation", new {Area = "Order"})')">
+            <label>
+              <div class="heading-box">
+                <input type="radio" id="appendStart">
+                <h2>Custom Products</h2>
+
+              </div>
+              <div class="text-holder">
+                <p>@AutomationText</p>
+              </div>
+            </label>
+          </a>
+        </li>
+      }
+    }
+    <!-- #endregion -->
+
+    <!-- #region NationBuilder -->
+    @if (Model == CartTabActive.NationBuilder)
+    {
+      <li class="nav-item">
+        <a class="nav-link" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="false"
+           onclick="window.location.replace('@Url.Action("Start", "Csv", new {Area = "Order"})')">
+          <label>
+            <div class="heading-box">
+              <input type="radio"/>
+              <h2>Upload a List</h2>
+            </div>
+            <div class="text-holder">
+              <p>@CsvText</p>
+            </div>
+          </label>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" id="contact-tab" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="true">
+          <label>
+            <div class="heading-box">
+              <input type="radio" name="append">
+              <h2>Nation Builder List</h2>
+            </div>
+            <div class="text-holder">
+              <p>@NationBuilderText</p>
+            </div>
+          </label>
+        </a>
+      </li>
+
+      if (User.Identity.HasAutoProcessingRules() && Debugger.IsAttached)
+      {
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false"
+             onclick="window.location.replace('@Url.Action("Start", "Automation", new {Area = "Order"})')">
+            <label>
+              <div class="heading-box">
+                <input type="radio" id="appendStart">
+                <h2>Custom Products</h2>
+
+              </div>
+              <div class="text-holder">
+                <p>@AutomationText</p>
+              </div>
+            </label>
+          </a>
+        </li>
+      }
+    }
+    <!-- #endregion -->
+
+    <!-- #region Automation -->
+    @if (Model == CartTabActive.Automation)
+    {
+      <li class="nav-item">
+        <a class="nav-link" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" aria-selected="false"
+           onclick="window.location.replace('@Url.Action("Start", "Csv", new {Area = "Order"})')">
+          <label>
+            <div class="heading-box">
+              <input type="radio" id="appendStart">
+              <h2>Upload a List</h2>
+
+            </div>
+            <div class="text-holder">
+              <p>@CsvText</p>
+            </div>
+          </label>
+        </a>
+      </li>
+
+      if (User.Identity.IsNationBuilderAccount())
+      {
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false"
+             onclick="window.location.replace('@Url.Action("Start", "Order", new {Area = "NationBuilder"})')">
+            <label>
+              <div class="heading-box">
+                <input type="radio">
+                <h2>Nation Builder List</h2>
+              </div>
+              <div class="text-holder">
+                <p>@NationBuilderText</p>
+              </div>
+            </label>
+          </a>
+        </li>
+      }
+
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">
+          <label>
+            <div class="heading-box">
+              <input type="radio" id="appendStart">
+              <h2>Custom Products</h2>
+
+            </div>
+            <div class="text-holder">
+              <p>@AutomationText</p>
+            </div>
+          </label>
+        </a>
+      </li>
+    }
+    <!-- #endregion -->
+</ul>

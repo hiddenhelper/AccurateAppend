@@ -1,0 +1,51 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Authentication.ResetPassword.Models.ResetPasswordModel
+
+@Html.Layout().Promo("Reset Password")
+
+  @using (var container = Html.Layout().Container())
+  {
+    using (var row = container.Row())
+    {
+      using (row.Column(8, style: "padding: 30px 0 30px 0"))
+      {
+        <p>To reset your password, enter the email address you use to sign in to Accurate Append.</p>
+
+        MvcHtmlString message = null;
+        if (!string.IsNullOrEmpty((string) TempData["message"]))
+        {
+          var div = new TagBuilder("div");
+          div.AddCssClass("alert alert-danger");
+          div.SetInnerText((string) TempData["message"]);
+
+          message = new MvcHtmlString(div.ToString());
+        }
+        @(message ?? MvcHtmlString.Empty)
+
+        using (Html.Forms().BeginForm("Request", "ResetPassword", FormMethod.Post))
+        {
+          using (Html.Forms().BeginFormRow())
+          {
+            @Html.LabelFor(x => x.UserName, new {@class = "required"})
+            @Html.TextBoxFor(x => x.UserName, new {@class = "form-control", style = "width: 350px;"})
+            @Html.ValidationMessageFor(x => x.UserName)
+          }
+
+          using (Html.Forms().BeginFormRow())
+          {
+            <div class="g-recaptcha" data-sitekey="6LeW4EkUAAAAAPX3-Zd61mquDOX_P26WRlgCvtAf" style="margin-top: 20px;"></div>
+          }
+
+          using (Html.Forms().BeginFormRow())
+          {
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+          }
+        }
+      }
+    }
+  }
+
+@section HeadContent
+{
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+}

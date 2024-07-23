@@ -1,0 +1,104 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.Order.Box.Models.SelectListModel
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List", true),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation"))
+
+<div class="append-block">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Please select the file you would like to process from Box.com</h4>
+                <div id="globalMessage" style="display: none;"></div>
+                <div id="treeview" style="background-color: #FFF; margin-top: 25px; padding: 20px;"></div>
+            </div>
+            <div class="col-md-3" id="fileDetailPane" style="display: none;">
+                <h4>File Details</h4>
+                <div id="details" style="background-color: #FFF; margin-top: 25px; padding: 20px;">
+                </div>
+            </div>
+        </div>
+      <script id="file-detail" type="text/x-kendo-template">
+            # if(!data.IsSupported) { #
+
+            <div class="alert alert-warning">File type not supported.</div>
+            <P>Our system supports .txt, .text, .csv, .xls, .xlsx, or a compressed archive (.zip) containing one of the aformentioned file types.</P>
+            <p></p>
+
+            # } else { #
+
+            <strong>Name</strong>
+            <p class="col-template-val">#=data.Name#</p>
+
+            <strong>Size</strong>
+            <p class="col-template-val">#=data.Size#</p>
+
+            # if(data.Description) { #
+            <strong>Description</strong>
+            <p class="col-template-val">#=data.Description#</p>
+            # } #
+
+            <strong>ModifiedAt</strong>
+            <p class="col-template-val">#=AccurateAppend.FormatString.formatDateTime(data.ModifiedAt)#</p>
+
+            <strong>ModifiedBy</strong>
+            <p class="col-template-val">#=data.ModifiedBy#</p>
+
+            <p><a class="btn btn-secondary" href="javascript:next(#= data.NodeId #)">Next ></a></p>
+
+            # } #
+
+
+        </script>
+      
+    </div>
+</div>
+
+<script type="text/javascript">
+  var forCurrentUser = "@this.Url.Action("ForCurrentUser", "BoxApi", new {Area = "Box"})";
+
+  // TODO: move this into TS once we set up view level settings
+  function next(nodeId) {
+    console.log('Selecting :' + nodeId);
+    $.ajax({
+      method: "POST",
+      url: "@this.Url.Action("SelectList", "Box", new {Area = "Order", this.Model.CartId})",
+      data: {
+        "nodeId": nodeId
+      },
+      success: function(result) {
+        window.location.href = '@this.Url.Action("ProcessFile", "Box", new {Area = "Order", this.Model.CartId})';
+      }
+    });
+  }
+</script>
+
+@section HeadContent
+{
+  <script src="@Url.Content("~/Scripts/AccurateAppend.StringFormatting.js")"></script>
+  <script src="@Url.Content("~/Areas/Order/Box/Scripts/box.js")" type="text/javascript"></script>
+  <script src="@Url.Content("~/Scripts/typings/HttpStatusCode.js")" type="text/javascript"></script>
+
+  <style>
+    #treeview .k-sprite { background-image: url('/Content/AccurateAppend_v7/images/KendoUi/coloricons-sprite.png'); }
+
+    .rootfolder { background-position: 0 0; }
+
+    .folder { background-position: 0 -16px; }
+
+    .pdf { background-position: 0 -32px; }
+
+    .html { background-position: 0 -48px; }
+
+    .image { background-position: 0 -64px; }
+
+
+    .k-in .k-state-selected { background-color: lightgrey; }
+  </style>
+}

@@ -1,0 +1,13 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+        using (row.Column(width: 12))
+        {
+            <h1>Thank You!</h1>
+            <h3>Your payment information has been updated and customer support has been notified. We'll contact you shortly.</h3>
+        }
+    }
+}

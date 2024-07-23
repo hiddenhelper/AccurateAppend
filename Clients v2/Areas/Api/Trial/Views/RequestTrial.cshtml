@@ -1,0 +1,75 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Api.Trial.Models.ApiSignupModel
+
+@Html.Layout().Promo("Request API Trial Key")
+
+
+    @using (var container = Html.Layout().Container())
+    {
+
+        @Html.Partial("~/Views/Shared/_Notification.cshtml")
+
+
+        using (var row = container.Row())
+        {
+            using (row.Column(width: 12, style: "margin-top: 30px;"))
+            {
+                <h4>No credit card required | Full-featured 30 day trial | Up to 500 transactions free</h4>
+                <p>Request your API trial key by filling out the form below. A key will immediately be sent to you via email.</p>
+            }
+        }
+
+        using (var row = container.Row())
+        {
+            using (row.Column(width: 6, style: "margin-bottom: 30px;"))
+            {
+                using (Html.Forms().BeginForm("RequestTrial", "Trial", new { area = "Api" }, FormMethod.Post))
+                {
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.Email, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Email)
+                        @Html.HiddenFor(x => x.Email)
+                    }
+
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.Company)
+                        @Html.TextBoxFor(x => x.Company, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Company)
+                    }
+
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.Name)
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Name)
+                    }
+
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        @Html.LabelFor(x => x.Phone, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Phone)
+                    }
+
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        <div style="margin-top:15px;"></div>
+                        <span class="g-recaptcha" data-sitekey="6LeW4EkUAAAAAPX3-Zd61mquDOX_P26WRlgCvtAf"></span>
+                    }
+
+                    using (Html.Forms().BeginFormRow())
+                    {
+                        <input type="submit" value="Submit" class="btn btn-default" style="display: block; margin-top: 10px;" />
+                    }
+                }
+            }
+        }
+    }
+
+@section HeadContent
+{
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+}

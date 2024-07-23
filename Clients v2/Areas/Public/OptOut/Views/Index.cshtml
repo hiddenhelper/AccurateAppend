@@ -1,0 +1,216 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using DomainModel.Html
+@model AccurateAppend.Websites.Clients.Areas.Public.OptOut.Models.OptOutModel
+
+@Html.Layout().Promo("Privacy Opt-out Form")
+
+<style>
+  .input-row { padding: 0px 0 15px 0; }
+
+  .dashboard-block {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+  }
+</style>
+
+<div class="dashboard-block">
+  <div class="col-block">
+    @using (var container = Html.Layout().Container())
+    {
+      using (var row = container.Row())
+      {
+        using (row.Column(8))
+        {
+          using (Html.Forms().BeginForm("Index", "OptOut"))
+          {
+            using (Html.Forms().BeginFormRow())
+            {
+              <p>Accurate Append respects your privacy and your right to opt-out of the sale of your personal information. Beginning on January 1, 2020, the California Consumer Privacy Act (CCPA) provides consumers with certain rights related to personal information collected about them. To view more information about these rights, please see our <a href="https://www.accurateappend.com/privacy-policy">Privacy Policy</a>.</p>
+              <p>To exercise your right to opt-out of the sale of your personal information by Accurate Append, please complete and submit the form below.</p>
+              <p>It is important to note that if you have opted out of the sale of personal information through other websites or companies, that information may not have been shared with us. The only way to ensure that Accurate Append does not sell your personal information is to complete and submit the form below.</p>
+              <p>Accessibility: If you use assistive technology and the format of any material on this website interferes with your ability to submit this form, or if you otherwise have any trouble accessing or using any feature or functionality on this website, please email support@accurateappend.com or call 888-979-9813.</p>
+              <div>
+                @Html.Partial("~/Views/Shared/_Notification.cshtml")
+              </div>
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.FirstName, new {@class = "required"})
+                  @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.FirstName)
+                }
+              }
+
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.LastName, new {@class = "required"})
+                  @Html.TextBoxFor(x => x.LastName, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.LastName)
+                }
+              }
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.Address, new {@class = "required"})
+                  @Html.TextBoxFor(x => x.Address, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.Address)
+                }
+              }
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.City, new {@class = "required"})
+                  @Html.TextBoxFor(x => x.City, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.City)
+                }
+              }
+
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  using (Html.Forms().BeginInputHolder())
+                  {
+                    using (Html.Forms().BeginInputBox("select-full-width"))
+                    {
+                      @Html.LabelFor(x => x.State, new {@class = "required"})
+                      @Html.DropDownListFor(a => a.StateAbbreviation, NorthAmericanTerritories.StateSelectList(), new {@class = "form-control"})
+                      @Html.TextBoxFor(a => a.StatePlainText, new {@class = "form-control", style = "display:none;"})
+                      @Html.ValidationMessageFor(x => x.State)
+                    }
+                  }
+                }
+              }
+
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.PostalCode, new {@class = "required"})
+                  @Html.TextBoxFor(x => x.PostalCode, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.PostalCode)
+                }
+              }
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.Phone)
+                  @Html.TextBoxFor(x => x.Phone, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.Phone)
+                }
+              }
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.Email)
+                  @Html.TextBoxFor(x => x.Email, new {@class = "form-control"})
+                  @Html.ValidationMessageFor(x => x.Email)
+                }
+              }
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column())
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  @Html.LabelFor(x => x.Comments)
+                  @Html.TextAreaFor(x => x.Comments, new {@class = "form-control"})
+                }
+              }
+            }
+
+            using (var r = container.Row())
+            {
+              using (r.Column(12))
+              {
+                using (Html.Forms().BeginFormRow())
+                {
+                  <input type="submit" class="btn btn-primary" id="complete" value="Submit Form"/>
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  </div>
+</div>
+
+<div class="modal" id="tos-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 600px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Terms of Service</h4>
+      </div>
+      <div class="modal-body">
+        @{
+          switch (HttpContext.Current.Request.Url.Host.ToLowerInvariant())
+          {
+            case "localhost":
+            case "clients.accurateappend.com":
+            case "dev.clients.accurateappend.com":
+              @Html.Partial("~/Views/Shared/AccurateAppend_v7/_Terms.cshtml")
+              break;
+            case "clients.2020connect.net":
+            case "dev.clients.2020connect.net":
+              @Html.Partial("~/Views/Shared/2020Connect/_Terms.cshtml")
+              break;
+            default:
+              Response.Write("Term sheet missing");
+              break;
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@section HeadContent
+{
+
+  <style>
+    .modal-backdrop { opacity: 0.5 !important; }
+  </style>
+
+  <script type="text/javascript">
+    var viewModel = {
+      Model: @Html.Raw(Json.Encode(Model)),
+      Canada: '@Countries.Canada',
+      UnitedStates: '@Countries.UnitedStates'
+    };
+  </script>
+}
+
+<script src="@Url.Content("~/Areas/Public/NewClientRegistration/Scripts/Create.js")" defer>
+</script>

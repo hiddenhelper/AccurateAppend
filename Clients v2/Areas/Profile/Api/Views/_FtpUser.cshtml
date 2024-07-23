@@ -1,0 +1,37 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Profile.Api.Models.ApiDetailsModel
+
+@if (Model.BatchEnabled && Model.FtpUser != null)
+{
+  using (Html.Forms().BeginFormRow())
+  {
+    using (Html.Forms().BeginInputHolder())
+    {
+      <div>
+        <label>Username: </label>
+        <span>@Model.FtpUser</span>
+      </div>
+      <div>
+        <label>Password: </label>
+        <span>@Model.FtpPassword</span>
+      </div>
+    }
+  }
+  using (Html.Forms().BeginFormRow())
+   {
+     using (Html.Forms().BeginInputHolder())
+     {
+       <label>Documentation</label>
+       <p>
+           <a href="@Url.Action("FtpBatchApi", "Documentation", new {Area = "Public"})">FTP Batch Processing Setup & Overview</a>
+       </p>
+     }
+   }
+}
+else
+{
+  using (Html.Forms().BeginFormRow())
+  {
+    <div class="alert alert-info">You do not currently have FTP Batch access enabled. Please contact sales or customer support to request access.</div>
+  }
+}

@@ -1,0 +1,18 @@
+﻿@model Guid
+<div class="carousel">
+  <div class="container">
+    <ul class="slides">
+      <li>
+        <div class="block fixed">
+
+          <div class="order-header">
+            <h1>Thank you. Your request has been received.</h1>
+            <p>A data quality specialist will promptly contact you during regular businesses</p>
+            @Html.ActionLink("Take me to my lists", "Index", "DisplayLists", new {area="NationBuilder", cartid = this.Model}, new { @class="btn btn-default" })
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>

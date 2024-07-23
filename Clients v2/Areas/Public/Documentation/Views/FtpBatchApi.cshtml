@@ -1,0 +1,80 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@using (var container = Html.Layout().Container())
+{
+  <hr/>
+  <div class="heading-block" style="margin-bottom: 40px;">
+    <h2>FTP Batch Processing Setup & Overview</h2>
+  </div>
+
+  using (var row = container.Row())
+  {
+    using (row.Column(10))
+    {
+      <div style="margin-bottom: 30px;">
+        <p>
+          Accurate Append’s batch processing system allows users to automate file processing without doing the work of programming. Submit files containing up to 1 million records directly to our system for automated processing. Once your batch account is set up, processing your contact list is as easy as sending a file to Accurate Append for appending and enhancement. After receipt, our system will process your file and return the results when complete.
+        </p>
+        <p>
+          A subscription is required to access our automated batch system, so please contact sales or customer support to acquire credentials.
+        </p>
+        <h4>Step 1: Install FileZilla</h4>
+        <p>
+            There are a wide variety of FTP Client applications on the market, but we recommend using FileZilla. FileZilla is a free FTP client application that will connect to Accurate Append’s system and allow you to post files. FileZilla can be downloaded <a href="https://filezilla-project.org/download.php?type=client"> here</a>.
+        </p>
+        <h4>Step 2: Setup & Credentials</h4>
+        <p>
+          To view your credentials, <a href="@Url.Action("Index", "Api", new {Area = "Profile"})">click here</a>
+        </p>
+        <h4>Step 3: Configure FileZilla</h4>
+        <p>
+          Once FileZilla is installed, open FileZilla and hit Ctrl + S to open the site manager and
+          click New Site.
+        </p>
+        <p>Configure the site new entry:</p>
+        <ol>
+          <li>Protocol: SFTP – SSH File Protocol</li>
+          <li>Host: sftp.accurateappend.com</li>
+          <li>Port: Leave empty</li>
+          <li>Logon Type: Normal</li>
+          <li>User: The username provided by Customer Support</li>
+          <li>Password: The password provided by Customer Support</li>
+          <li>Click “Connect”</li>
+        </ol>
+        <img src="/Content/AccurateAppend_v7/images/BatchApi/FielZilla_sitemanager.png" style="height: 30%; margin-bottom: 20px; width: 30%;"/>
+        <h4>Step 4: View your FTP Directory</h4>
+        <p>At this point you should be connected to Accurate Append’s Batch System and you should see your system folders in the bottom right pane.</p>
+        <img src="/Content/AccurateAppend_v7/images/BatchApi/FileZilla_screen1.png" style="height: 40%; margin-bottom: 20px; width: 40%;"/>
+        <h4>Step 5: Submit a File</h4>
+        <p>For requirements and instructions regarding how to format a file, <a href="@Url.Action("BatchApi_FileFormatting", "Documentation", new {Area = "Public"})">click here.</a></p>
+        <ol>
+          <li>To submit a file, click, hold and drag the file from the left bottom pane or a Windows File Explorer, and drop it on the “in” folder in the bottom right pane.</li>
+          <li>Our system checks the “in” folder every 30 seconds, and your file will disappear when it has been picked up.</li>
+          <li>If setup, you will receive an email notification confirming your file has been received.</li>
+          <li>Should our system encounter any errors while attempting to process the file, the file will be moved to the Error folder.</li>
+        </ol>
+        <h4>Step 6: Retrieve Results</h4>
+        <ol>
+          <li>
+            Monitor the “out” box by double-clicking on “out” and hitting the “refresh” icon in the FileZilla top menu bar.
+
+            <img src="/Content/AccurateAppend_v7/images/BatchApi/FileZilla_screen2.png" style="height: 40%; margin: 10px 0 10px 0; width: 40%;"/>
+
+          </li>
+          <li>You should see a file named [your file name].report.txt in the “out” folder. This file contains the status of your file and serves as a placeholder.</li>
+          <li>File processing response time is linear and based on the number of records in your file.</li>
+          <li>A file of 1,000 records should be complete within 10 minutes.</li>
+          <li>A file containing 25,000 records will take approximately 30 minutes and 100,000 records should take an hour.</li>
+          <li>When your file is complete, it will appear in the “out” folder along with [your file name].report.txt that contains a processing report.</li>
+          <li>If setup, you will receive an email notification when the file is complete. Contact customer support to request notifications.</li>
+        </ol>
+        <p style="margin-bottom: 30px;">All files uploaded via FTP can also viewed in your <a href="@Url.Action("Index", "Current", new {Area = "Order"})">Accurate Append Dashboard</a>. You can check progress, and even download the results and processing reports.</p>
+        <h2>Data Retention Policy</h2>
+        <p>Files that are processed may remain accessible for up to 7 days after the date of processing for support purposes only. Upon request, your account may be configured for our system to purge any files immediately after processing. Please note that choosing this option will limit the support our team is able to offer if you have questions about your appended file.</p>
+      </div>
+    }
+  }
+}

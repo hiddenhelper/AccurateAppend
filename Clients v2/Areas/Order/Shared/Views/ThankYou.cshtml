@@ -1,0 +1,17 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@Html.Layout().Promo("Order Received")
+<div>
+    <div class="container">
+        <div class="row" style="padding: 30px;">
+            <h2>What happens next?</h2>
+            <ul class="ticks" style="margin-top: 20px;">
+                <li style="margin-bottom: 10px;">We will shortly begin to prepare your list for processing in Accurate Append's state of the art appending services. Processing can take anywhere from a few minutes to several hours depending on the number of records and the products you selected.</li>
+                <li style="margin-bottom: 10px;">When processing is complete we will bill your credit card for the exact number of matches and notify you via email with a receipt.</li>
+                <li style="margin-bottom: 10px;">When billing is complete your results will be available to download from the orders page.</li>
+            </ul>
+            @Html.ActionLink("View your orders", "Index", "Current", new { area = "Order" }, new { style = "" })
+        </div>
+    </div>
+</div>
+
+

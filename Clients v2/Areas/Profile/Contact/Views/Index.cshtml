@@ -1,0 +1,153 @@
+﻿@using DomainModel.Html
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Profile.Contact.Models.ContactDetailsModel
+
+@Html.Layout().Promo("My Profile")
+
+<style>
+  .hidden-select {
+    display: none;
+  }
+</style>
+
+<div class="profile-block">
+  <div class="container">
+    @Html.Partial("~/Areas/Profile/Shared/_ProfileNavigation.cshtml","account-information")
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade active show account-information" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <h2>Account Information</h2>
+
+        <div>
+            @Html.Partial("~/Views/Shared/_Notification.cshtml")
+        </div>
+
+        <div class="col-block">
+            @using (Html.Forms().BeginForm("Index", "Contact", new { area = "Profile" }))
+            {
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.Email, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(x => x.Email)
+                    }
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.BusinessName)
+                        @Html.TextBoxFor(x => x.BusinessName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.BusinessName)
+                    }
+
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.FirstName, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.FirstName)
+                    }
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.LastName, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.LastName)
+                    }
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.Address, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Address)
+                    }
+
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        using (Html.Forms().BeginInputBox("select-full-width"))
+                        {
+                            @Html.LabelFor(x => x.City, new { @class = "required" })
+                            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.City)
+                        }
+                    }
+                }
+
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        using (Html.Forms().BeginInputBox("select-full-width"))
+                        {
+                            @Html.LabelFor(x => x.State, new { @class = "required" })
+                            @Html.DropDownList("StateAbbreviation", NorthAmericanTerritories.StateSelectList(Model.State), new { @class = "form-control", style = "width:100%;", tab = "5" })
+                            @Html.TextBoxFor(x => x.StatePlainText, new { @class = "form-control", style = "display:none;", tab = "6" })
+                            @Html.ValidationMessageFor(x => x.State)
+                        }
+                    }
+
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.Country, new { @class = "required" })
+                        @Html.DropDownListFor(a => a.Country, Countries.CountrySelectList, new { @class = "form-control", tab = "6" })
+                        @Html.ValidationMessageFor(x => x.Country)
+                    }
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PostalCode)
+                        @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control", tab = "7" })
+                        @Html.ValidationMessageFor(x => x.PostalCode)
+                    }
+                }
+
+                using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        <input type="submit" value="Update">
+                    }
+                }
+            }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer>
+  $(document).ready(function() {
+    @if (Model.Country == Countries.UnitedStates || Model.Country == Countries.Canada)
+        {
+          <text>$("input[name=StatePlainText]").hide();</text>
+          <text>$("select[name=StateAbbreviation]").show();</text>
+        }
+        else
+        {
+          <text>$("input[name=StatePlainText]").show();</text>
+          <text>$("select[name=StateAbbreviation]").hide()</text>
+        }
+
+    $("select[name=Country]").change(function() {
+      if ($(this).val() == "@Countries.UnitedStates" || $(this).val() == "@Countries.Canada") {
+          $("input[name=StatePlainText]").hide();
+          $("select[name=StateAbbreviation]").show();
+          $("select[name=StateAbbreviation]").val('');
+          $("select[name=StateAbbreviation]").parent().show();
+      } else {
+          $("input[name=StatePlainText]").show();
+          $("select[name=StateAbbreviation]").show();
+          $("select[name=StateAbbreviation]").parent().hide();
+        }
+      });
+
+  });
+</script>

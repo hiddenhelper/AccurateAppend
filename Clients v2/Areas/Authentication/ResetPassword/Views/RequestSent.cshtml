@@ -1,0 +1,15 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+
+@Html.Layout().Promo("Reset Password")
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+        using (row.Column(width: 12, style: "padding: 30px 0 30px 0"))
+        {
+            <p>A message with reset instructions has been sent to the email associated with the account.</p>
+            <p style="margin-top: 20px;">If you don't receive the message within 10 minutes then please check your SPAM folder or contact <a href="http://www.accurateappend.com/get-in-touch" class="blue-link">customer support</a>.</p>
+        }
+    }
+}

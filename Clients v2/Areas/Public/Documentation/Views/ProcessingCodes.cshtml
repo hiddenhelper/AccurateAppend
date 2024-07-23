@@ -1,0 +1,252 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@using (var container = Html.Layout().Container())
+{
+  <hr />
+  <div class="heading-block" style="margin-bottom: 30px;">
+    <h2>Processing Codes</h2>
+  </div>
+
+  using (var row = container.Row())
+  {
+    using (row.Column(12))
+    {
+      <h4>Match Type - Consumer</h4>
+      <table class="table table-bordered"  style="margin-bottom: 30px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Category</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>IND</td>
+          <td>Individual</td>
+          <td>Individual person. Criteria that includes first name & last name and identifies an individual person.</td>
+        </tr>
+        <tr>
+          <td>HH</td>
+          <td>Household</td>
+          <td>Household. Criteria that includes last name & address and identifies a family.</td>
+        </tr>
+        <tr>
+          <td>T1</td>
+          <td>Exact</td>
+          <td>Exact match to 10 Digit telephone number.</td>
+        </tr>
+        <tr>
+          <td>EM1</td>
+          <td>Exact</td>
+          <td>Exact match to Email address.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h4>Match Type - Business</h4>
+      <table class="table table-bordered"  style="margin-bottom: 30px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>BUS1</td>
+          <td>High confidence name match, exact house number, street, city, state, and zip code.</td>
+        </tr>
+        <tr>
+          <td>BUS2</td>
+          <td>Medium confidence name match, exact house number, street, city, state, and zip code.</td>
+        </tr>
+        <tr>
+          <td>BUS3</td>
+          <td>Low confidence name match, exact house number, street, city, state, and zip code.</td>
+        </tr>
+        <tr>
+          <td>BUS4</td>
+          <td>High confidence name match, exact city & state.</td>
+        </tr>
+        <tr>
+          <td>BUS5</td>
+          <td>High confidence name match, exact state.</td>
+        </tr>
+        <tr>
+          <td>BUS6</td>
+          <td>Medium confidence name match, exact city & state.</td>
+        </tr>
+        <tr>
+          <td>BUS7</td>
+          <td>Medium confidence name match, exact state.</td>
+        </tr>
+        </tbody>
+      </table>
+     
+      <h4>Email Verification Status Codes</h4>
+      <table class="table table-bordered" style="margin-bottom: 30px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Verified (Deliverable)</td>
+          <td>The email address is verified as deliverable.</td>
+        </tr>
+        <tr>
+          <td>Verified</td>
+          <td>The email address is verified as deliverable.</td>
+        </tr>
+        <tr>
+          <td>Illegitimate</td>
+          <td>The email address either has an incorrect syntax or does not comply with the RFC2822 specification in some form.</td>
+        </tr>
+        <tr>
+          <td>Undeliverable</td>
+          <td>The email address is confirmed to not be a valid email address that is able to accept mail at this time.</td>
+        </tr>
+        <tr>
+            <td>Unknown (UnableToVerify)</td>
+          <td>The email address has a valid syntax, but the server associated with the email address is not responding.</td>
+        </tr>
+        </tbody>
+      </table>
+      <h4>Email Verification Secondary Status Codes</h4>
+      <table class="table table-bordered" style="margin-bottom: 30px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>US Domain</td>
+                <td>Certified deliverable, Domestic US email address.</td>
+            </tr>
+            <tr>
+                <td>Non-US Domain</td>
+                <td>Certified deliverable, International-based email address.</td>
+            </tr>
+            <tr>
+                <td>Invalid</td>
+                <td>Defined as the inability to actually deliver a message to receiving domain.</td>
+            </tr>
+            <tr>
+                <td>Trap</td>
+                <td>Spam-Trap or Honeypot driven. Direct ownership or control over the resources involved with the acquisition and processing of this email as evidence leading to its submission to a DNSBL.</td>
+            </tr>
+            <tr>
+                <td>Mole</td>
+                <td>Collaborator – willing or unknowing User submission based or via automated, domain-level, anti-spam solution evidence with no direct ownership of resources involved with the acquisition and processing of this email leading to its submission to a DNSBL. Yet historical evidence firmly established evidence reflecting relationship to DNSBL at a domain level.</td>
+            </tr>
+            <tr>
+                <td>Quarantine</td>
+                <td>Historical evidence with no current direct ownership or control over resources involved with the acquisition and processing of this email leading to its submission to a DNSBL. Yet historical evidence firmly established evidence reflecting relationship to DNSBL at a domain level.</td>
+            </tr>
+            <tr>
+                <td>Seed</td>
+                <td>Known companies known to oversee - Third party oversight email address used for general monitoring of company and company's network resources used.</td>
+            </tr>
+            <tr>
+                <td>Key</td>
+                <td>Automated heuristic-based algorithm seeking specific, static "key" content. Explain known recipient key name and group pattern heuristics to detect traps, recipient that violates per RFC standard formatting.</td>
+            </tr>
+        <tr>
+            <td>Netprotect</td>
+            <td>Domains in which have employed an outsourced, managed spam SaaS (software as a service) used as a front-end, external firewall between your message and the domain of the email address. These domains and their recipients belonging to managed SMTP SaaS's known to be highly collaborative, notifying and in some cases forwarding evidence to other leading industry DNSBL sites in real-time.</td>
+        </tr>
+        <tr>
+            <td>Parked</td>
+            <td>Collection of email addresses that after careful scoring and evaluation has been established to be least likely to be responsive or engage b/c it’s either parked, for sale, cyber squatted, or other parked methodology</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h4>Phone Line Type</h4>
+      <table class="table table-bordered" style="margin-bottom: 30px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>C</td>
+          <td>Mobile phone</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>Landline phone</td>
+        </tr>
+        <tr>
+          <td>U</td>
+          <td>Unknown line type</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h4>Phone Line Category</h4>
+      <table class="table table-bordered" style="margin-bottom: 30px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>R</td>
+          <td>Residential</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>Business</td>
+        </tr>
+        <tr>
+          <td>U</td>
+          <td>Unknown line category</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h4>Gender Codes</h4>
+      <table class="table table-bordered" style="margin-bottom: 40px;">
+        <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>M</td>
+          <td>Male</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>Female</td>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td>Neutral</td>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td>Unknown</td>
+        </tr>
+        </tbody>
+      </table>
+
+     
+    }
+  }
+}

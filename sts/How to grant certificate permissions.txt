@@ -1,0 +1,42 @@
+﻿_______________________________________________________________________________
+
+TO GRANT CERTIFICATE PRIVILEGES
+_______________________________________________________________________________
+
+After the associated certificate is installed, the process that reads the
+certificate must have permission to read/access the certificate.  When running
+from Visual Studio this is still required if you are a local administrator
+unless you're running Visual Studio as an administrator.
+
+To grant the required read permissions, perform the following steps:
+
+1) Open Windows PowerShell
+2) Execute the following script:
+   a) If this is the first time using PowerShell, you must enable scripts by
+      executing the following command:
+      PS C:\>Set-ExecutionPolicy RemoteSigned
+
+PS C:\>$cert = dir cert:\localmachine\my | where { $_.Subject -eq "CN=Token Server Stub" } | select -first 1
+PS C:\>.\Set-CertificateAcl.ps1 $cert "REDMOND\<user name>" -Grant
+
+PS C:\>$cert = dir cert:\localmachine\my | where { $_.Subject -eq "CN=Atlantis Dev" } | select -first 1
+PS C:\>.\Set-CertificateAcl.ps1 $cert "REDMOND\<user name>" -Grant
+
+_______________________________________________________________________________
+
+TO VIEW CERTIFICATE PRIVILEGES
+_______________________________________________________________________________
+
+To view the current permissions on a certificate, perform the following steps:
+
+1) Open Windows PowerShell
+2) Execute the following script:
+   a) If this is the first time using PowerShell, you must enable scripts by
+      executing the following command:
+      PS C:\>Set-ExecutionPolicy RemoteSigned
+
+PS C:\>$cert = dir cert:\localmachine\my | where { $_.Subject -eq "CN=Token Server Stub" } | select -first 1
+PS C:\>.\Get-CertificateAcl.ps1 $cert -Expand | ft -a
+
+PS C:\>$cert = dir cert:\localmachine\my | where { $_.Subject -eq "CN=Atlantis Dev" } | select -first 1
+PS C:\>.\Get-CertificateAcl.ps1 $cert -Expand | ft -a

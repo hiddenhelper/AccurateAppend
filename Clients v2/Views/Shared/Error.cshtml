@@ -1,0 +1,23 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@Html.Layout().Promo("System Error")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(12))
+    {
+      <h1 style="margin: 30px 0 20px 0;">We're sorry, something is not quite right.</h1>
+      <p>Our system has encountered an error. Please back up and try again or contact<a href="http://www.accurateappend.com/get-in-touch/"> customer support</a>.</p>
+      <p>
+        @{
+          if (TempData["message"] != null)
+          {
+            <p style="font-weight: bold;">Error Message</p>
+            <p style="font-style: italic;">@((string) TempData["message"])</p>
+          }
+        }
+      </p>
+    }
+  }
+}

@@ -1,0 +1,60 @@
+﻿@using AccurateAppend.Core.IdentityModel
+<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link @(Model =="account-information"?"active show":"")"
+       href="@Url.Action("Index","Contact",new{area="Profile"})"
+       role="tab"
+       aria-controls="v-pills-home"
+       aria-selected="true">
+        Account Information
+    </a>
+    <a class="nav-link"
+       style="display:none;" @*added to maintain the css index*@
+       href="#"
+       role="tab"
+       aria-controls="v-pills-profile"
+       aria-selected="false">
+        Manage Credits
+    </a>
+    <a class="nav-link @(Model =="payment-information"?"active show":"")"
+       href="@Url.Action("Index","Card",new{area="Profile"})"
+       role="tab"
+       aria-controls="v-pills-messages"
+       aria-selected="false">
+        Manage Payment Options
+    </a>
+    <a class="nav-link @(Model =="change-password"?"active show":"")"
+       href="@Url.Action("Index","Password",new{area="Profile"})"
+       role="tab"
+       aria-controls="v-pills-home"
+       aria-selected="true">
+        Change Password
+    </a>
+    <a class="nav-link @(Model =="manage-nations"?"active show":"")"
+       href="@Url.Action("Index","Nation",new{area="Profile"})"
+       role="tab"
+       aria-controls="v-pills-home"
+       aria-selected="true">
+        Manage Nations
+    </a>
+    <a class="nav-link @(Model =="social-media-login"?"active show":"")"
+       href="@Url.Action("Index","SocialMediaLogin",new{area="Profile"})"
+       role="tab"
+       aria-controls="v-pills-home"
+       aria-selected="true">
+        Social Media Login
+    </a>
+    <a class="nav-link"
+       href="@Url.Action("Upload", "File", new {Area = "Public", id = this.User.Identity.GetIdentifier()})"
+       role="tab"
+       aria-controls="v-pills-home"
+       aria-selected="true">
+        Send File to Support
+    </a>
+    <a class="nav-link @(Model == "manage-api" ? "active show" : "")"
+       href="@Url.Action("Index", "Api", new {area = "Profile"})"
+       role="tab"
+       aria-controls="v-pills-home"
+       aria-selected="true">
+        Manage API Access
+    </a>
+</div>

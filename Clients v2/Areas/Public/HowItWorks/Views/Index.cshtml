@@ -1,0 +1,42 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model Uri
+
+@Html.Layout().Promo("How It Works...")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(8))
+    {
+      <div style="padding: 30px 0 30px 0;">
+
+        <h2>Step 1: Create a free account</h2>
+        <p>Enter your email address to register for a free account. </p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Register.png"/>
+        <h2 style="margin-top: 35px;">Step 2: Upload your file</h2>
+        <p>Upload the file you want to process. Our system accepts .csv, text and Excel files.</p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Upload File.png"/>
+        <h2 style="margin-top: 35px;">Step 3: Choose options and view cost estimate</h2>
+        <p>Choose your processing options. You are billed for only successful matches and your estimated cost is displayed to the right.</p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Select Products.png"/>
+        <h2 style="margin-top: 35px;">Step 4: Map fields</h2>
+        <p>Identify which fields in your file that you want used during the append.</p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Map Fields.png"/>
+        <h2 style="margin-top: 35px;">Step 5: Order summary and confirmation before purchase</h2>
+        <p>View an order summary and cost estimate before you purchase.</p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Order Summary.png"/>
+        <h2 style="margin-top: 35px;">Step 6: Order confirmation</h2>
+        <p>After your order is submitted, we will display a confirmation. A copy will be emailed to you too.</p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Order Complete.png"/>
+        <h2 style="margin-top: 35px;">Step 7: Order status and past orders</h2>
+        <p>Follow your order and view it's status. Most orders are processed within 1 business-hour.</p>
+        <img src="~/Content/AccurateAppend_v7/images/HowItWorks/Orders.png" style="margin-bottom: 35px;"/>
+        @if (!this.User.Identity.IsAuthenticated)
+        {
+          @Html.Buttons().PrimaryButton("Get Started Now!", "Index", "SignUp", new { Area = "Public" })
+        }
+      </div>
+    }
+  }
+}

@@ -1,0 +1,29 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.NationBuilder.Order.Models.NewCartModel
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List", true),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation"))
+
+<div class="append-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p style="margin: 10px 0 20px 0; text-align: left;" id="processing">
+                    <img style="width:200px;" src="~/Content/Shared/images/circular loading.gif" alt="processing" />
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@section HeadContent
+{
+    <script type="text/javascript">
+        var CheckUrl = "@this.Html.Raw(this.Model.CheckUrl)";
+        var NextUrl = "@this.Model.NextUrl";
+    </script>
+    <script src="@Url.Content("~/Areas/NationBuilder/Order/Scripts/SelectList.js")"></script>
+}

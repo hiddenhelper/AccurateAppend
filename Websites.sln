@@ -1,0 +1,206 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F688CC23-153A-4714-8530-85D3EC0758EA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C517E87-CB92-46C5-9F7F-E5F655349D56}"
+	ProjectSection(SolutionItems) = preProject
+		Accurate Append.dacpac = Accurate Append.dacpac
+		ASPNET.dacpac = ASPNET.dacpac
+		Clients Leads Api Formstack Test Form.html = Clients Leads Api Formstack Test Form.html
+		Clients Leads Api Google Test Form.html = Clients Leads Api Google Test Form.html
+		master.dacpac = master.dacpac
+		msdb.dacpac = msdb.dacpac
+		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
+		Websites.sln.DotSettings = Websites.sln.DotSettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{98560683-47DF-415E-BA31-124A93ABF151}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9215A3F-D551-4D8F-917A-059CD7FEF197} = {C9215A3F-D551-4D8F-917A-059CD7FEF197}
+		{550C8250-071F-4742-BDEF-1F77F50B423B} = {550C8250-071F-4742-BDEF-1F77F50B423B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain Model", "Domain Model\Domain Model.csproj", "{C9215A3F-D551-4D8F-917A-059CD7FEF197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuilder", "ListBuilder\ListBuilder.csproj", "{550C8250-071F-4742-BDEF-1F77F50B423B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Read Model", "Read Model\Read Model.sqlproj", "{9F28CEA8-11CA-44CD-BB28-FC46826A834D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage", "Storage\Storage.csproj", "{BCCD4325-F792-46CC-AB55-B4436C613765}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared Code", "Shared Code", "{67A0745E-FD88-4708-B79F-38253718ACEA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListBuilder", "ListBuilder", "{33EE280F-BF6B-4B56-8D22-930F302F2320}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{EBA8D5DB-2D32-4E6A-8CA3-5DAF5129D8EB}"
+	ProjectSection(SolutionItems) = preProject
+		Shared Code\ListBuilder\Scripts\_readme.txt = Shared Code\ListBuilder\Scripts\_readme.txt
+		Shared Code\ListBuilder\Scripts\Attributes formatted in TypeScript but not used in scripts.txt = Shared Code\ListBuilder\Scripts\Attributes formatted in TypeScript but not used in scripts.txt
+		Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js = Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js
+		Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js.map = Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js.map
+		Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.ts = Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.ts
+		Shared Code\ListBuilder\Scripts\Enums.js = Shared Code\ListBuilder\Scripts\Enums.js
+		Shared Code\ListBuilder\Scripts\Enums.js.map = Shared Code\ListBuilder\Scripts\Enums.js.map
+		Shared Code\ListBuilder\Scripts\Enums.ts = Shared Code\ListBuilder\Scripts\Enums.ts
+		Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js = Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js
+		Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js.map = Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js.map
+		Shared Code\ListBuilder\Scripts\FinancesTabViewModel.ts = Shared Code\ListBuilder\Scripts\FinancesTabViewModel.ts
+		Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js = Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js
+		Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js.map = Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js.map
+		Shared Code\ListBuilder\Scripts\GeographyTabViewModel.ts = Shared Code\ListBuilder\Scripts\GeographyTabViewModel.ts
+		Shared Code\ListBuilder\Scripts\Index.js = Shared Code\ListBuilder\Scripts\Index.js
+		Shared Code\ListBuilder\Scripts\Index.js.map = Shared Code\ListBuilder\Scripts\Index.js.map
+		Shared Code\ListBuilder\Scripts\Index.ts = Shared Code\ListBuilder\Scripts\Index.ts
+		Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js = Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js
+		Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js.map = Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js.map
+		Shared Code\ListBuilder\Scripts\InterestsTabViewModel.ts = Shared Code\ListBuilder\Scripts\InterestsTabViewModel.ts
+		Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js = Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js
+		Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js.map = Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js.map
+		Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.ts = Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.ts
+		Shared Code\ListBuilder\Scripts\Objects.js = Shared Code\ListBuilder\Scripts\Objects.js
+		Shared Code\ListBuilder\Scripts\Objects.js.map = Shared Code\ListBuilder\Scripts\Objects.js.map
+		Shared Code\ListBuilder\Scripts\Objects.ts = Shared Code\ListBuilder\Scripts\Objects.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contexts", "Contexts", "{ACD23A6C-1404-4F52-AAE8-52D57C739783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales", "Sales\Sales.csproj", "{C0F0B875-9E8D-43C1-99AA-D050FE6256BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Tests", "Sales.Tests\Sales.Tests.csproj", "{E6E66D94-23A5-446D-A3B3-4E3F30951A69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Contracts", "Sales.Contracts\Sales.Contracts.csproj", "{807E31EF-D930-4EC0-A06C-06096E1EB59D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients v2", "Clients v2\Clients v2.csproj", "{88181548-14D5-4052-906C-2FEDBEBBCFF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{432439F6-6CAB-4942-8ABA-582F9FF2EB5B}"
+	ProjectSection(SolutionItems) = preProject
+		Shared Code\Configuration\ControllerCache.cs = Shared Code\Configuration\ControllerCache.cs
+		Shared Code\Configuration\ControllersInstaller.cs = Shared Code\Configuration\ControllersInstaller.cs
+		Shared Code\Configuration\RouteValueDictionary Extensions.cs = Shared Code\Configuration\RouteValueDictionary Extensions.cs
+		Shared Code\Configuration\WindsorControllerFactory.cs = Shared Code\Configuration\WindsorControllerFactory.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{A60A0FB0-CC8A-4006-A505-4ADD37E7C5DD}"
+	ProjectSection(SolutionItems) = preProject
+		Shared Code\Validation\Validation Attributes.cs = Shared Code\Validation\Validation Attributes.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Handlers", "Sales.Handlers\Sales.Handlers.csproj", "{CF1FEF2A-98FF-4B6F-97BA-C1999E91F25B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{F76294E1-3D2B-48F9-AAA3-83A2062354A0}"
+	ProjectSection(SolutionItems) = preProject
+		Shared Code\Templates\OrderDetail.html.config = Shared Code\Templates\OrderDetail.html.config
+		Shared Code\Templates\OrderDetailHtml.cs = Shared Code\Templates\OrderDetailHtml.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98560683-47DF-415E-BA31-124A93ABF151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98560683-47DF-415E-BA31-124A93ABF151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98560683-47DF-415E-BA31-124A93ABF151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98560683-47DF-415E-BA31-124A93ABF151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9215A3F-D551-4D8F-917A-059CD7FEF197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9215A3F-D551-4D8F-917A-059CD7FEF197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9215A3F-D551-4D8F-917A-059CD7FEF197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9215A3F-D551-4D8F-917A-059CD7FEF197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550C8250-071F-4742-BDEF-1F77F50B423B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550C8250-071F-4742-BDEF-1F77F50B423B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550C8250-071F-4742-BDEF-1F77F50B423B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550C8250-071F-4742-BDEF-1F77F50B423B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F28CEA8-11CA-44CD-BB28-FC46826A834D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F28CEA8-11CA-44CD-BB28-FC46826A834D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F28CEA8-11CA-44CD-BB28-FC46826A834D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCCD4325-F792-46CC-AB55-B4436C613765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCCD4325-F792-46CC-AB55-B4436C613765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCCD4325-F792-46CC-AB55-B4436C613765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCCD4325-F792-46CC-AB55-B4436C613765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F0B875-9E8D-43C1-99AA-D050FE6256BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F0B875-9E8D-43C1-99AA-D050FE6256BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F0B875-9E8D-43C1-99AA-D050FE6256BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F0B875-9E8D-43C1-99AA-D050FE6256BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E66D94-23A5-446D-A3B3-4E3F30951A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E66D94-23A5-446D-A3B3-4E3F30951A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E66D94-23A5-446D-A3B3-4E3F30951A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E66D94-23A5-446D-A3B3-4E3F30951A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807E31EF-D930-4EC0-A06C-06096E1EB59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807E31EF-D930-4EC0-A06C-06096E1EB59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807E31EF-D930-4EC0-A06C-06096E1EB59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807E31EF-D930-4EC0-A06C-06096E1EB59D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88181548-14D5-4052-906C-2FEDBEBBCFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88181548-14D5-4052-906C-2FEDBEBBCFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88181548-14D5-4052-906C-2FEDBEBBCFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88181548-14D5-4052-906C-2FEDBEBBCFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1FEF2A-98FF-4B6F-97BA-C1999E91F25B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1FEF2A-98FF-4B6F-97BA-C1999E91F25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1FEF2A-98FF-4B6F-97BA-C1999E91F25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1FEF2A-98FF-4B6F-97BA-C1999E91F25B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{33EE280F-BF6B-4B56-8D22-930F302F2320} = {67A0745E-FD88-4708-B79F-38253718ACEA}
+		{EBA8D5DB-2D32-4E6A-8CA3-5DAF5129D8EB} = {33EE280F-BF6B-4B56-8D22-930F302F2320}
+		{C0F0B875-9E8D-43C1-99AA-D050FE6256BE} = {ACD23A6C-1404-4F52-AAE8-52D57C739783}
+		{E6E66D94-23A5-446D-A3B3-4E3F30951A69} = {ACD23A6C-1404-4F52-AAE8-52D57C739783}
+		{807E31EF-D930-4EC0-A06C-06096E1EB59D} = {ACD23A6C-1404-4F52-AAE8-52D57C739783}
+		{432439F6-6CAB-4942-8ABA-582F9FF2EB5B} = {67A0745E-FD88-4708-B79F-38253718ACEA}
+		{A60A0FB0-CC8A-4006-A505-4ADD37E7C5DD} = {67A0745E-FD88-4708-B79F-38253718ACEA}
+		{CF1FEF2A-98FF-4B6F-97BA-C1999E91F25B} = {ACD23A6C-1404-4F52-AAE8-52D57C739783}
+		{F76294E1-3D2B-48F9-AAA3-83A2062354A0} = {67A0745E-FD88-4708-B79F-38253718ACEA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5CF7264-59B6-475C-93CC-141040922E84}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://accurateappend.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Admin\\Admin.csproj
+		SccProjectName1 = Admin
+		SccLocalPath1 = Admin
+		SccProjectUniqueName2 = Domain\u0020Model\\Domain\u0020Model.csproj
+		SccProjectName2 = Domain\u0020Model
+		SccLocalPath2 = Domain\u0020Model
+		SccProjectUniqueName3 = ListBuilder\\ListBuilder.csproj
+		SccProjectName3 = ListBuilder
+		SccLocalPath3 = ListBuilder
+		SccProjectUniqueName4 = Read\u0020Model\\Read\u0020Model.sqlproj
+		SccProjectName4 = Read\u0020Model
+		SccLocalPath4 = Read\u0020Model
+		SccProjectUniqueName5 = Storage\\Storage.csproj
+		SccProjectName5 = Storage
+		SccLocalPath5 = Storage
+		SccProjectUniqueName6 = Sales\\Sales.csproj
+		SccProjectTopLevelParentUniqueName6 = Websites.sln
+		SccProjectName6 = Sales
+		SccLocalPath6 = Sales
+		SccProjectUniqueName7 = Sales.Tests\\Sales.Tests.csproj
+		SccProjectTopLevelParentUniqueName7 = Websites.sln
+		SccProjectName7 = Sales.Tests
+		SccLocalPath7 = Sales.Tests
+		SccProjectUniqueName8 = Sales.Contracts\\Sales.Contracts.csproj
+		SccProjectTopLevelParentUniqueName8 = Websites.sln
+		SccProjectName8 = Sales.Contracts
+		SccLocalPath8 = Sales.Contracts
+		SccProjectUniqueName9 = Clients\u0020v2\\Clients\u0020v2.csproj
+		SccProjectName9 = Clients\u0020v2
+		SccLocalPath9 = Clients\u0020v2
+		SccProjectUniqueName10 = Sales.Handlers\\Sales.Handlers.csproj
+		SccProjectTopLevelParentUniqueName10 = Websites.sln
+		SccProjectName10 = Sales.Handlers
+		SccLocalPath10 = Sales.Handlers
+	EndGlobalSection
+EndGlobal

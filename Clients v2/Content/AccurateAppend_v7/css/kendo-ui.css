@@ -1,0 +1,86 @@
+﻿.file-icon {
+    display: inline-block;
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-left: 10px;
+    margin-top: 13.5px;
+}
+
+.img-file {
+    background-image: url(/Content/shared/images/jpg.png)
+}
+
+.doc-file {
+    background-image: url(/Content/shared/images/doc.png)
+}
+
+.pdf-file {
+    background-image: url(/Content/shared/images/pdf.png)
+}
+
+.xls-file {
+    background-image: url(/Content/shared/images/xls.png)
+}
+
+.zip-file {
+    background-image: url(/Content/shared/images/zip.png)
+}
+
+.txt-file {
+    background-image: url(/Content/shared/images/text.png)
+}
+
+.default-file {
+    background-image: url(/Content/shared/images/default.png)
+}
+
+.file-heading {
+    font-family: Arial;
+    font-size: 1.1em;
+    display: inline-block;
+    float: left;
+    width: 450px;
+    margin: 0 0 0 20px;
+    height: 25px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    font-size: .9em;
+    margin-top: 10px;
+}
+
+.file-name-heading {
+    font-weight: bold;
+}
+
+.file-size-heading {
+    font-weight: normal;
+    font-style: italic;
+}
+
+li.k-file .file-wrapper .k-upload-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+li.k-file div.file-wrapper {
+    position: relative;
+    height: 75px;
+}
+
+.k-widget {
+    margin-bottom: 30px;
+}
+
+.k-dropzone {
+    text-align: left;
+}
+
+.k-icon:before {
+    position:relative;
+}

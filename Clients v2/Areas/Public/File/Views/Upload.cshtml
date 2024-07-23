@@ -1,0 +1,41 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model Uri
+
+@Html.Layout().Promo("Send File to Customer Support")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(8))
+    {
+      <div style="padding: 30px 0 30px 0;">
+        @{
+          var message = (string)TempData["message"];
+          if (!string.IsNullOrEmpty(message))
+          {
+            <div class="alert alert-success" style="margin: 10px 0 20px 0;">@message</div>
+          }
+        }
+        <p>
+          Please use the form below to securely send files to customer support. <a href="@Url.Action("Start", "New", new {Area = "Order"})">Click here</a> if you want to process a list.
+        </p>
+        <div class="alert alert-danger" style="display: none;" id="errorMessage"></div>
+        <div>
+          <script id="fileTemplate" type="text/x-kendo-template">
+                        <span class='k-progress'></span>
+                        <div class='file-wrapper'>
+                            <span class='file-icon #=addExtensionClass(files[0].extension)#'></span>
+                            <div style="di">Name: #=name# <button type='button' class='k-upload-action'></button></div>
+                        </div>
+                    </script>
+          <div class="demo-section k-content">
+            <input name="files" id="files" type="file"/>
+          </div>
+        </div>
+      </div>
+    }
+  }
+}
+
+@Html.Partial("~/Views/Shared/_Upload.cshtml", Model)

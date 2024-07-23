@@ -1,0 +1,206 @@
+﻿@using AccurateAppend.Core.IdentityModel
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using DomainModel.Html
+@using Newtonsoft.Json
+@model AccurateAppend.Websites.Clients.Areas.Shared.Models.OrderPaymentViewPresenter
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List"),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Map Your File"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation", true))
+
+
+<div class="main-holder">
+  <div class="container">
+    @using (Html.Forms().BeginForm(Model.PostBack.ActionName, Model.PostBack.ControllerName))
+    {
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="content-box">
+
+            @Html.Partial("~/Views/Shared/_DisplayOrderInformation.cshtml", Model.Order)
+
+            <div class="heading-box">
+              <h2>Payment Information</h2>
+            </div>
+            <div class="holder profile-block">
+                @Html.ValidationSummary()
+
+                @using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardHolderFirstName, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardHolderFirstName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardHolderFirstName)
+                    }
+
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardHolderLastName, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardHolderLastName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardHolderLastName)
+                    }
+                }
+
+                @using (Html.Forms().BeginFormRow())
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardHolderBusinessName)
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardHolderBusinessName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardHolderBusinessName)
+                    }
+                }
+
+                @using (Html.Forms().BeginFormRow("three"))
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardPostalCode, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardPostalCode, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardPostalCode)
+                    }
+
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardHolderPhone)
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardHolderPhone, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardHolderPhone)
+                    }
+                }
+
+                @using (Html.Forms().BeginFormRow("three"))
+                {
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardNumber, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardNumber, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardNumber)
+                    }
+
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardExpirationMonth, new { @class = "required" })
+                        using (Html.Forms().BeginInputBox("select-half-width"))
+                        {
+                            @Html.DropDownListFor(a => a.PaymentDetails.CardExpirationMonth, CreditCardExpiration.MonthSelectList, new { @class = "form-control", style = "width:150px;font-family:sans-serif !important;" })
+                            @Html.DropDownListFor(a => a.PaymentDetails.CardExpirationYear, CreditCardExpiration.YearSelectList, new { @class = "form-control", style = "width:150px;font-family:sans-serif !important;" })
+                        }
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardExpirationYear)
+                    }
+
+                    using (Html.Forms().BeginInputHolder())
+                    {
+                        @Html.LabelFor(x => x.PaymentDetails.CardCvv, new { @class = "required" })
+                        @Html.TextBoxFor(x => x.PaymentDetails.CardCvv, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.PaymentDetails.CardCvv)
+                    }
+                }
+
+                @using (Html.Forms().BeginFormRow())
+                {
+                    <a href="#" class="btn btn-primary large" id="submit" style="margin-top: 20px;">
+                        <span>Next - Finalize Order</span><i class="icon-arrow-right"></i>
+                    </a>
+                }
+
+                @Html.HiddenFor(a => a.Order.ListName)
+                @Html.HiddenFor(a => a.Order.OrderId)
+                @Html.HiddenFor(a => a.Order.RecordCount)
+                @Html.HiddenFor(a => a.Order.Total)
+                @Html.HiddenFor(a => a.PaymentDetails.ApplicationId)
+                @Html.Hidden("PaymentDetails.UserId", User.Identity.GetIdentifier())
+
+                @foreach (var data in Model.Order.ExtensionData())
+                {
+                    @Html.Hidden("Order." + data.Key, data.Value)
+                }
+
+                @{
+                    var products = Model.Order.Products.AsEnumerable().ToArray();
+                    for (var i = 0; i < products.Length; i++)
+                    {
+                        @Html.Hidden("SelectedList.Products[" + i + "].Cost", products[i].Cost)
+                        @Html.Hidden("SelectedList.Products[" + i + "].Count", products[i].Count)
+                        @Html.Hidden("SelectedList.Products[" + i + "].EstMatches", products[i].EstMatches)
+                        @Html.Hidden("SelectedList.Products[" + i + "].PerformOverwrites", products[i].PerformOverwrites)
+                        @Html.Hidden("SelectedList.Products[" + i + "].ProductKey", products[i].ProductKey)
+                        @Html.Hidden("SelectedList.Products[" + i + "].Title", products[i].Title)
+                    }
+                }
+
+                @Html.Hidden("orderModel", JsonConvert.SerializeObject(Model.Order))
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="widget">
+            <div class="heading-box">
+              <h3>Estimated Total</h3>
+            </div>
+            <div class="holder">
+              <div class="text-holder number-block">
+                <span class="number">@($"{Model.Order.Total:c}")</span>
+                <p>There is a $@Model.Order.OrderMinimum USD minimum charge per list</p>
+              </div>
+              @*<div class="btn-holder">
+                <a href="#" class="btn btn-primary large" id="submit">
+                  <span>Next - Finalize Order</span><i class="icon-arrow-right"></i>
+                </a>
+              </div>*@
+            </div>
+          </div>
+
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+
+@section HeadContent
+{
+  <style>
+
+    .validation-summary-errors ul { margin-left: 0px; }
+  </style>
+
+  <script type="text/javascript" defer>
+
+    $(document).ready(function() {
+
+      $('#submit').click(function() {
+
+        var paymentDetailsModel = {
+          CardHolderBusinessName: $('#PaymentDetails_CardHolderBusinessName').val(),
+          CardHolderFirstName: $('#PaymentDetails_CardHolderFirstName').val(),
+          CardHolderLastName: $('#PaymentDetails_CardHolderLastName').val(),
+          CardHolderPhone: $('#PaymentDetails_CardHolderPhone').val(),
+          CardPostalCode: $('#PaymentDetails_CardPostalCode').val(),
+          CardNumber: $('#PaymentDetails_CardNumber').val(),
+          CardExpirationMonth: $('#PaymentDetails_CardExpirationMonth').val(),
+          CardExpirationYear: $('#PaymentDetails_CardExpirationYear').val(),
+          CardCvv: $('#PaymentDetails_CardCvv').val()
+        };
+
+        $('<input>').attr({
+          type: 'hidden',
+          name: 'paymentModel',
+          value: JSON.stringify(paymentDetailsModel)
+        }).appendTo('form').first();
+
+        $("form").first().submit();
+
+      });
+
+    });
+  </script>
+}
+

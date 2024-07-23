@@ -1,0 +1,50 @@
+﻿@using System.Diagnostics
+@using AccurateAppend.Core.IdentityModel
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using AuthenticationTypes = System.Security.Claims.AuthenticationTypes
+
+@Html.Layout().Promo("My Profile")
+
+<div class="profile-block">
+  <div class="container">
+    @Html.Partial("~/Areas/Profile/Shared/_ProfileNavigation.cshtml", "social-media-login")
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade active show account-information" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="col-block">
+
+          <div class="table-block">
+            <div id="message">
+
+            </div>
+
+            <div class="heading-box">
+              <h3>Social Media Logins</h3>
+              @if (this.User.Identity.GetAuthenticationMethod() == AuthenticationTypes.Password && Debugger.IsAttached)
+              {
+                @Html.Buttons().PrimaryButtonLarge(" + Invite", "Invite", "SocialMediaLogin", new {area = "Profile"})
+              }
+            </div>
+
+            <div class="main-table">
+              <div id="grid"></div>
+
+              <div class="alert alert-info" id="no-logins-message">
+                No Linked Social Media Logins Found
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section HeadContent
+{
+  <script src="~/Views/Shared/Scripts/NotificationHelper.js"></script>
+  <script src="~/Areas/Profile/SocialMediaLogin/Scripts/index.js"></script>
+
+  <script>
+    initializeSocialMediaLoginView('@Url.Action("Read", "SocialMediaLogin", new {area = "Profile"})');
+  </script>
+}

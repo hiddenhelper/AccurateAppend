@@ -1,0 +1,58 @@
+﻿<style type="text/css">
+
+    .info, .success, .warning, .error {
+        border: 1px solid;
+        margin: 10px 20px 20px 20px;
+        padding: 15px 10px 15px 15px;
+    }
+
+    .info {
+        background-color: #BDE5F8;
+        color: #00529B;
+    }
+
+    .success {
+        background-color: #DFF2BF;
+        color: #4F8A10;
+    }
+
+    .warning {
+        background-color: #FEEFB3;
+        color: #9F6000;
+    }
+
+    .error {
+        background-color: #ffdede;
+        color: #191616;
+    }
+</style>
+
+@{
+  var div = new TagBuilder("div");
+
+  switch ((String) TempData["messageType"])
+  {
+    case "error":
+      div.AddCssClass("alert alert-danger");
+
+      break;
+    case "info":
+      div.AddCssClass("alert alert-info");
+
+      break;
+    case "warning":
+      div.AddCssClass("alert alert-warning");
+
+      break;
+    case "success":
+      div.AddCssClass("alert alert-success");
+
+      break;
+    default:
+      div.AddCssClass("alert alert-info");
+
+      break;
+  }
+  div.SetInnerText((String)TempData["message"]);
+}
+@(new MvcHtmlString(TempData["messageType"]==null?"":div.ToString()))

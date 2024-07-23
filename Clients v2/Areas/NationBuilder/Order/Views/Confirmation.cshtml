@@ -1,0 +1,68 @@
+﻿@using System.Web.Script.Serialization
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.NationBuilder.Order.Models.OrderConfirmationViewPresenter
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List"),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Map Your File"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation", true))
+
+<div class="main-holder">
+  <div class="container">
+    @using (Html.BeginForm(Model.Postback.ActionName, Model.Postback.ControllerName, new {Area = Model.Postback.AreaName}))
+    {
+      <div class="row">
+        <div class="col-12 col-lg-8">
+
+          @Html.Partial("~/Views/Shared/_DisplayOrderInformation.cshtml", Model.Order)
+
+          @*<input id="submit" type="submit" value="Submit Order" class="btn btn-default"/>*@
+
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="widget">
+            <div class="heading-box">
+              <h3>Estimated Total</h3>
+            </div>
+            <div class="holder">
+              <div class="text-holder number-block">
+                <span class="number">@($"{Model.Order.Total:c}")</span>
+                <p>There is a $@Model.Order.OrderMinimum USD minimum charge per list</p>
+              </div>
+              <div class="btn-holder">
+                  <a href="#" class="btn btn-primary large" id="submit">
+                      <span>Next - Finalize Order</span><i class="icon-arrow-right"></i>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+@section HeadContent
+{
+    <script type="text/javascript">
+
+      var orderModel = {
+          order: {
+              products: @this.Html.Raw(Json.Encode(this.Model.Order.Products)),
+              orderId: '@this.Model.Order.OrderId',
+              listName: '@this.Model.Order.ListName.ToUpper()',
+              recordCount: '@this.Model.Order.RecordCount',
+              ListId: '@this.Model.Order.ListId',
+              RegId: '@this.Model.Order.RegId'
+          }
+      }
+
+    </script>
+
+    <script src="@Url.Content("~/Areas/NationBuilder/Order/Scripts/Confirmation.js")"></script>
+}

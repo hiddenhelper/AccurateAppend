@@ -1,0 +1,42 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model string
+
+@Html.Layout().Promo("Connect to Nation Builder")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(8, style: "padding: 30px 0 30px 0"))
+    {
+      <p>Please enter your Nation Builder slug and click Next.</p>
+      
+      if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+      {
+        @Html.ValidationSummary("", new { @class = "alert alert-danger" })
+      }
+      using (Html.Forms().BeginForm("Index", "Renew", new {area = "NationBuilder"}))
+      {
+        using (Html.Forms().BeginFormRow())
+        {
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">http://</span>
+            </div>
+            @Html.TextBox("slug", null, new {id = "slug", placeholder = "Your NationBuilder URL", @class = "form-control"})
+            <div class="input-group-append">
+              <span class="input-group-text">.nationbuilder.com</span>
+            </div>
+          </div>
+        }
+
+        using (Html.Forms().BeginFormRow())
+        {
+          <a href="#" class="btn btn-primary large" style="margin: 10px 0;" onclick="$('form').submit()">
+            <span>Next</span><i class="icon-arrow-right"></i>
+          </a>
+        }
+      }
+    }
+  }
+}

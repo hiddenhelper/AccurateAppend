@@ -1,0 +1,28 @@
+﻿@using System.Web.Mvc.Html
+@using AccurateAppend.Websites.Clients.Areas.Shared.Views
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Order.Shared.Models.UploadRequestModel
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List", true),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation"))
+
+<div class="append-block">
+  @using (Html.Layout().Container())
+  {
+    Html.RenderPartial("~/Areas/Shared/Views/_CartTab.cshtml", CartTabActive.Csv);
+
+    Html.RenderPartial("~/Areas/Order/Shared/Views/_UploadFile.cshtml", this.Model);
+  }
+</div>
+
+<script type="text/javascript">
+  var saveUrl = "@Model.UploadTo.ToString()";
+</script>
+
+<script src="@Url.Content("~/Areas/Order/Shared/Scripts/upload.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/typings/HttpStatusCode.js")" type="text/javascript"></script>

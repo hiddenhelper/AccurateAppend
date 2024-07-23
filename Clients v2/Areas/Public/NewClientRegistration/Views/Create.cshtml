@@ -1,0 +1,400 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using DomainModel.Html
+@model AccurateAppend.Websites.Clients.Models.UserModel
+
+@Html.Layout().Promo("Register")
+
+<style>
+  .input-row { padding: 0px 0 15px 0; }
+
+  .dashboard-block {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+  }
+</style>
+
+<div class="dashboard-block">
+    <div class="col-block">
+        @using (var container = Html.Layout().Container())
+        {
+            using (var row = container.Row())
+            {
+                using (row.Column(8))
+                {
+                    using (Html.Forms().BeginForm("Create", "NewClientRegistration"))
+                    {
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            <h2>Log In & Contact Details</h2>
+
+                            var message = (string)TempData["RegError"];
+                            if (!string.IsNullOrEmpty(message))
+                            {
+                                <div class="alert alert-warning" style="margin: 20px 0 10px 0;">@message</div>
+                            }
+                        }
+
+                        using (var r = container.Row())
+                        {
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.Email, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Email)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.Password, new { @class = "required" })
+                                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                                    <span style="font-size: .7em; font-style: italic;">If left blank, we will create a random password and send it to you.</span>
+                                    @Html.ValidationMessageFor(x => x.Password)
+                                }
+                            }
+
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.BusinessName, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.BusinessName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.BusinessName)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.FirstName, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.FirstName)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.LastName, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.LastName)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.Phone, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Phone)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.Address, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Address)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.City, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.City)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    using (Html.Forms().BeginInputHolder())
+                                    {
+                                        using (Html.Forms().BeginInputBox("select-full-width"))
+                                        {
+                                            @Html.LabelFor(x => x.State, new { @class = "required" })
+                                            @Html.DropDownListFor(a => a.StateAbbreviation, NorthAmericanTerritories.StateSelectList(), new { @class = "form-control" })
+                                            @Html.TextBoxFor(a => a.StatePlainText, new { @class = "form-control", style = "display:none;" })
+                                            @Html.ValidationMessageFor(x => x.State)
+                                        }
+                                    }
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(x => x.PostalCode, new { @class = "required" })
+                                    @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.PostalCode)
+                                }
+                            }
+
+                            using (row.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    using (Html.Forms().BeginInputHolder())
+                                    {
+                                        @Html.LabelFor(x => x.Country)
+                                        using (Html.Forms().BeginInputBox("select-full-width"))
+                                        {
+                                            @Html.DropDownListFor(a => a.Country, Countries.CountrySelectList, new { @class = "form-control", tab = "6" })
+                                            @Html.ValidationMessageFor(x => x.Country)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        using (var r = container.Row())
+                        {
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    <h2>Payment Details</h2>
+                                }
+                            }
+
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    <input type="checkbox" id="ckUseBillingAddress" />
+                                    <span class="checkbox-label">Use info above</span>
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardHolderFirstName, "First Name")
+                                    @Html.TextBoxFor(a => a.CardHolderFirstName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardHolderFirstName)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardHolderLastName, "Last Name")
+                                    @Html.TextBoxFor(a => a.CardHolderLastName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardHolderLastName)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardAddress)
+                                    @Html.TextBoxFor(a => a.CardAddress, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardAddress)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardCity)
+                                    @Html.TextBoxFor(a => a.CardCity, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardCity)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    using (Html.Forms().BeginInputHolder())
+                                    {
+                                        using (Html.Forms().BeginInputBox("select-full-width"))
+                                        {
+                                            @Html.LabelFor(a => a.CardState)
+                                            @Html.DropDownListFor(a => a.CardStateAbbreviation, NorthAmericanTerritories.StateSelectList(), new { @class = "form-control" })
+                                            @Html.TextBoxFor(a => a.CardStatePlainText, new { @class = "form-control", style = "display:none;" })
+                                            @Html.ValidationMessageFor(a => a.CardState)
+                                        }
+                                    }
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardPostalCode)
+                                    @Html.TextBoxFor(a => a.CardPostalCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardPostalCode)
+                                }
+                            }
+
+                            using (row.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    using (Html.Forms().BeginInputHolder())
+                                    {
+                                        @Html.LabelFor(x => x.CardCountry)
+                                        using (Html.Forms().BeginInputBox("select-full-width"))
+                                        {
+                                            @Html.DropDownListFor(a => a.CardCountry, Countries.CountrySelectList, new { @class = "form-control", tab = "6" })
+                                            @Html.ValidationMessageFor(x => x.CardCountry)
+                                        }
+                                    }
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardHolderPhone)
+                                    @Html.TextBoxFor(a => a.CardHolderPhone, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardHolderPhone)
+                                }
+                            }
+
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardNumber)
+                                    @Html.TextBoxFor(a => a.CardNumber, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardNumber)
+                                }
+                            }
+
+                            using (r.Column())
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardExpirationMonth, "Card Expiration")
+                                    using (Html.Forms().BeginInputBox("select-half-width"))
+                                    {
+                                        @Html.DropDownListFor(a => a.CardExpirationMonth, CreditCardExpiration.MonthSelectList, new { @class = "form-control", style = "font-family:sans-serif !important;" })
+                                        @Html.DropDownListFor(a => a.CardExpirationYear, CreditCardExpiration.YearSelectList, new { @class = "form-control", style = "margin-left:15px; font-family:sans-serif !important;" })
+                                        @Html.ValidationMessageFor(a => a.CardExpirationMonth, "")
+                                        @Html.ValidationMessageFor(a => a.CardExpirationYear, "")
+                                    }
+                                }
+                            }
+
+                            using (r.Column(2))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.LabelFor(a => a.CardCvv)
+                                    @Html.TextBoxFor(a => a.CardCvv, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.CardCvv)
+                                }
+                            }
+
+                            using (r.Column(12))
+                            {
+                                <p>
+                                    <br />
+                                    @Html.CheckBoxFor(a => a.AgreeToTerms)<Label class="checkbox-label" style="margin-left: 5px;">I Agree to the <a id="lnkTerms" href="#">Terms of Service</a></Label>
+                                    @Html.ValidationMessageFor(a => a.AgreeToTerms, "", new { style = "display: block; margin-top:10px;" })
+                                </p>
+                            }
+
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    @Html.HiddenFor(a => a.PublicKey)
+                                    @Html.HiddenFor(a => a.ApplicationId)
+                                }
+                            }
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                  <p>You will have the opportunity to upload files after you submit the form.</p>
+                                }
+                            }
+
+
+                            using (r.Column(12))
+                            {
+                                using (Html.Forms().BeginFormRow())
+                                {
+                                    <input type="submit" class="btn btn-primary" id="completeRegistration" value="Submit" />
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </div>
+</div>
+
+<div class="modal" id="tos-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 600px;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Terms of Service</h4>
+      </div>
+      <div class="modal-body">
+        @{
+          switch (HttpContext.Current.Request.Url.Host.ToLowerInvariant())
+          {
+            case "localhost":
+            case "clients.accurateappend.com":
+            case "dev.clients.accurateappend.com":
+              @Html.Partial("~/Views/Shared/AccurateAppend_v7/_Terms.cshtml")
+              break;
+            case "clients.2020connect.net":
+            case "dev.clients.2020connect.net":
+              @Html.Partial("~/Views/Shared/2020Connect/_Terms.cshtml")
+              break;
+            default:
+              Response.Write("Term sheet missing");
+              break;
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@section HeadContent
+{
+
+  <style>
+    .modal-backdrop { opacity: 0.5 !important; }
+  </style>
+
+  <script type="text/javascript">
+    var viewModel = {
+      Model: @Html.Raw(Json.Encode(Model)),
+      Canada: '@Countries.Canada',
+      UnitedStates: '@Countries.UnitedStates'
+    };
+  </script>
+}
+
+<script src="@Url.Content("~/Areas/Public/NewClientRegistration/Scripts/Create.js")" defer>
+</script>

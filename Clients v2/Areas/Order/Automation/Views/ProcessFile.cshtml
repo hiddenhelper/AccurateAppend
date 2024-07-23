@@ -1,0 +1,16 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Order.Shared.Models.ProcessFileModel
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose Product"),
+  new PageLayoutHtmlHelper.Step("Upload", true),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Confirmation"))
+
+<!--Awaiter-->
+@{
+    Html.RenderPartial("~/Areas/Order/Shared/Views/_ProcessFileAwaiter.cshtml");
+}

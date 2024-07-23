@@ -1,0 +1,46 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "AMD",
+    "target": "es5",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    //"sourceMap": true
+    "inlineSourceMap": true,
+    "inlineSources": true
+  },
+  "include": [
+    "Scripts/typings", "Areas/Tickets/Views/Shared/CreateTicketModalPartial.ascx", "Navigator/TicketsNavigator.cs", "Areas/Tickets/Controllers/ListTicketsController.cs", "Areas/Tickets/Controllers/TicketsApiController.cs", "Areas/Clients/LeadWizard/Models/LeadWizardViewModel.cs", "../Clients v2/Areas/Order/DownloadUsage/Controller.cs", "Areas/JobProcessing/Summary/SummaryController.cs"
+  ],
+  "exclude": [
+    "node_modules/@Types"
+  ],
+  "files": [
+    "../Shared Code/ListBuilder/Scripts/DemographicsTabViewModel.ts",
+    "../Shared Code/ListBuilder/Scripts/Enums.ts",
+    "../Shared Code/ListBuilder/Scripts/FinancesTabViewModel.ts",
+    "../Shared Code/ListBuilder/Scripts/GeographyTabViewModel.ts",
+    "../Shared Code/ListBuilder/Scripts/Index.ts",
+    "../Shared Code/ListBuilder/Scripts/InterestsTabViewModel.ts",
+    "../Shared Code/ListBuilder/Scripts/ListCriteriaViewModel.ts",
+    "../Shared Code/ListBuilder/Scripts/Objects.ts",
+    "Scripts/AccurateAppend.DynamicAppend.BuildManifest.ts",
+    "Scripts/AccurateAppend.DynamicAppend.Objects.ts",
+    "Scripts/AccurateAppend.DynamicAppend.Strategies.ts",
+    "Scripts/AccurateAppend.Enums.ts",
+    "Scripts/AccurateAppend.Ui.ts",
+    "Scripts/app.bootstrap.ts",
+    "Areas/Reporting/Scripts/Dashboard.ts",
+    "Areas/Clients/UserDetail/Scripts/UserDetail.ts",
+    "Areas/Tickets/ListTickets/Scripts/ListTickets.ts",
+    "Areas/Clients/ApiTrialDetail/Scripts/ApiTrialDetail.ts",
+    "Areas/Clients/LeadWizard/Scripts/LeadWizard.ts",
+    "Areas/SmtpRules/Summary/Scripts/Index.ts",
+    "Areas/JobProcessing/Summary/Scripts/Index.ts",
+    "Areas/JobProcessing/Summary/Scripts/JobModel.ts",
+    "Areas/JobProcessing/Summary/Scripts/JobReportModel.ts",
+    "Areas/JobProcessing/Summary/Scripts/NationBuilderModel.ts",
+    "Areas/JobProcessing/Summary/Scripts/OperationReportModel.ts"
+  ]
+}

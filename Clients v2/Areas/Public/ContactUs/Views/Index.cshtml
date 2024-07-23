@@ -1,0 +1,78 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@Html.Layout().Promo("Contact Us")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(4, Target.Md))
+    {
+
+      <div class="sidebar" id="contact-us">
+        
+        <h3>Our Team</h3>
+
+        <ul class="clearfix">
+          <li>
+            <img src="/Content/AccurateAppend_v7/images/chris-small-headshot.png">
+            <p>Chris</p>
+          </li>
+          <li>
+              <img src="/Content/AccurateAppend_v7/images/jimmy-small-headshot.png">
+            <p>Jimmy</p>
+          </li>
+          <li>
+              <img src="/Content/AccurateAppend_v7/images/steve-small-headshot.png">
+            <p>Steve</p>
+          </li>
+
+        </ul>
+        
+        <p> We respond to all inquiries within one business day</p>
+
+        <hr>
+
+        @*<p>We are available by phone at:<br/>
+          <span class="inline-link">888-496-4258</span></p>
+
+        <hr>*@
+
+        <p class="privacy-copy">All clients, inquiries, and information is kept strictly confidential.  Files that are processed with Accurate Append, will never be cached, stored, shared, or used in any other manner than to perform the service requested. </p>
+
+        <div class="contact-bbb">
+          Get in touch
+          <div id="text-2" class="">
+            <a target="_blank" id="bbblink" class="ruhzbam"
+               href="https://www.bbb.org/western-washington/business-reviews/data-processing-service/accurate-append-in-seattle-wa-22831285#bbbseal"
+               title="Accurate Append Inc., Data Processing Service, Seattle, WA" style="display: block;position: relative;overflow: hidden; width: 150px; height: 68px; margin: 0px; padding: 0px;">
+              <img style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-alaskaoregonwesternwashington.bbb.org/logo/ruhzbam/accurate-append-22831285.png" width="300" height="68"
+                   alt="Accurate Append Inc., Data Processing Service, Seattle, WA" /></a>
+            <script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-alaskaoregonwesternwashington.bbb.org' + unescape('%2Flogo%2Faccurate-append-22831285.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+          </div> 
+           
+        </div>
+
+
+      </div>
+
+
+
+    }
+
+    using (row.Column(7, Target.Md))
+    {
+      <script type="text/javascript" src="https://accurateappend.formstack.com/forms/js.php/contact_clients_accurate"></script>
+    }
+  }
+
+  using (var row = container.Row())
+  {
+    using (row.Column(6, Target.Md))
+    {
+    }
+  }
+}

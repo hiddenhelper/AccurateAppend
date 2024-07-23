@@ -1,0 +1,46 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Profile.SocialMediaLogin.Models.InviteUserModel
+
+@Html.Layout().Promo("Invite User Access")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(8, style: "padding: 30px 0 30px 0"))
+    {
+      <p>
+        To invite an additional user to leverage your Accurate Append account, enter their email address to send an email. They will be able to log in using one of the supported
+        social media systems (Google or Facebook) and act as your account to submit files, update billing information, and contact support. The user account can be removed at
+        any time you need.
+      </p>
+
+      MvcHtmlString message = null;
+      if (!String.IsNullOrEmpty((String) TempData["message"]))
+      {
+        var div = new TagBuilder("div");
+        div.AddCssClass("alert alert-danger");
+        div.SetInnerText((String) TempData["message"]);
+
+        message = new MvcHtmlString(div.ToString());
+      }
+      @(message ?? MvcHtmlString.Empty)
+
+      using (Html.Forms().BeginForm("Invite", "SocialMediaLogin", new {Area = "Profile"}))
+      {
+        using (Html.Forms().BeginFormRow())
+        {
+          @Html.LabelFor(x => x.EmailAddress, new {@class = "required"})
+          @Html.TextBoxFor(x => x.EmailAddress, new {@class = "form-control", style = "width: 350px;"})
+          @Html.ValidationMessageFor(x => x.EmailAddress)
+        }
+
+        using (Html.Forms().BeginFormRow())
+        {
+          <input type="submit" value="Submit" class="btn btn-primary"/>
+        }
+      }
+    }
+  }
+}
+  

@@ -1,0 +1,67 @@
+﻿.navbar-default {
+    background-color: #5CB4E3;
+    border-color: #5CB4E3;
+    border-radius: 0;
+}
+
+.nav-pills li {
+    background-color: #F7F7F7;
+    border-radius:5px;
+}
+
+.nav-pills li a {
+    color: #606060;
+}
+
+.nav-pills > li a:hover {
+    background-color: #DFDFDF;
+}
+
+.nav-pills > li .fa {
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    background: url("/images/logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 48px;
+    margin: 14px 10px 0 5px !important;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -9999px;
+    width: 278px;
+}
+
+.navbar-header {
+    margin-left: 10px;
+    height: 75px;
+}
+
+.activity li{
+    list-style: none;
+}
+
+.activity span.fa{
+    margin-right: 5px;
+}
+
+.navbar-form .btn-default {
+    background-color: #F7F7F7;
+}
+
+.navbar-form .btn-default {
+    background-color: #F7F7F7;
+}
+
+.navbar-form .btn-default:hover {
+    background-color: #DFDFDF;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #F06823;
+    color: #FFFFFF;
+}
+
+span.fa {
+    margin-right: 5px;
+}

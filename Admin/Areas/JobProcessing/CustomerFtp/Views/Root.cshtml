@@ -1,0 +1,22 @@
+@model FileManagerRootFolder
+@using GleamTech.AspNet.Mvc
+@using GleamTech.FileUltimate.AspNet.UI
+
+@{
+  var fileManager = new FileManager
+  {
+    Width = 800,
+    Height = 600,
+    Resizable = false
+  };
+
+  var rootFolder = this.Model;
+  fileManager.RootFolders.Add(rootFolder);
+}
+
+<html>
+<head><title>File Manager</title>@this.RenderHead(fileManager)</head>
+<body>
+@this.RenderBody(fileManager)
+</body>
+</html>

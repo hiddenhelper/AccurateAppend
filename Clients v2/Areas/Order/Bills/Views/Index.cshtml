@@ -1,0 +1,77 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@Html.Layout().Promo("Dashboard")
+
+<style>
+    .k-widget.k-datepicker {
+      margin-bottom: 0px;
+    }
+
+    #usageDateRangeWidget .k-widget.k-datepicker.k-header {
+      margin-bottom: 7px;
+    }
+
+    #grid tr td, #grid tr th {
+      overflow: visible;
+    }
+</style>
+
+<div class="dashboard-block">
+    @using (var container = Html.Layout().Container())
+    {
+        using (var row = container.Row())
+        {
+            using (row.Column(3))
+            {
+              <!-- Start Pills -->
+              @Html.Partial("~/Areas/Order/Shared/Views/_OrderPills.cshtml")
+            }
+
+            using (row.Column(9))
+            {
+                <div id="alert" style="display: none; margin: 20px 0 20px 0;"></div>
+                <div class="table-block">
+                    <div class="heading-box">
+                        <h2 class="align-text-top">My Bills</h2>
+                    </div>
+
+                    <div id="message" class="alert alert-info" style="display: none; margin: 20px 0 20px 0;">
+                        No bills found
+                    </div>
+                    <div id="grid"></div>
+                </div>
+            }
+        }
+    }
+</div>
+
+<script id="grid-download-column-template" type="text/x-kendo-template">
+    # if(Links.Download != null) { #
+    <a class="btn btn-secondary" href="\\#" onclick="viewModel.downloadFile('#= Links.Download #');">Download PDF</a>
+    # } #
+</script>
+
+<script id="responsive-column-template" type="text/x-kendo-template">
+    <strong>Date</strong>
+    <p class="col-template-val">#= kendo.toString(kendo.parseDate(CompletedDate, 'MM/dd/yyyy'), 'MM/dd/yyyy') #</p>
+
+    <strong>Id</strong>
+    <p class="col-template-val">#=Id#</p>
+
+    <strong>Description</strong>
+    <p class="col-template-val">#=Title#</p>
+
+    <strong>Status</strong>
+    <p class="col-template-val">#=data.StatusDescription# </p>
+
+    # if(Links.Download != null) { #
+    <a class="btn btn-secondary" href="\\#" onclick="viewModel.downloadFile('#= Links.Download #');">Download PDF</a>
+    # } #
+</script>
+
+@section HeadContent
+{
+    <script src="@Url.Content("~/Areas/Order/Bills/Scripts/Index.js")"></script>
+    <script type="text/javascript">
+        dataUrl = "/Order/Bills/ForCurrentUser";
+    </script>
+}

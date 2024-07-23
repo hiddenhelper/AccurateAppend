@@ -1,0 +1,120 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers
+@using AccurateAppend.Security
+
+@{
+  var url = this.Context.Request.RawUrl;
+  var area = this.ViewContext.RouteData.DataTokens["area"] == null ? "" : this.ViewContext.RouteData.DataTokens["area"].ToString().ToLower();
+  var controller = this.ViewContext.RequestContext.RouteData.Values.First(a => a.Key == "controller").Value.ToString().ToLower();
+  var action = this.ViewContext.RequestContext.RouteData.Values.First(a => a.Key == "action").Value.ToString().ToLower();
+  var options = string.Empty;
+}
+<header class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Accurate Append</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        @{
+            if (this.Context.User.Identity.IsAuthenticated)
+            {
+                #region default options for authenticated user
+
+                if (this.Context.User.Identity.IsNationBuilderAccount())
+                {
+                    options += "<li class=\"dropdown\">";
+                    options += "<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">New Order <span class=\"caret\"></span></a>";
+                    options += "<ul class=\"dropdown-menu\">";
+                    options += this.Html.SubNavigationLink(this.Url.Action("Start", "New", new {area = "Order"}), "Upload List", url);
+                    options += this.Html.SubNavigationLink(this.Url.Action("Start", "Order", new {area = "NationBuilder"}), "NationBuilder List", url);
+                    options += "</ul>";
+                    options += "</li>";
+                }
+                else
+                {
+                    options += this.Html.SubNavigationLink(this.Url.Action("Start", "New", new { area = "Order" }), "UploadList", url);
+                }
+
+                options += this.Html.SubNavigationLink(this.Url.Action("Index", "Current", new {area = "Order"}), "Existing Orders", url);
+                // +
+                //Html.SubNavigationLink("/Api", "API", url);
+
+                options += "<li class=\"dropdown\">";
+                options += "<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Account <span class=\"caret\"></span></a>";
+
+                options += "<ul class=\"dropdown-menu\">";
+                options += this.Html.SubNavigationLink("/Profile/Contact", "My Profile", url);
+                options += "<li>" + this.Html.ActionLink("Log Off", "Index", "LogOff", new {Area = "Authentication"}, null) + "</li>";
+                options += "</ul>";
+                options += "</li>";
+
+                switch (controller)
+                {
+                    case "interstitial":
+                    case "nolists":
+                    case "DataQualityAssessmentThankyou":
+                        // show default menu options
+                        break;
+                    case "DataQualityAssessment":
+                        options = "<li>" + this.Html.ActionLink("Log Off", "Index", "LogOff", new {Area = "Authentication"}, null).ToHtmlString() + "</li>";
+                        break;
+                    case "order":
+                        switch (action)
+                        {
+                            case "index":
+                                options = "<li>" + this.Html.ActionLink("Log Off", "Index", "LogOff", new {Area = "Authentication"}, null).ToHtmlString() + "</li>";
+                                break;
+                        }
+                        break;
+                    case "newpassword":
+                        switch (action)
+                        {
+                            case "index":
+                                options = "<li> " + this.Html.ActionLink("Log Off ", "Index", "LogOff", new {Area = "Authentication"}, null).ToHtmlString() + " </li>";
+                                break;
+                        }
+                        break;
+                }
+
+                #endregion
+            }
+            else
+            {
+                #region options for un-authenticated users
+
+                switch (area)
+                {
+                    case "nationbuilder":
+                        options += this.Html.SubNavigationLink(this.Url.Action("Index", "Signup", new {area = "NationBuilder"}), "Signup", url) +
+                                   this.Html.SubNavigationLink("/Authentication", "Login", url);
+                        break;
+                    case "public":
+                        switch (controller)
+                        {
+                            // non-nb user pages
+                            case "signup":
+                                options += this.Html.SubNavigationLink(this.Url.Action("Index", "Signup", new {area = "Public"}), "Signup", url) +
+                                           this.Html.SubNavigationLink("/Authentication", "Login", url);
+                                break;
+                            case "newclientregistration":
+                            case "payment":
+                            case "file":
+                                options = "<li class=\"nav-number\">888-496-4258</li>";
+                                break;
+                        }
+                        break;
+                }
+
+                #endregion
+            }
+        }
+        @(new MvcHtmlString(options))
+      </ul>
+    </div>
+  </div>
+</header>

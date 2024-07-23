@@ -1,0 +1,91 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Public.Signup.Models.PublicCreateAccountModel
+
+<section class="promo-section index">
+    <div class="bg-stretch" id="bg-stretch1542001375637735">
+    </div>
+    @using (var container = Html.Layout().Container())
+    {
+        using (var row = container.Row())
+        {
+            using (row.Column(7))
+            {
+                <h1 style="margin-bottom: 25px; text-align: center;">Instantly Add Quality Email Addresses, Phone Numbers and More to Your List</h1>
+                var message = (string)TempData["RegError"];
+                @Html.Raw(string.IsNullOrEmpty(message) ? string.Empty : "<div class=\"alert alert-danger\">" + message + "</div>")
+            }
+
+            using (row.Column(5))
+            {
+                <div class="get-started">
+                    <div class="heading-block">
+                        <h2>Start Appending Instantly</h2>
+                        <p>Enter your email address to create a free account and upload your list to instantly receive a quote.</p>
+                    </div>
+                    @using (Html.Forms().BeginForm("Index", "Signup", new { area = "Public" }))
+                    {
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email Address" })
+                            @Html.ValidationMessageFor(x => x.Email)
+                        }
+
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            <p style="margin-top: 10px; font-size: .8em;color: #a9a9a9">* We never share or sell your information.</p>
+                        }
+
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            @Html.Recaptcha().RenderControl(new { style = "margin-top: 20px;" })
+                        }
+
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            <input type="submit" class="btn btn-default" id="submitBtn" disabled="disabled" style="display: inline" value="Get Started" />
+                            @Html.ActionLink("SEE HOW IT WORKS!", "Index", "HowItWorks", null, new { Controller = "HowItWorks", Area = "Public", style = "vertical-align: bottom; color: #505050; font-size: .8em; text-decoration: underline; margin-left: 20px;" })
+                        }
+                    }
+                </div>
+            }
+        }
+    }
+
+</section>
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+        using (row.Column(12))
+        {
+            <ul class="ticks" style="margin: 40px 0 40px 0;">
+                <li>Add land line and mobile phone numbers to lists.</li>
+                <li>Add new email addresses to fill holes in your data and help you reach more prospects.</li>
+                <li>Append demographic attributes like income, age and gender.</li>
+                <li>We'll show you which emails are causing you SPAM trouble.</li>
+                <li>Save time and money by verifying that your list members have correct phone and postal contact info.</li>
+                <li>Services for U.S. and Canadian campaigns and nonprofits.</li>
+                <li>Processing files is incredibly easy; upload your file, receive a free estimate and process in as little as a few minutes.</li>
+            </ul>
+        }
+    }
+}
+
+
+<script type="text/javascript">
+    var imNotARobot = function () {
+        console.info("reCaptcha was verified");
+        $("#submitBtn").prop('disabled', false);
+    };
+    var tooSlow = function () {
+        console.info("reCaptcha has expired");
+        $("#submitBtn").prop('disabled', true);
+    };
+</script>
+
+@section HeadContent
+{
+  @(this.Html.Recaptcha().GenerateScript())
+}

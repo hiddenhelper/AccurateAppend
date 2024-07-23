@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props" Condition="Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0F0B875-9E8D-43C1-99AA-D050FE6256BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccurateAppend.Sales</RootNamespace>
+    <AssemblyName>AccurateAppend.Sales</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccurateAppend.Core, Version=5.0.7464.24414, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Common.5.0.7464.24414\lib\netstandard2.0\AccurateAppend.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Collections, Version=2.0.7464.24416, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Collections.2.0.7464.24416\lib\netstandard2.0\AccurateAppend.Core.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.ComponentModel, Version=1.1.7464.24415, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-ComponentModel.1.1.7464.24415\lib\net48\AccurateAppend.Core.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Data, Version=3.5.7464.24418, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Data.3.5.7464.24418\lib\net48\AccurateAppend.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing.Orchestration, Version=1.2.7464.15138, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.Orchestration.1.2.7464.15138\lib\net48\AccurateAppend.JobProcessing.Orchestration.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccrualBilling.cs" />
+    <Compile Include="ApiCallsUsageRollup.cs" />
+    <Compile Include="ApiUsageRollup.cs" />
+    <Compile Include="Audit Extensions.cs" />
+    <Compile Include="Audit.cs" />
+    <Compile Include="BatchUsageRollup.cs" />
+    <Compile Include="BillableOrder Extensions.cs" />
+    <Compile Include="BillableOrder.cs" />
+    <Compile Include="CartAnalysis.cs" />
+    <Compile Include="CartQuote.cs" />
+    <Compile Include="CreditCardRef.cs" />
+    <Compile Include="CsvCart.cs" />
+    <Compile Include="DailyUsageRollup.cs" />
+    <Compile Include="DataAccess\ProductQuery Extensions.cs" />
+    <Compile Include="DataAccess\CartQuery Extensions.cs" />
+    <Compile Include="DataAccess\ClientRefQuery Extensions.cs" />
+    <Compile Include="DataAccess\RecurringBillingAccount Extensions.cs" />
+    <Compile Include="DataAccess\DefaultUsageReportBuilder.cs" />
+    <Compile Include="DealBinder Extensions.cs" />
+    <Compile Include="DealFile.cs" />
+    <Compile Include="Formatters\IUsageReportBuilder.cs" />
+    <Compile Include="Mapping\CsvCartConfiguration.cs" />
+    <Compile Include="Mapping\NationBuilderCartConfiguration.cs" />
+    <Compile Include="Mapping\ProductOrderConfiguration.cs" />
+    <Compile Include="Mapping\DailyUsageRollupConfiguration.cs" />
+    <Compile Include="DataAccess\NationBuilderCostService.cs" />
+    <Compile Include="DataAccess\CreditCardRefQuery Extensions.cs" />
+    <Compile Include="DataAccess\DefaultClientUsageCalculator.cs" />
+    <Compile Include="BillingContract.cs" />
+    <Compile Include="BillContent.cs" />
+    <Compile Include="BillingPeriod.cs" />
+    <Compile Include="Cart.cs" />
+    <Compile Include="FileSource.cs" />
+    <Compile Include="Mapping\PendingTransactionConfiguration.cs" />
+    <Compile Include="NationBuilderCart.cs" />
+    <Compile Include="PendingTransactionCollection.cs" />
+    <Compile Include="PendingTransaction.cs" />
+    <Compile Include="ProcessingStatus.cs" />
+    <Compile Include="ProductOrder.cs" />
+    <Compile Include="TransactionEvent.cs" />
+    <Compile Include="ClientRef.cs" />
+    <Compile Include="ContractType.cs" />
+    <Compile Include="Cost.cs" />
+    <Compile Include="CostPricingModel.cs" />
+    <Compile Include="DataAccess\ChargeEventQuery Extensions.cs" />
+    <Compile Include="DataAccess\ContextBasedCostService.cs" />
+    <Compile Include="DataAccess\CustomerCostService.cs" />
+    <Compile Include="DataAccess\DealBinderQuery Extensions.cs" />
+    <Compile Include="DataAccess\DefaultContext.cs" />
+    <Compile Include="FileAttachment.cs" />
+    <Compile Include="DataAccess\OrderQuery Extensions.cs" />
+    <Compile Include="DealStatus Extensions.cs" />
+    <Compile Include="IClientUsageCalculator.cs" />
+    <Compile Include="ICostService.cs" />
+    <Compile Include="IOrderCalculationService.cs" />
+    <Compile Include="LedgerDeal.cs" />
+    <Compile Include="LedgerEntry.cs" />
+    <Compile Include="LedgerType.cs" />
+    <Compile Include="Mapping\ApiCallsUsageRollupConfiguration.cs" />
+    <Compile Include="Mapping\ApiUsageRollupConfiguration.cs" />
+    <Compile Include="Mapping\BatchUsageRollupConfiguration.cs" />
+    <Compile Include="Mapping\BillContentConfiguration.cs" />
+    <Compile Include="Mapping\BillingContractConfiguration.cs" />
+    <Compile Include="Mapping\CartConfiguration.cs" />
+    <Compile Include="Mapping\TransactionEventConfiguration.cs" />
+    <Compile Include="Mapping\CostConfiguration.cs" />
+    <Compile Include="Mapping\CostPricingModelConfiguration.cs" />
+    <Compile Include="Mapping\CreditCardRefConfiguration.cs" />
+    <Compile Include="Mapping\LedgerDealConfiguration.cs" />
+    <Compile Include="Mapping\LedgerEntryConfiguration.cs" />
+    <Compile Include="Mapping\OrderRuntimeConfiguration.cs" />
+    <Compile Include="Mapping\PostalAddressRefConfiguration.cs" />
+    <Compile Include="Mapping\ProductCategoryConfiguration.cs" />
+    <Compile Include="Mapping\RefundOrderConfiguration.cs" />
+    <Compile Include="Mapping\RecurringBillingAccountConfiguration.cs" />
+    <Compile Include="Mapping\SubscriptionBillingConfiguration.cs" />
+    <Compile Include="Mapping\AccrualBillingConfiguration.cs" />
+    <Compile Include="Mapping\UsageBillingConfiguration.cs" />
+    <Compile Include="MutableDeal Extensions.cs" />
+    <Compile Include="DealBinder.cs" />
+    <Compile Include="DealStatus.cs" />
+    <Compile Include="Mapping\AuditConfiguration.cs" />
+    <Compile Include="Mapping\BillableOrderConfiguration.cs" />
+    <Compile Include="Mapping\ClientRefConfiguration.cs" />
+    <Compile Include="Mapping\DealBinderConfiguration.cs" />
+    <Compile Include="Mapping\MutableDealConfiguration.cs" />
+    <Compile Include="Mapping\OrderConfiguration.cs" />
+    <Compile Include="Mapping\OrderLineConfiguration.cs" />
+    <Compile Include="Mapping\ProductConfiguration.cs" />
+    <Compile Include="Monetary Extensions.cs" />
+    <Compile Include="MutableDeal.cs" />
+    <Compile Include="Order Extensions.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderCollection.cs" />
+    <Compile Include="OrderRuntime.cs" />
+    <Compile Include="PostalAddressRef.cs" />
+    <Compile Include="ProductCategory.cs" />
+    <Compile Include="ProductLine Extensions.cs" />
+    <Compile Include="ProductLine.cs" />
+    <Compile Include="ProductLineCollection.cs" />
+    <Compile Include="OrderStatus.cs" />
+    <Compile Include="Product Extensions.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductUsage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateCard.cs" />
+    <Compile Include="ReadModel\DealNoteView.cs" />
+    <Compile Include="ReadModel\DealView.cs" />
+    <Compile Include="ReadModel\DealViewQuery Extensions.cs" />
+    <Compile Include="ReadModel\ReadContext.cs" />
+    <Compile Include="ReadModel\Queries\IDealNotesQuery.cs" />
+    <Compile Include="ReadModel\Queries\IDealsViewActiveDuringQuery.cs" />
+    <Compile Include="ReadModel\Queries\IDealsViewByIdQuery.cs" />
+    <Compile Include="RefundOrder.cs" />
+    <Compile Include="DataAccess\StandardOrderCalculationService.cs" />
+    <Compile Include="RecurringBillingAccount.cs" />
+    <Compile Include="SubscriptionBilling.cs" />
+    <Compile Include="TransactionResult Extensions.cs" />
+    <Compile Include="UsageBilling.cs" />
+    <Compile Include="UseReport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets" Condition="Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props" Condition="Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9215A3F-D551-4D8F-917A-059CD7FEF197}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainModel</RootNamespace>
+    <AssemblyName>DomainModel</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\Job Controller\Source\Dev\StyleCop\Standard.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccurateAppend.Accounting, Version=3.9.7465.12882, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Accounting.3.9.7465.12882\lib\net48\AccurateAppend.Accounting.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ChargeProcessing.Contracts, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ChargeProcessing.Contracts.1.1.0\lib\net48\AccurateAppend.ChargeProcessing.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core, Version=5.0.7464.24414, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Common.5.0.7464.24414\lib\netstandard2.0\AccurateAppend.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Collections, Version=2.0.7464.24416, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Collections.2.0.7464.24416\lib\netstandard2.0\AccurateAppend.Core.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.ComponentModel, Version=1.1.7464.24415, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-ComponentModel.1.1.7464.24415\lib\net48\AccurateAppend.Core.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Configuration, Version=1.0.7453.20010, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Configuration.1.0.7453.20010\lib\net48\AccurateAppend.Core.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Data, Version=3.5.7464.24418, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Data.3.5.7464.24418\lib\net48\AccurateAppend.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing, Version=3.5.7453.20008, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.3.5.7453.20008\lib\net48\AccurateAppend.JobProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing.Orchestration, Version=1.2.7464.15138, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.Orchestration.1.2.7464.15138\lib\net48\AccurateAppend.JobProcessing.Orchestration.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Messaging, Version=1.4.7334.19215, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Messaging.1.4.7334.19215\lib\net48\AccurateAppend.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Security, Version=3.5.7464.24419, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Security.3.5.7464.24419\lib\net48\AccurateAppend.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Standardization, Version=1.0.7457.22841, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Standardization.1.0.7457.22841\lib\netstandard2.0\AccurateAppend.Standardization.dll</HintPath>
+    </Reference>
+    <Reference Include="AuthorizeNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AuthorizeNet.2.0.1\lib\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DAL, Version=2.14.7457.22841, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DAL.2.14.7457.22841\lib\net48\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DataStreams, Version=5.27.0.0, Culture=neutral, PublicKeyToken=9c9b03c227e1bea6, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataStreams.5.27.0\lib\net452\DataStreams.dll</HintPath>
+    </Reference>
+    <Reference Include="DQS, Version=2.0.7457.22842, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DQS.2.0.7457.22842\lib\net48\DQS.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EventLogger, Version=1.12.7440.24332, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventLogger.1.12.7440.24332\lib\net48\EventLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImpressionWise, Version=1.1.7451.23269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImpressionWise.1.1.7451.23269\lib\net471\ImpressionWise.dll</HintPath>
+    </Reference>
+    <Reference Include="Integration.NationBuilder, Version=3.7.7440.26840, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Integration-NationBuilder.3.7.7440.26840\lib\net48\Integration.NationBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2019.7.0.21100, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2019.7.0\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.NET-Encryption-Library, Version=1.15.0.0, Culture=neutral, PublicKeyToken=dccbd7ce7d6a58c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\KellermanEncryption.4.0.0.0\lib\net4\KellermanSoftware.NET-Encryption-Library.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NServiceBus.Callbacks, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.Callbacks.2.0.2\lib\net452\NServiceBus.Callbacks.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.6.5.8\lib\net452\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.NHibernate, Version=7.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.NHibernate.7.2.5\lib\net452\NServiceBus.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.CastleWindsor, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.6.1.1\lib\net452\NServiceBus.ObjectBuilder.CastleWindsor.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Transport.SqlServer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.SqlServer.3.1.4\lib\net452\NServiceBus.Transport.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.5.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XVerify, Version=1.1.7451.23270, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XVerify.1.1.7451.23270\lib\net48\XVerify.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionResults\EnableCorsAttribute.cs" />
+    <Compile Include="ActionResults\DownLoadResult.cs" />
+    <Compile Include="ActionResults\JsonNetResult.cs" />
+    <Compile Include="ActionResults\FileProxyResult.cs" />
+    <Compile Include="ActionResults\LiteralResult.cs" />
+    <Compile Include="CaptchaVerifyer.cs" />
+    <Compile Include="EmailTemplates\AccurateAppend.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccurateAppend.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailTemplates\AccurateAppend.Partials.cs">
+      <DependentUpon>AccurateAppend.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\ReceiptTemplateName.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Html\IPdfGenerator.cs" />
+    <Compile Include="Html\RequiredFieldMapping.cs" />
+    <Compile Include="Messages\BillingCommandBase.cs" />
+    <Compile Include="Messages\ConfigureFtpAccountCommand.cs" />
+    <Compile Include="MvcModels\McvActionModelBinder.cs" />
+    <Compile Include="Commands\AcknowledgeAlertCommand.cs" />
+    <Compile Include="Commands\IAcknowledgeAlertCommand.cs" />
+    <Compile Include="Commands\UserToGroupCommand.cs" />
+    <Compile Include="Commands\IUserToGroupCommand.cs" />
+    <Compile Include="Html\Countries.cs" />
+    <Compile Include="FormsAuthenticationService.cs" />
+    <Compile Include="Html\CreditCardExpiration.cs" />
+    <Compile Include="IFormsAuthentication.cs" />
+    <Compile Include="MvcModels\MvcActionModel.cs" />
+    <Compile Include="Messages\ResetClientHistorgramCommand.cs" />
+    <Compile Include="Queries\AlertsQuery.cs" />
+    <Compile Include="Queries\ApiTrialMetricsQuery.cs" />
+    <Compile Include="Queries\IAdminUserActivityMetricQuery.cs" />
+    <Compile Include="Queries\IDealMetricQuery.cs" />
+    <Compile Include="Queries\ILeadMetricQuery.cs" />
+    <Compile Include="Queries\ILeadChannelMetricQuery.cs" />
+    <Compile Include="Queries\IAgentMetricQuery.cs" />
+    <Compile Include="Queries\IMrrMetricQuery.cs" />
+    <Compile Include="Queries\IApiTrailMetricsQuery.cs" />
+    <Compile Include="Queries\IUserOperatingMetricQuery.cs" />
+    <Compile Include="Queries\IUserDealMetricQuery.cs" />
+    <Compile Include="Queries\IUserProcessingMetricQuery.cs" />
+    <Compile Include="Queries\LeadMetricQuery.cs" />
+    <Compile Include="Queries\DealMetricQuery.cs" />
+    <Compile Include="Queries\AdminUserActivityMetricQuery.cs" />
+    <Compile Include="Queries\LeadChannelMetricQuery.cs" />
+    <Compile Include="Queries\AgentMetricQuery.cs" />
+    <Compile Include="Queries\MrrMetricQuery.cs" />
+    <Compile Include="Queries\UserOperatingMetricQuery.cs" />
+    <Compile Include="Queries\UserProcessingMetricQuery.cs" />
+    <Compile Include="Queries\OperationReportMetricQuery.cs" />
+    <Compile Include="Queries\OperatingMetricQuery.cs" />
+    <Compile Include="Queries\IAlertsQuery.cs" />
+    <Compile Include="Queries\IOperationReportMetricQuery.cs" />
+    <Compile Include="Queries\JobQueueQuery.cs" />
+    <Compile Include="Queries\DealsViewQuery.cs" />
+    <Compile Include="Queries\IApiReportMetrics.cs" />
+    <Compile Include="Queries\IOperatingMetricQuery.cs" />
+    <Compile Include="Queries\IJobQueueMetricsQuery.cs" />
+    <Compile Include="Queries\IJobQueueQuery.cs" />
+    <Compile Include="Queries\INationBuilderPushViewQuery.cs" />
+    <Compile Include="Queries\ILeadReportingQuery.cs" />
+    <Compile Include="Queries\JobQueueMetricsQuery.cs" />
+    <Compile Include="Queries\LeadReportingQuery.cs" />
+    <Compile Include="Queries\LeadsViewQuery.cs" />
+    <Compile Include="Queries\ClientsViewQuery.cs" />
+    <Compile Include="Queries\ChargeEventsQuery.cs" />
+    <Compile Include="Queries\IBatchUsageQuery.cs" />
+    <Compile Include="Queries\IClientsViewQuery.cs" />
+    <Compile Include="Queries\ILeadsViewQuery.cs" />
+    <Compile Include="ReadModel\ContactView.cs" />
+    <Compile Include="ReadModel\DeployedSystem.cs" />
+    <Compile Include="ReadModel\FailedBusMessage.cs" />
+    <Compile Include="ReadModel\JobQueueSummary.cs" />
+    <Compile Include="ReadModel\JobQueueView.cs" />
+    <Compile Include="ReadModel\ClientView.cs" />
+    <Compile Include="ReadModel\LeadView.cs" />
+    <Compile Include="ReadModel\NationBuilderPushView.cs" />
+    <Compile Include="ReadModel\NationBuilderRegistration.cs" />
+    <Compile Include="ReadModel\Prospector\ColumnViewModel.cs" />
+    <Compile Include="ReadModel\Prospector\CommonValueModel.cs" />
+    <Compile Include="ReadModel\Prospector\FactViewModel.cs" />
+    <Compile Include="ReadModel\Prospector\ProspectorViewModel.cs" />
+    <Compile Include="ReadModel\ReadContext.cs" />
+    <Compile Include="ReadModel\ChargeEvent.cs" />
+    <Compile Include="Commands\ChangePriorityCommand.cs" />
+    <Compile Include="Commands\ILogonMustResetPasswordCommand.cs" />
+    <Compile Include="Commands\LogonMustResetPasswordCommand.cs" />
+    <Compile Include="Context Extensions.cs" />
+    <Compile Include="DateTime Extensions.cs" />
+    <Compile Include="ReadModel\LeadMetric.cs" />
+    <Compile Include="Enum\DateRange.cs" />
+    <Compile Include="Enum\JobSource.cs" />
+    <Compile Include="Enum\ReviewType.cs" />
+    <Compile Include="Enum\UserStatus.cs" />
+    <Compile Include="JsonNET\DateTimeConverter.cs" />
+    <Compile Include="JsonNET\DateTimeConverterUtc.cs" />
+    <Compile Include="JsonNET\FormCollectionJsonBinder.cs" />
+    <Compile Include="JsonNET\JsonBoolBitConverter.cs" />
+    <Compile Include="JsonNET\JsonEnumConvertor.cs" />
+    <Compile Include="JsonNET\JsonGuidConverter.cs" />
+    <Compile Include="JsonNET\JsonShortDateConverter.cs" />
+    <Compile Include="JsonNET\ModelBinderExAttribute.cs" />
+    <Compile Include="MimeTypeHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\IChargeEventsQuery.cs" />
+    <Compile Include="SerializationUtils.cs" />
+    <Compile Include="Html\NorthAmericanTerritories.cs" />
+    <Compile Include="Services\DealManagementService.cs" />
+    <Compile Include="Services\DealProcessService.cs" />
+    <Compile Include="Services\DealRefundService.cs" />
+    <Compile Include="UploadRequest.cs" />
+    <Compile Include="UploadResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmailTemplates\AccurateAppend.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccurateAppend.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sales.Contracts\Sales.Contracts.csproj">
+      <Project>{807e31ef-d930-4ec0-a06c-06096e1eb59d}</Project>
+      <Name>Sales.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sales\Sales.csproj">
+      <Project>{c0f0b875-9e8d-43c1-99aa-d050fe6256be}</Project>
+      <Name>Sales</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\NServiceBus.6.5.8\analyzers\dotnet\cs\NServiceBus.Core.Analyzer.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\DQS.2.0.7457.22842\build\DQS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DQS.2.0.7457.22842\build\DQS.targets'))" />
+  </Target>
+  <Import Project="..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets" Condition="Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\DQS.2.0.7457.22842\build\DQS.targets" Condition="Exists('..\packages\DQS.2.0.7457.22842\build\DQS.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

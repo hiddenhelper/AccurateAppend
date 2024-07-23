@@ -1,0 +1,40 @@
+﻿@using AccurateAppend.Core.Definitions
+@model AccurateAppend.Websites.Clients.Areas.Shared.Models.OrderProductsViewPresenter
+
+<div data-bind="visible: filteredProductsByCategory('Phone').length > 2">
+    <div class="heading-box">
+        <h3>Phone Append Services</h3>
+        <p style="margin-top: 7px;">Enhance your list by adding fresh phone numbers.</p>
+    </div>
+    <div class="main-table" style="margin-bottom: 20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th class="d-none d-sm-table-cell">Description</th>
+                    <th class="d-none d-sm-table-cell">Est Matches/Cost</th>
+                    <th class="d-none d-sm-table-cell">Include</th>
+                    <th class="d-sm-none">List Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="d-none d-sm-table-cell" style="padding-top: 15px; vertical-align: top;" colspan="2">
+                        <span style="font-weight: bold;">MULTI-MATCH PHONE APPEND</span>
+                        <p style="margin-top: 5px;">
+                            Multi-match leverages three separate phone sources to return the best number from each source. Up to three unique numbers per record, providing the highest number of opportunities to connect with your prospect.
+                        </p>
+                    </td>
+                    <td class="d-none d-sm-table-cell">
+                        <a href="#" data-bind="visible: multiMatchPhoneIncludedInOrder(), click: removeMultiMatchPhoneIncludedInOrder">Remove<br />All Sources</a>
+                        <a href="#" data-bind="visible: !multiMatchPhoneIncludedInOrder(), click: addMultiMatchPhoneIncludedInOrder">Include<br />All Sources</a>
+                    </td>
+                    <td class="d-sm-none" style="text-align: left;"></td>
+                </tr>
+                <tr style="background-color: #ffffff;" data-bind="css: { selected: filteredProduct('@PublicProduct.PHONE_DA').includeInOrder() }, template: { name: 'product-row-multiMatch', data: filteredProduct('@PublicProduct.PHONE_DA') }"></tr>
+                <tr style="background-color: #ffffff;" data-bind="css: { selected: filteredProduct('@PublicProduct.PHONE_PREM').includeInOrder() }, template: { name: 'product-row-multiMatch', data: filteredProduct('@PublicProduct.PHONE_PREM') }"></tr>
+                <tr style="background-color: #ffffff;" data-bind="css: { selected: filteredProduct('@PublicProduct.PHONE_MOB').includeInOrder() }, template: { name: 'product-row-multiMatch', data: filteredProduct('@PublicProduct.PHONE_MOB') }"></tr>
+                <tr style="background-color: #E8E8E8;" data-bind="css: { selected: filteredProduct('@PublicProduct.PHONE_REV_PREM').includeInOrder() }, template: { name: 'product-row-multiMatch', data: filteredProduct('@PublicProduct.PHONE_REV_PREM') }"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

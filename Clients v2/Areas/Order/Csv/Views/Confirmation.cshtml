@@ -1,0 +1,99 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Order.Csv.Models.OrderConfirmationViewPresenter2
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List"),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Map Your File"),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation", true))
+
+<div class="main-holder">
+  <div class="container">
+    @using (Html.BeginForm(Model.Postback.ActionName, Model.Postback.ControllerName, new {Area = Model.Postback.AreaName, this.Model.CartId}))
+    {
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="table-block order-summary">
+            <div class="heading-box">
+              <h2>Order Summary</h2>
+            </div>
+            <div class="main-table" id="mainTable">
+              <table id="orderSummary">
+                <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Estimated Matches</th>
+                  <th>Unit Cost</th>
+                  <th>Total</th>
+                </tr>
+                </thead>
+                <!-- Enter Quoted Product Data -->
+                <tbody>
+                <!-- ko foreach: products -->
+                <tr data-bind="template: { name: 'orderRowTemplate' }"></tr>
+                <!-- /ko -->
+                <tr>
+                  <td colspan="3">Estimated Total<span data-bind="visible: total <= minimum" style="font-size: .7em" class="pull-right"> (Adjusted to minimum)</span></td>
+                  <td class="text-center" id="order-total">
+                    <span data-bind="text: AccurateAppend.FormatString.formatCurrency(adjustedTotal(), 2)"></span>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="profile-block" style="background-color: white; display: none;" id="paymentForm">
+            <div class="p-4">
+              <h2>Payment Information</h2>
+              @Html.Partial("~/Views/Shared/_DisplayPaymentForm.cshtml", Model.PaymentDetails)
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="widget">
+            <div class="heading-box">
+              <h3>Estimated Total</h3>
+            </div>
+            <div class="holder">
+              <div class="text-holder number-block">
+                <span class="number">
+                  <span data-bind="text: AccurateAppend.FormatString.formatCurrency(adjustedTotal(), 2)"></span>
+                </span>
+                <p>There is a <span data-bind="text: AccurateAppend.FormatString.formatCurrency(minimum(), 2)"></span> USD minimum charge per list</p>
+              </div>
+              <div class="btn-holder">
+                <a href="#" class="btn btn-primary large" id="submit">
+                  <span>Next - Finalize Order</span><i class="icon-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<script type="text/x-kendo-template" id="orderRowTemplate">
+    <td data-bind="text: description" class="text-left"></td>
+    <td data-bind="text: AccurateAppend.FormatString.formatNumber(estimatedMatches, 2)" class="text-center"></td>
+    <td data-bind="text: AccurateAppend.FormatString.formatCurrency(price, 2)" class="text-center"></td>
+    <td Data-bind="text: AccurateAppend.FormatString.formatCurrency(subtotal, 2)" class="text-center"></td>
+</script>
+
+@section HeadContent
+{
+  <script src="~/Areas/Order/Shared/Scripts/Confirmation.js"></script>
+  <script src="~/Scripts/AccurateAppend.StringFormatting.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var viewModel =
+          new Sales.Confirmation.ViewModel("@Model.CartId", { dataUrl:"@Model.DataUrl", walletUrl:"@Model.WalletUrl"});
+      viewModel.load();
+      ko.applyBindings(viewModel);
+    });
+  </script>
+}

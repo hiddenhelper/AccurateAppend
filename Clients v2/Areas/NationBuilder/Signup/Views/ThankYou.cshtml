@@ -1,0 +1,45 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.NationBuilder.Signup.Models.NationBuilderCreateAccountModel
+<div class="carousel">
+  <div class="container">
+    <ul class="slides">
+      <li>
+        <div class="block fixed">
+
+          <div class="order-header">
+            <p>You will now be transferred to NationBuilder so you can authorize Accurate Append to access your nation so we can analyze your contact data to provide you with your free report. If you're not logged into your nation, you'll be asked to do so.</p>
+            <h2 id="countdown" style="margin-top: 20px;"></h2>
+            <a href="#" onclick="redirect()" class="blue-link" style="font-size: .7em;">Click here if you are not automatically redirected</a>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+@section HeadContent {
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      $("#countdown").countdown(redirect, 10);
+    });
+
+    function redirect() {
+      window.location = "@Url.Action("Initiate","AuthHandler", new {area = "NationBuilder", slug = Model.Slug})";
+    }
+
+    $.fn.countdown = function (callback, duration) {
+      var container = $(this[0]).html("You will be redirected to NationBuilder.com in " + duration + " seconds...");
+      var countdown = setInterval(function () {
+        if (--duration) {
+          container.html("You will be redirected to NationBuilder.com in " + duration + " seconds...");
+        } else {
+          clearInterval(countdown);
+          callback.call(container);
+        }
+      }, 1000);
+    };
+
+  </script>
+}

@@ -1,0 +1,67 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+  Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+<style>
+  h5 { font-size: 18px; }
+</style>
+
+@using (var container = Html.Layout().Container())
+{
+  <hr/>
+  <div class="heading-block" style="margin-bottom: 40px;">
+    <h2>Automated Batch Processing - File Structure & Headers</h2>
+  </div>
+  <p>
+    <a href="@Url.Action("BatchApi_FileFormatting", "Documentation", new {Area = "Public"})">< Back to Automated Batch Processing - File Formatting</a>
+  </p>
+
+  using (var row = container.Row())
+  {
+    using (row.Column(10))
+    {
+      <div style="margin-bottom: 30px;">
+        <h3>Field Mapping & Required Fields</h3>
+        <p>Accurate Appends' data processing services require the user's input data to be mapped to our systems' required fields. For example, phone append requires name, street address, city, state, and postal code, so our system needs to determine the location of those fields within a customer's input file. This can be accomplished in one of three ways:</p>
+        <h5>Header Row</h5>
+        <p>
+          A header row must be the first line in the file, and the field count and delimiters must be consistent with the remainder of the file. Files are most reliably mapped when standard header values are used. Some of the standard values our system recognizes are:
+        </p>
+        <ul>
+          <li>First name</li>
+          <li>Middle name</li>
+          <li>Last name</li>
+          <li>Address</li>
+          <li>City</li>
+          <li>State</li>
+          <li>Postal Code</li>
+          <li>Phone Number</li>
+          <li>Email Address</li>
+          <li>Date of Birth</li>
+        </ul>
+        <p>
+          Our system also has the capacity to infer header values based on our experience with thousands of historical file headers processed through our system.
+        </p>
+        <p>
+          For example, first”, “firstname”, “firstname1”, “first_name” would all be inferred as First Name. “Last Name”, “Last Name1”, “last_name”, “LastName”, “LastName1” would be inferred as Last Name.
+        </p>
+        <p>
+          Currently, there are approximately 200 alternate field name mappings, and we can add additional mappings globally if needed. Contact customer support or sales for more information.
+        </p>
+        <p>
+          Inferred headers are useful because they allow you to pass an unformatted file directly to our system with editing it.
+        </p>
+        <p>
+          For example, a customer may receive a daily file from a government entity that contains names and addresses and needs phone numbers appended to it. The file may have non-standard headers like “debtor first name”, and “debtor last name,” and it would be beneficial to leverage the existing header rather than edit each file.
+        </p>
+        <p>Contact <a href="https://www.accurateappend.com/get-in-touch">customer support</a> for more information.</p>
+        <h5>Auto-map</h5>
+        <p>Accurate Append's system has auto-map functionality that examines the contents of your input file, excluding the header, and infers the field type based on a scoring algorithm. The scoring algorithm examines the first 100 populated values in each column and uses pattern matching to identify names, addresses, email addresses, etc. This mapping process is the most flexible because file headers are not required, but is not as reliable as Header Row and Fixed Format.</p>
+        <p><span style="font-weight: bold;">Note: </span>With Header Row and Auto-map, specific column ordering on your file is not required. However Accurate Append's systems will prefer columns found closer to the the start of the record over columns that come later if there is any question of multiple possible inputs for appending (such as discovering more than one phone number in a file using phone validation). Use of a header row can assist our systems in understanding your file and give you the best possible experience.</p>
+        <h5>Fixed Format</h5>
+        <p>Fixed format is the most reliable, and least flexible mapping process. In a fixed format process, our technical staff will build your automation to expect a single, consistent format. This method is typically used by customers who have more technical resources and a common record format, want maximum reliablity and don't need the flexibility of Header Row and Auto-map.</p>
+      </div>
+    }
+  }
+}

@@ -1,0 +1,171 @@
+﻿@using AccurateAppend.Websites.Clients.Data
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@Html.Layout().Promo("Dashboard")
+
+<style>
+    .k-widget.k-datepicker {
+      margin-bottom: 0px;
+    }
+
+    #usageDateRangeWidget .k-widget.k-datepicker.k-header {
+      margin-bottom: 7px;
+    }
+
+    #grid tr td, #grid tr th {
+      overflow: visible;
+    }
+</style>
+
+<div class="dashboard-block">
+    @using (var container = Html.Layout().Container())
+    {
+        using (var row = container.Row())
+        {
+            using (row.Column(3))
+            {
+              <!-- Start Pills -->
+              @Html.Partial("~/Areas/Order/Shared/Views/_OrderPills.cshtml")
+            }
+
+            using (row.Column(9))
+            {
+                <div id="alert" style="display: none; margin: 20px 0 20px 0;"></div>
+                <div class="table-block">
+                    <div class="heading-box">
+                        <h2 class="align-text-top">My Orders</h2>
+                        <div class="form-group" style="margin-bottom: 0" id="dateRange">
+                            <label style="margin-right: 5px;">Start Date</label>
+                            <input id="start" placeholder="Start Date" />
+                            <label style="margin: 0 5px 0 5px;">End Date</label>
+                            <input id="end" placeholder="End Date" />
+                            <a href="#" id="DownloadUsage" title="Download usage to Excel">
+                                <img src="~/Content/AccurateAppend_v7/images/icon-download.png" style="height: 35px; padding-left: 5px; width: 35px;">
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div id="no-orders-message" class="alert alert-info" style="display: none; margin: 20px 0 20px 0;">
+                        No orders found
+                    </div>
+                    <div id="grid"></div>
+                </div>
+                <p id="dataSecurityDisclaimer" style="font-style: italic">For security, our system does not store customer data older than 30 days. Orders more than 30 days old are not available for download.</p>
+            }
+        }
+    }
+
+
+    <div class="modal fade" id="downloadConfirmation" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width: 600px;">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #5CB4E3;">
+                    <h4 class="modal-title">Download</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="downloadPushOutputFile()">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DOWNLOAD USAGE -->
+<div class="modal fade" tabindex="-1" role="dialog" id="downloadUsageModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #5CB4E3;">
+                <h4 class="modal-title">Download Usage</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Download your order history to Excel file for the specified period.</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Date Range</label>
+                        <div class="col-sm-8">
+                            <span id="usageDateRangeWidget"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <a href="#" class="btn btn-primary" onclick="downloadUsage()">Download</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="grid-description-column-template" type="text/x-kendo-template">
+    #= Name # # if(Type === "${OrderTypePush}") { # - #:Slug# # } #
+</script>
+
+
+<script id="grid-status-column-template" type="text/x-kendo-template">
+    <!-- if status == complete then display button else dispaly link-->
+    # if(OrderStatus === "Available") { #
+    <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="\\#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            #:StatusDescription#
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            # if(DownloadLink != null) { #
+            # if (Type === 'Batch' || Type === 'Client' ) { #
+            <a class="dropdown-item" href="\\#" onclick="downloadFile('#:DownloadLink#')">Download File</a>
+            <a class="dropdown-item" href="\\#" onclick="downloadFile('#:ReportDownloadLink#')">Download Processing Report</a>
+            # } else { #
+            <a class="dropdown-item" href="\\#" onclick="displayDownloadConfirmation('#:DownloadLink#','#:Name#','#:Slug#','#:PushStatus#')">Download File</a>
+            # } #
+            # } #
+            # if(ReceiptDownloadLink != null) { #
+            <a class="dropdown-item" href="\\#" onclick="downloadFile('#:ReceiptDownloadLink#')">Download Receipt</a>
+            # } #
+        </div>
+    </div>
+    # } else { #
+    <span>#:StatusDescription#</span>
+    # } #
+</script>
+
+<script id="responsive-column-template" type="text/x-kendo-template">
+    <strong>List Name/Source</strong>
+    <p class="col-template-val">#= Name # # if(Type === "@OrderType.Push") { # #:Slug# # } #</p>
+
+    <strong>Order Date</strong>
+    <p class="col-template-val">#= kendo.toString(kendo.parseDate(DateSubmitted, 'MM/dd/yyyy'), 'MM/dd/yyyy') #</p>
+
+    <strong>Record Count</strong>
+    <p class="col-template-val">#=kendo.toString(data.TotalRecords, "n0")#</p>
+
+    <strong>Status</strong>
+    <p class="col-template-val">#=data.StatusDescription# </p>
+
+    # if(DownloadLink != null) { #
+    # if (Type === 'Batch' || Type === 'Client' ) { #
+    <a class="btn-link" href="\\#" onclick="downloadBatchOutputFile('#:data.DownloadLink#')">Download File</a>
+    <br />
+    <a class="btn-link" href="\\#" onclick="downloadTextReport('#:data.ReportDownloadLink#')">Download Report</a>
+    # } else { #
+    <a class="btn-link" href="\\#" onclick="displayDownloadConfirmation('#:data.DownloadLink#','#:data.Name#','#:data.Slug#','#:data.PushStatus#')">Download File</a>
+    # } #
+    # } #
+</script>
+
+@section HeadContent
+{
+    <script src="@Url.Content("~/Scripts/moment.min.js")"></script>
+    <script src="@Url.Content("~/Areas/Order/Current/Scripts/Index.js")"></script>
+    <script src="@Url.Content("~/Scripts/AccurateAppend.DatePicker.js")"></script>
+    <script type="text/javascript">
+        dataUrl = "/Order/Current/Read";
+    </script>
+
+
+}

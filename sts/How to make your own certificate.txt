@@ -1,0 +1,11 @@
+Use the MakeCert.exe tool (part of the .Net SDK)
+
+makecert -r -n "CN=YOUR CERTIFICATE NAME" -pe -ss my -sr localmachine -sky exchange "PATH TO WRITE CERTFICATE TO.cer"
+
+The certificate will need to be imported into the local machine
+store Personal and Trusted People nodes in order to work in your
+development environment
+
+Use the winhttpcertcfg.exe tool to set permissions on the container to allow your ASP.Net user account access
+This command will check the access for the certificate:
+	winhttpcertcfg -l -c LOCAL_MACHINE\My -s "YOUR CERTIFICATE NAME"

@@ -1,0 +1,74 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using DomainModel.Html
+@model AccurateAppend.Websites.Clients.Areas.Profile.Card.Models.PaymentDetailsModel
+
+@using (Html.Forms().BeginFormRow())
+{
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardHolderFirstName, new {@class = "required"})
+    @Html.TextBoxFor(x => x.CardHolderFirstName, new {@class = "form-control", id = "cardHolderFirstName"})
+    @Html.ValidationMessageFor(x => x.CardHolderFirstName)
+  }
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardHolderLastName, new {@class = "required"})
+    @Html.TextBoxFor(x => x.CardHolderLastName, new {@class = "form-control", id = "cardHolderLastName"})
+    @Html.ValidationMessageFor(x => x.CardHolderLastName)
+  }
+}
+
+@using (Html.Forms().BeginFormRow())
+{
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardHolderBusinessName)
+    @Html.TextBoxFor(x => x.CardHolderBusinessName, new {@class = "form-control", id = "cardHolderBusinessName"})
+    @Html.ValidationMessageFor(x => x.CardHolderBusinessName)
+  }
+}
+
+@using (Html.Forms().BeginFormRow("three"))
+{
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardPostalCode, new {@class = "required"})
+    @Html.TextBoxFor(x => x.CardPostalCode, new {@class = "form-control", id = "cardPostalCode"})
+    @Html.ValidationMessageFor(x => x.CardPostalCode)
+  }
+
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardHolderPhone)
+    @Html.TextBoxFor(x => x.CardHolderPhone, new {@class = "form-control", id = "cardHolderPhone"})
+    @Html.ValidationMessageFor(x => x.CardHolderPhone)
+  }
+}
+
+@using (Html.Forms().BeginFormRow("three"))
+{
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardNumber, new {@class = "required"})
+    @Html.TextBoxFor(x => x.CardNumber, new {@class = "form-control", placeholder = Model.Display, id = "cardNumber"})
+    @Html.ValidationMessageFor(x => x.CardNumber)
+  }
+
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardExpirationMonth, new {@class = "required"})
+    using (Html.Forms().BeginInputBox("select-half-width"))
+    {
+      @Html.DropDownListFor(a => a.CardExpirationMonth, CreditCardExpiration.MonthSelectList, new {@class = "form-control", style = "width:150px;font-family:sans-serif !important;", id = "cardExpirationMonth"})
+      @Html.DropDownListFor(a => a.CardExpirationYear, CreditCardExpiration.YearSelectList, new {@class = "form-control", style = "width:150px;font-family:sans-serif !important;", id = "cardExpirationYear"})
+    }
+    @Html.ValidationMessageFor(x => x.CardExpirationYear)
+  }
+
+  using (Html.Forms().BeginInputHolder())
+  {
+    @Html.LabelFor(x => x.CardCvv, new {@class = "required"})
+    @Html.TextBoxFor(x => x.CardCvv, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.CardCvv)
+  }
+}

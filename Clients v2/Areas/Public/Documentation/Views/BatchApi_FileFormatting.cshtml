@@ -1,0 +1,59 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@{
+    Layout = "~/Views/Shared/AccurateAppend_v7/_Layout.cshtml";
+}
+
+@using (var container = Html.Layout().Container())
+{
+    <hr />
+    <div class="heading-block" style="margin-bottom: 40px;">
+        <h2>Automated Batch Processing - File Formatting</h2>
+    </div>
+    <p><a href="@Url.Action("BatchApiOverview", "Documentation", new {Area = "Public"})">< Back to FTP Batch Processing Setup & Overview</a></p>
+
+    using (var row = container.Row())
+    {
+        using (row.Column(10))
+        {
+            <div style="margin-bottom: 30px;">
+                <h3>File Format Overview</h3>
+                <p>
+                    Accurate Append’s Batch Processing system accepts files containing at least one, and up to 1 million rows. As of this date, our system will accept text/csv files and Excel files.
+                </p>
+                <h5>Text / CSV</h5>
+                <ul>
+                    <li>Accurate Appends' system supports .csv and .txt file extensions.</li>
+                    <li>Files must be formatted in using ASCII, UTF-8 or ISO-8559-1 character encoding.</li>
+                    <li>Each file must contain at least one row.</li>
+                    <li>CTRL-LF characters are required as a row delimiter.</li>
+                    <li>Each row must contain at least one field.</li>
+                    <li>All rows must contain the same number of fields.</li>
+                    <li>Fields must be delimited using comma, tab, or pipe.</li>
+                    <li>Eliminate duplicate records to avoid extra costs</li>
+                    <li>The output will be returned using input delimiter but can also be configured to accept one delimiter and transform into another.</li>
+                </ul>
+                <h5>Excel</h5>
+                <ul>
+                    <li>Accurate Appends' system supports .xls and .xlsx file extensions.</li>
+                    <li>Excel files will automatically be converted to an equivalent CSV to being processed.</li>
+                    <li>Only the first tab in an Excel file will be converted to a CSV. All other tabs will be discarded.</li>
+                    <li>All special formatting will be lost.</li>
+                    <li>The first tab must contain at least one row.</li>
+                    <li>Each row must contain at least one field.</li>
+                    <li>All rows must contain the same number of fields.</li>
+                    <li>Eliminate duplicate records to avoid extra costs</li>
+                    <li>The output will be returned in a CSV file with one tab.</li>
+                </ul>
+                <h3>File Structure & Headers</h3>
+                <p>For specific file formatting instructions, <a href="@Url.Action("BatchApi_FileFormatting_Header", "Documentation", new {Area = "Public"})">click here.</a></p>
+                <h3>Zip / Compression</h3>
+                <p>Accurate Append’s Batch Processing system accepts compressed folders with a file extension of .zip. Only the first file in the archive will be processed, and all other files will be ignored.</p>
+                <h3>Encryption</h3>
+                <p>Accurate Append’s Batch Processing system accepts PGP encrypted files. A PGP file must be sent using the extension PGP, and only text and csv files are accepted. PGP encryption should not be used with Excel or Compressed files.</p>
+                <p>
+                    Clients may elect to encrypt their file using our public key. To download our public key, <a href="/Content/Files/AA_public.key.zip">click here.</a>
+                </p>
+            </div>
+        }
+    }
+}

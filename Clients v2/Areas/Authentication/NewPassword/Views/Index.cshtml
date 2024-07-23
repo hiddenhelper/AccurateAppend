@@ -1,0 +1,47 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Authentication.NewPassword.Models.ForcedPasswordChangeModel
+<section class="page-tab">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-6" style="margin-bottom: 40px;">
+        @using (Html.BeginForm("Index", "NewPassword", new {area = "Authentication"}, FormMethod.Post, new {@class = "settings-form", id = "settings"}))
+        {
+
+          using (Html.Forms().BeginFormRow())
+          {
+            using (Html.Forms().BeginInputHolder())
+            {
+              @Html.LabelFor(x => x.NewPassword, new { @class = "required" })
+              @Html.PasswordFor(x => x.NewPassword, new { @class = "form-control" })
+              @Html.ValidationMessageFor(x => x.NewPassword)
+            }
+          }
+
+          using (Html.Forms().BeginFormRow())
+          {
+            using (Html.Forms().BeginInputHolder())
+            {
+              @Html.LabelFor(x => x.ConfirmPassword, new { @class = "required" })
+              @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+              @Html.ValidationMessageFor(x => x.ConfirmPassword)
+            }
+          }
+
+          using (Html.Forms().BeginFormRow())
+          {
+            using (Html.Forms().BeginInputHolder())
+            {
+              <input type="submit" value="Update" class="btn btn-default"/>
+            }
+          }
+          
+        }
+      
+      </div>
+
+    </div>
+
+  </div>
+</section>

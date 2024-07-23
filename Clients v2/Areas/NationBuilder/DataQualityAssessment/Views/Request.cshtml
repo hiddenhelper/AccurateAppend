@@ -1,0 +1,80 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.NationBuilder.DataQualityAssessment.Models.ConsultationRequestModel
+
+@Html.Layout().Promo("Data Quality Assessment")
+
+@using (var container = Html.Layout().Container())
+{
+  using (var row = container.Row())
+  {
+    using (row.Column(8, style: "padding: 30px 0 30px 0"))
+    {
+      <h1 style="margin-bottom: 20px;">Impressive Lists!</h1>
+      <h3>Your database is larger than average and you qualify for a free review with a data quality consultant.</h3>
+      <ul class="ticks" style="margin: 30px 0 40px 20px;">
+        <li>We'll examine the completeness of your list</li>
+        <li>We'll provide estimates of how many records we can update</li>
+        <li>We'll provide you with expert advice</li>
+      </ul>
+
+      using (Html.BeginForm("Request", "DataQualityAssessment", new {area = "NationBuilder"}, FormMethod.Post))
+      {
+        using (var r = container.Row())
+        {
+          using (r.Column())
+          {
+            using (Html.Forms().BeginFormRow())
+            {
+              @Html.LabelFor(x => x.Name, new {@class = "required"})
+              @Html.TextBoxFor(x => x.Name, new {@class = "form-control", style = "width: 350px;"})
+              @Html.ValidationMessageFor(x => x.Name)
+            }
+          }
+        }
+
+        using (var r = container.Row())
+        {
+          using (r.Column(style: "padding-top: 20px;"))
+          {
+            using (Html.Forms().BeginFormRow())
+            {
+              @Html.LabelFor(x => x.Phone, new {@class = "required"})
+              @Html.TextBoxFor(x => x.Phone, new {@class = "form-control", style = "width: 350px;"})
+              @Html.ValidationMessageFor(x => x.Phone)
+            }
+          }
+        }
+
+        using (var r = container.Row())
+        {
+          using (r.Column(style: "padding: 20px 0 20px 15px;"))
+          {
+            using (Html.Forms().BeginFormRow())
+            {
+              @Html.LabelFor(x => x.Comments, new {@class = "required"})
+              @Html.TextAreaFor(x => x.Comments, new {@class = "form-control", style = "width: 350px;height: 100px;"})
+              @Html.ValidationMessageFor(x => x.Comments)
+            }
+          }
+        }
+
+        using (var r = container.Row())
+        {
+          using (r.Column(style: "padding-top: 10px;"))
+          {
+            using (Html.Forms().BeginFormRow())
+            {
+              {
+                <input class="btn btn-primary" value="Get In Touch"/>
+              }
+            }
+          }
+        }
+
+        <p style="margin-top: 20px;">
+          @Html.ActionLink("No, thank you. Take me to my lists.", "Suppress", "DataQualityAssessment", new {area = "NationBuilder", cartId = Model.CartId}, new {@class="btn btn-secondary"})
+        </p>
+      }
+    }
+  }
+ }

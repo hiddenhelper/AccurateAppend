@@ -1,0 +1,12 @@
+﻿https://coldweather.nationbuilder.com
+
+Uid:	7cbc603658586277d48c5d31bf1dd03d9389f7ecfc2cccaeb7124ad0d08f114d
+Secret	11d91669389f480ffb321251d7206899170e2d5bf7534b2ee7ec980d045fffdd
+Client  http://localhost:25703/Home/AuthHandler
+
+Admin Authorize Page:
+https://coldweather.nationbuilder.com/oauth/authorize?response_type=code&client_id=7cbc603658586277d48c5d31bf1dd03d9389f7ecfc2cccaeb7124ad0d08f114d&redirect_uri=http://localhost:25703/Home/AuthHandler
+
+code    c2d25b86bf6809aa183c19a388876468c791ad966d40bc7f33ecfd56a49491af <= 1 time use
+
+Active Token: a4e00875291ca41df5e22d24628c39d4d16954e8f205b8d5ff0d2b52a1ee2a1f

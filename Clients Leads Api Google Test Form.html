@@ -1,0 +1,55 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        function send() {
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:50830/Public/LeadsApi/Google",
+                data: {
+                    "HandshakeKey": "CF1311A0-6332-4CF1-A2E2-3B02AA64771D",
+                    "lead_id": "test_tangram_lead_access_137939233_100575869656_1576880906228",
+                    "user_column_data": [
+                        {
+                            "column_name": "Full Name",
+                            "string_value": "dummy_value",
+                            "column_id": "FULL_NAME"
+                        },
+                        {
+                            "column_name": "User Email",
+                            "string_value": "dummy_value",
+                            "column_id": "EMAIL"
+                        },
+                        {
+                            "column_name": "User Phone",
+                            "string_value": "dummy_value",
+                            "column_id": "PHONE_NUMBER"
+                        }
+                    ],
+                    "api_version": "1.0",
+                    "form_id": 100575869656,
+                    "campaign_id": 0,
+                    "google_key": "Google Ads",
+                    "is_test": true,
+                    "gcl_id": "test_tangram_lead_access_137939233_100575869656_1576880906228"
+                }
+            })
+                .done(function (msg) {
+                    alert("Data Saved: " + msg);
+                });
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="submit" value="POST" onclick="send()">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+﻿@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using Newtonsoft.Json
+@model AccurateAppend.Websites.Clients.Areas.Shared.Models.OrderProductsViewPresenter
+
+@functions
+{
+
+    private static string FormatData(object value)
+    {
+        return JsonConvert.SerializeObject(value);
+    }
+
+}
+
+<style>
+    .modal-backdrop {
+      opacity: 0.5 !important;
+    }
+</style>
+
+@Html.Layout().Promo("Cost Estimate")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List"),
+  new PageLayoutHtmlHelper.Step("Cost Estimate", true),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation"))
+
+@using (Html.BeginForm(Model.Postback.ActionName, Model.Postback.ControllerName, new { Area = Model.Postback.AreaName }))
+{
+    @Html.Hidden("RecordCount", Model.Order.RecordCount)
+}
+<div class="main-holder" style="padding: 37px 0">
+    <div class="container">
+        <h2 style="margin-bottom: 40px;">@Model.Order.ListName (@Model.Order.RecordCount.ToString("N0") records)</h2>
+        <div class="row">
+            <div class="col-12 col-lg-8">
+
+                <div style="display: none;" id="alert"></div>
+                <div class="table-block select-products">
+                    @* NATIONBUILDER and PUBLIC use a different set of phone products so specific views are used  *@
+                    @Html.Partial(Model.OrderViewPath, Model)
+
+                    <div class="heading-box">
+                        <h3>Email Append Services</h3>
+                        <p style="margin-top: 7px;">Enhance your list with fresh, verified email addresses.</p>
+                    </div>
+                    <div class="main-table" style="margin-bottom: 20px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="d-none d-sm-table-cell">Description</th>
+                                    <th class="d-none d-sm-table-cell">Est Matches/Cost</th>
+                                    <th class="d-none d-sm-table-cell">Include</th>
+                                    <th class="d-sm-none">List Details</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: filteredProductsByCategory('Email')">
+                                <tr data-bind="css: { selected: includeInOrder() }, template: { name: 'product-row' }"></tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <div class="heading-box">
+                        <h3>Other Services</h3>
+                        <p style="margin-top: 7px;">Enhance and validate your list with demographics and validation services.</p>
+                    </div>
+                    <div class="main-table" style="margin-bottom: 20px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="d-none d-sm-table-cell">Description</th>
+                                    <th class="d-none d-sm-table-cell">Est Matches/Cost</th>
+                                    <th class="d-none d-sm-table-cell">Include</th>
+                                    <th class="d-sm-none">List Details</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: filteredProductsByCategory('Other')">
+                                <tr data-bind="css: { selected: includeInOrder() }, template: { name: 'product-row' }"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="widget">
+                    <div class="heading-box">
+                        <h3>Estimated Total Cost</h3>
+                    </div>
+                    <div class="holder">
+                        <div class="text-holder number-block">
+                            <span class="number" data-bind="text: AccurateAppend.FormatString.formatCurrency(total(), 2)"></span>
+                            <p>There is a $@Model.Order.OrderMinimum USD minimum charge per list</p>
+                        </div>
+                        <div class="btn-holder" style="margin-bottom: 20px;">
+                            <a href="#" class="btn btn-primary large" data-bind="click: submit">
+                                <span>Next</span><i class="icon-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="text-holder number-block">
+                            <p>Match rate estimates are based on similar files and may vary. You will be billed for only actual matches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="product-details-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: 600px;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #5CB4E3;">
+                <h5 class="modal-title" style="color: #ffffff"></h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="font-family: Arial;"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bind="click: addProductToOrder">Include In Order</button>
+                <input type="hidden" name="productKey" value="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="broadcasting-notice" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 600px;">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #5CB4E3;">
+                <h5 class="modal-title">Email Broadcasting Notice</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="font-family: Arial;">
+                <p>
+                    Email sender reputation is a top priority for NationBuilder, Mail Chimp, Constant Contact and some other broadcasting services and they have become more particular about the type of email campaigns that can be transmitted from their systems.
+                </p>
+                <p>
+                    All email addresses appended through our system are validated using an ISP ping and other validation logic, but this does not guarantee broadcasters will transmit to the appended addresses and it's the customer's responsibility to familiarize themselves with their broadcaster's broadcasting policies.
+                </p>
+                <p>
+                    For this reason, <strong>we cannot guarantee broadcasters will send the emails verified or appended by our system.</strong>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: function (data, event) { emailBroadcastPolicyStatement(false); return true; }">Cancel</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" data-bind="click: function (data, event) { emailBroadcastPolicyStatement(true); return true; }">I Agree</button>
+                <input type="hidden" name="productKey" value="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="product-row" type="text/x-kendo-template">
+    <td class="d-none d-sm-table-cell" style="vertical-align: top; padding-top: 10px;">
+        <span data-bind="text: title" style="font-weight: bold;"></span>
+        <p style="margin-top:5px;"><span data-bind="text: description" style="font-size: .8em;"></span><a href="#" data-bind="click: displayProductInfo" style="font-size: .8em; margin-left: 5px;">More Info</a></p>
+    </td>
+    @*<td class="d-none d-sm-table-cell" data-bind="text: AccurateAppend.FormatString.formatNumber(parseFloat(estMatches)) + '&nbsp;&#64; ' + AccurateAppend.FormatString.formatCurrency(cost, 4) + '/Match'"></td>*@
+    <td class="d-none d-sm-table-cell">
+        <span style="display: block; color: #282828" data-bind="text: AccurateAppend.FormatString.formatCurrency(subtotal, 2)"></span>
+        <span style="display: block; font-size: .9em;" data-bind="text: AccurateAppend.FormatString.formatNumber(parseFloat(estMatches)) + '&nbsp;&#64; ' + AccurateAppend.FormatString.formatCurrency(cost, 4) + '/Match'"></span>
+    </td>
+    <td class="d-none d-sm-table-cell">
+        <button href="#" class="btn btn-secondary btn-sm" style="min-width: 100px;" data-bind="visible: includeInOrder(), click: remove">Remove</button>
+        <button href="#" class="btn btn-primary btn-sm" style="min-width: 100px;" data-bind="visible: !includeInOrder(), click: add">Add</button>
+    </td>
+    <td class="d-sm-none" style="text-align: left;">
+        <label style="font-size: .9em; font-weight: bold;">Product</label>
+        <p data-bind="text: title, click: displayProductInfo" style="display: inline;"></p>
+        <label style="font-size: .9em; font-weight: bold;">Estimated Matches</label>
+        <p data-bind="text: AccurateAppend.FormatString.formatNumber(parseFloat(estMatches)) + '&nbsp;&#64; ' + AccurateAppend.FormatString.formatCurrency(cost, 4) + '/Match'"></p>
+        <label style="font-size: .9em; font-weight: bold;">Cost</label>
+        <p data-bind="text: AccurateAppend.FormatString.formatCurrency(subtotal, 2)"></p>
+        <p>
+            <button href="#" class="btn btn-secondary btn-sm" style="min-width: 100px;" data-bind="visible: includeInOrder(), click: remove">Remove</button>
+            <button href="#" class="btn btn-primary btn-sm" style="min-width: 100px;" data-bind="visible: !includeInOrder(), click: add">Add</button>
+        </p>
+    </td>
+</script>
+
+<script id="product-row-multiMatch" type="text/x-kendo-template">
+    <td class="d-none d-sm-table-cell" style="vertical-align: top; padding-top: 10px;">
+        <span data-bind="text: title" style="font-weight: bold;"></span>
+        <p style="margin-top: 5px;"><span data-bind="text: description" style="font-size: .8em;"></span><a href="#" data-bind="click: displayProductInfo" style="font-size: .8em; margin-left: 5px;">More Info</a></p>
+    </td>
+    @*<td class="d-none d-sm-table-cell" data-bind="text: AccurateAppend.FormatString.formatNumber(parseFloat(estMatches)) + '&nbsp;&#64; ' + AccurateAppend.FormatString.formatCurrency(cost, 4) + '/Match'"></td>*@
+    <td class="d-none d-sm-table-cell">
+        <span style="display: block; color: #282828" data-bind="text: AccurateAppend.FormatString.formatCurrency(subtotal, 2)"></span>
+        <span style="display: block; font-size: .9em;" data-bind="text: AccurateAppend.FormatString.formatNumber(parseFloat(estMatches)) + '&nbsp;&#64; ' + AccurateAppend.FormatString.formatCurrency(cost, 4) + '/Match'"></span>
+    </td>
+    <td class="d-none d-sm-table-cell">
+        <button href="#" class="btn btn-secondary btn-sm" style="min-width: 100px;" data-bind="visible: includeInOrder(), click: remove">Remove</button>
+        <button href="#" class="btn btn-primary btn-sm" style="min-width: 100px;" data-bind="visible: !includeInOrder(), click: add">Add</button>
+    </td>
+    <td class="d-sm-none" style="text-align: left;">
+        <label style="font-size: .9em; font-weight: bold;">Product</label>
+        <p data-bind="text: title, click: displayProductInfo" style="display: inline;"></p>
+        <label style="font-size: .9em; font-weight: bold;">Estimated Matches</label>
+        <p data-bind="text: AccurateAppend.FormatString.formatNumber(parseFloat(estMatches)) + '&nbsp;&#64; ' + AccurateAppend.FormatString.formatCurrency(cost, 4) + '/Match'"></p>
+        <label style="font-size: .9em; font-weight: bold;">Cost</label>
+        <p data-bind="text: AccurateAppend.FormatString.formatCurrency(subtotal, 2)"></p>
+        <p>
+            <a href="#" class="btn btn-secondary" data-bind="visible: includeInOrder(), click: remove">Remove from Order</a>
+            <a href="#" class="btn btn-primary" data-bind="visible: !includeInOrder(), click: add">Add to Order</a>
+        </p>
+    </td>
+</script>
+
+
+@section HeadContent
+{
+  <script src="@Url.Content("~/Scripts/app/shared/DisplayProducts.js")"></script>
+  <script src="@Url.Content("~/Scripts/AccurateAppend.StringFormatting.js")"></script>
+    <script type="text/javascript">
+    var PostBack_AreaName = "@Model.Postback.AreaName";
+    var OrderId = "@Model.Order.OrderId";
+    var OrderMinimum = @Model.Order.OrderMinimum;
+    var OrderRecordCount = '@Model.Order.RecordCount';
+    var ListName = '@Model.Order.ListName.ToUpper()';
+
+    // construct object that will be sent back to controller as json
+    // add additional parameters here
+    var OrderExtensionData = {
+      @foreach (var dataItem in Model.Order.ExtensionData())
+      {
+        @Html.Raw(dataItem.Key + ":" + FormatData(dataItem.Value) + ",")
+      }
+    };
+    </script>
+}

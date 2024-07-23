@@ -1,0 +1,159 @@
+﻿@using DomainModel.Html
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@model AccurateAppend.Websites.Clients.Areas.Shared.Models.PaymentDetailsModel
+
+
+@using (var container = Html.Layout().Container())
+{
+    <hr />
+
+    using (var row = container.Row())
+    {
+        using (row.Column(width: 12))
+        {
+            <h2> Update Payment Details</h2>
+            <p style="margin-bottom: 20px;">Please use the form below to update the credit card information for your account. Customer support will be notified after you submit the form.</p>
+           
+        }
+    }
+
+    using (Html.Forms().BeginForm("Update", "Payment", new { area = "Public", id = "paymentForm" }))
+    {
+
+
+        using (var row = container.Row("mb-5"))
+        {
+            using (row.Column())
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardHolderFirstName, new { @class = "required" })
+                    @Html.TextBoxFor(x => x.CardHolderFirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardHolderFirstName)
+                }
+            }
+            using (row.Column())
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardHolderLastName, new { @class = "required" })
+                    @Html.TextBoxFor(x => x.CardHolderLastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardHolderLastName)
+                }
+            }
+
+            using (row.Column(width: 12))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardHolderBusinessName)
+                    @Html.TextBoxFor(x => x.CardHolderBusinessName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardHolderBusinessName)
+                }
+            }
+
+            using (row.Column(width: 4))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardPostalCode, new { @class = "required" })
+                    @Html.TextBoxFor(x => x.CardPostalCode, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardPostalCode)
+                }
+            }
+
+            using (row.Column(width: 4))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardHolderPhone)
+                    @Html.TextBoxFor(x => x.CardHolderPhone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardHolderPhone)
+                }
+            }
+
+
+            using (row.Column(width: 6))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardNumber, new { @class = "required" })
+                    @Html.TextBoxFor(x => x.CardNumber, new { @class = "form-control", placeholder = Model.Display })
+                    @Html.ValidationMessageFor(x => x.CardNumber)
+                }
+            }
+
+            using (row.Column(width: 4))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardExpirationMonth, new { @class = "required" })
+                    using (Html.Forms().BeginInputBox("select-half-width"))
+                    {
+                        @Html.DropDownListFor(a => a.CardExpirationMonth, CreditCardExpiration.MonthSelectList, new { @class = "form-control", style = "margin-right:5px;" })
+                        @Html.DropDownListFor(a => a.CardExpirationYear, CreditCardExpiration.YearSelectList, new { @class = "form-control" })
+                    }
+                    @Html.ValidationMessageFor(x => x.CardExpirationYear)
+                }
+            }
+
+            using (row.Column(width: 2))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    @Html.LabelFor(x => x.CardCvv, new { @class = "required" })
+                    @Html.TextBoxFor(x => x.CardCvv, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.CardCvv)
+
+                }
+            }
+
+            using (row.Column(width: 12))
+            {
+                using (Html.Forms().BeginInputHolder())
+                {
+                    <input type="submit" value="Update" class="btn btn-default" />
+                    @Html.HiddenFor(a => a.ApplicationId)
+                    @Html.HiddenFor(a => a.UserId)
+                    @Html.HiddenFor(a => a.CardState)
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@section HeadContent
+{
+    <script type="text/javascript" defer>
+        $(document).ready(function () {
+@if (Model.CardCountry == Countries.UnitedStates || Model.CardCountry == Countries.Canada || Model.CardCountry == null)
+        {
+          <text>$("input[name=CardStatePlainText]").hide();</text>
+          <text>$("select[name=CardStateAbbreviation]").show();</text>
+        }
+        else
+        {
+          <text>$("input[name=CardStatePlainText]").show();</text>
+          <text>$("select[name=CardStateAbbreviation]").hide()</text>
+        }
+
+            $("select[name=CardCountry]").change(function () {
+                if ($(this).val() == "@Countries.UnitedStates" || $(this).val() == "@Countries.Canada") {
+                    $("input[name=CardStatePlainText]").hide();
+                    $("select[name=CardStateAbbreviation]").show();
+                    $("select[name=CardStateAbbreviation]").val('');
+                    $("select[name=CardStateAbbreviation]").parent().show();
+                } else {
+                    $("input[name=CardStatePlainText]").show();
+                    $("select[name=CardStateAbbreviation]").show();
+                    $("select[name=CardStateAbbreviation]").parent().hide();
+                }
+            });
+
+        });
+
+    </script>
+}

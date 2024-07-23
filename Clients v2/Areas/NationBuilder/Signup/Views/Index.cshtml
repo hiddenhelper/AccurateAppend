@@ -1,0 +1,68 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.NationBuilder.Signup.Models.NationBuilderCreateAccountModel
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+
+
+<section class="promo-section">
+    <div class="bg-stretch" id="bg-stretch1542001375637735"></div>
+    @using (var container = Html.Layout().Container())
+    {
+        using (var row = container.Row())
+        {
+            using (row.Column(width: 7))
+            {
+                <h1 style="margin-bottom: 25px; text-align: center;">Use your NationBuilder lists<br /> to reach more voters and donors</h1>
+
+            }
+
+            using (row.Column(width: 5))
+            {
+                <div class="get-started">
+                    <div class="heading-block">
+                        <p>Enter your nationBuilder URL to browse your NationBuilder lists and get a FREE cost estimate.</p>
+                    </div>
+                    @using (this.Html.Forms().BeginForm("Index", "Signup", new { area = "NationBuilder" }))
+                    {
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control required", placeholder = "Email" })
+                            @Html.ValidationMessageFor(a => a.Email, String.Empty)
+                        }
+
+                        using (Html.Forms().BeginFormRow("pt-3"))
+                        {
+                            @Html.TextBoxFor(x => x.Slug, new { @class = "form-control required", placeholder = "Your Nation Name" })
+                            @Html.ValidationMessageFor(a => a.Slug, String.Empty)
+                        }
+
+                        using (Html.Forms().BeginFormRow())
+                        {
+                            <input type="submit" value="Get Started"/>
+                        }
+                    }
+                </div>
+            }
+
+            
+        }
+    }
+
+</section>
+
+@using (var container = Html.Layout().Container())
+{
+    using (var row = container.Row())
+    {
+       using (row.Column(width: 12, target: Target.Md))
+            {
+                <ul class="ticks" style="margin: 40px 0 40px 0; margin-left: 20px;">
+                    <li>We'll show you which emails are causing you SPAM trouble</li>
+                    <li>Add new email addresses and phone numbers to fill holes in your data and help you reach more prospects and voters</li>
+                    <li>Improve your Facebook ad buying ROI with the data you need for laser-targeted custom audiences</li>
+                    <li>Save time and money by verifying that your list members have correct phone and postal contact info</li>
+                    <li>Services for U.S. and Canadian campaigns and nonprofits</li>
+                    <li>Results automatically uploaded to your nation and also available as a separate .csv download so they can be used outside of NationBuilder</li>
+                    <li>Manage multiple nations from a single account</li>
+                </ul>
+            }
+    }
+}

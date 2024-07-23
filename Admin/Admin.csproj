@@ -1,0 +1,1535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props" Condition="Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98560683-47DF-415E-BA31-124A93ABF151}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccurateAppend.Websites.Admin</RootNamespace>
+    <AssemblyName>AccurateAppend.Websites.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <MvcBuildViews>false</MvcBuildViews>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\AccurateAppend.Websites.Admin.XML</DocumentationFile>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsAssertsToContractsCheckBox>True</CodeContractsAssertsToContractsCheckBox>
+    <CodeContractsRedundantTests>True</CodeContractsRedundantTests>
+    <CodeContractsMissingPublicRequiresAsWarnings>True</CodeContractsMissingPublicRequiresAsWarnings>
+    <CodeContractsMissingPublicEnsuresAsWarnings>False</CodeContractsMissingPublicEnsuresAsWarnings>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestAssumptionsForCallees>False</CodeContractsSuggestAssumptionsForCallees>
+    <CodeContractsSuggestRequires>False</CodeContractsSuggestRequires>
+    <CodeContractsNecessaryEnsures>True</CodeContractsNecessaryEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsSuggestReadonly>True</CodeContractsSuggestReadonly>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsSQLServerOption />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsSkipAnalysisIfCannotConnectToCache>False</CodeContractsSkipAnalysisIfCannotConnectToCache>
+    <CodeContractsFailBuildOnWarnings>False</CodeContractsFailBuildOnWarnings>
+    <CodeContractsBeingOptimisticOnExternal>True</CodeContractsBeingOptimisticOnExternal>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <DocumentationFile>bin\AccurateAppend.Websites.Admin.XML</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <CodeContractsInferEnsuresAutoProperties>True</CodeContractsInferEnsuresAutoProperties>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccurateAppend.Accounting, Version=3.9.7465.12882, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Accounting.3.9.7465.12882\lib\net48\AccurateAppend.Accounting.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ChargeProcessing, Version=1.0.7440.26991, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ChargeProcessing.Core.1.0.7440.26991\lib\net48\AccurateAppend.ChargeProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ChargeProcessing.Contracts, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ChargeProcessing.Contracts.1.1.0\lib\net48\AccurateAppend.ChargeProcessing.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ChargeProcessing.Handlers, Version=1.0.7465.11157, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ChargeProcessing.Handlers.1.0.7465.11157\lib\net48\AccurateAppend.ChargeProcessing.Handlers.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ColumnMapper, Version=3.1.7440.25474, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ColumnMapper.3.1.7440.25474\lib\net48\AccurateAppend.ColumnMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ColumnMapper.LocalData, Version=1.0.7440.25476, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ColumnMapper.LocalData.1.0.7440.25476\lib\net48\AccurateAppend.ColumnMapper.LocalData.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core, Version=5.0.7464.24414, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Common.5.0.7464.24414\lib\netstandard2.0\AccurateAppend.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Collections, Version=2.0.7464.24416, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Collections.2.0.7464.24416\lib\netstandard2.0\AccurateAppend.Core.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.ComponentModel, Version=1.1.7464.24415, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-ComponentModel.1.1.7464.24415\lib\net48\AccurateAppend.Core.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Core.Configuration, Version=1.0.7453.20010, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Configuration.1.0.7453.20010\lib\net48\AccurateAppend.Core.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.CustomerManagement.Contracts, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-CustomerManagement.Contracts.1.0.3\lib\net48\AccurateAppend.CustomerManagement.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Data, Version=3.5.7464.24418, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Core-Data.3.5.7464.24418\lib\net48\AccurateAppend.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobManagement.Contracts, Version=1.3.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobManagement.Contracts.1.3.1.3\lib\net48\AccurateAppend.JobManagement.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing, Version=3.5.7453.20008, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.3.5.7453.20008\lib\net48\AccurateAppend.JobProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing.Orchestration, Version=1.2.7464.15138, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.Orchestration.1.2.7464.15138\lib\net48\AccurateAppend.JobProcessing.Orchestration.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.JobProcessing.Orchestration.LocalData, Version=1.0.7453.20011, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-JobProcessing.Orchestration.LocalData.1.0.7453.20011\lib\net48\AccurateAppend.JobProcessing.Orchestration.LocalData.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Messaging, Version=1.4.7334.19215, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Messaging.1.4.7334.19215\lib\net48\AccurateAppend.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Operations, Version=1.0.7440.27154, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Operations.Core.1.0.7440.27154\lib\net48\AccurateAppend.Operations.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Operations.Contracts, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Operations.Contracts.1.0.0.8\lib\net48\AccurateAppend.Operations.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Operations.Handlers, Version=1.0.7440.27155, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Operations.Handlers.1.0.7440.27155\lib\net48\AccurateAppend.Operations.Handlers.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Pgp, Version=1.1.7440.26160, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Pgp.1.1.7440.26160\lib\net48\AccurateAppend.Pgp.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Plugin.Storage, Version=1.0.7440.25241, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-PluginStorage.1.0.7440.25241\lib\net48\AccurateAppend.Plugin.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Security, Version=3.5.7464.24419, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-Security.3.5.7464.24419\lib\net48\AccurateAppend.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.Standardization, Version=1.0.7457.22841, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Standardization.1.0.7457.22841\lib\netstandard2.0\AccurateAppend.Standardization.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ZenDesk, Version=1.0.7459.16072, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ZenDesk.Integration.1.0.7459.16072\lib\net48\AccurateAppend.ZenDesk.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ZenDesk.Contracts, Version=1.2.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ZenDesk.Contracts.1.2.0.3\lib\net48\AccurateAppend.ZenDesk.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="AccurateAppend.ZenDesk.Handlers, Version=1.0.7375.15114, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AccurateAppend-ZenDesk.Handlers.1.0.7375.15114\lib\net48\AccurateAppend.ZenDesk.Handlers.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AuthorizeNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AuthorizeNet.2.0.1\lib\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.OpenPgp, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.OpenPgp.1.8.1.1\lib\net20\BouncyCastle.OpenPgp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DAL, Version=2.14.7457.22841, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DAL.2.14.7457.22841\lib\net48\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="DataStreams, Version=5.27.0.0, Culture=neutral, PublicKeyToken=9c9b03c227e1bea6, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataStreams.5.27.0\lib\net452\DataStreams.dll</HintPath>
+    </Reference>
+    <Reference Include="DQS, Version=2.0.7457.22842, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DQS.2.0.7457.22842\lib\net48\DQS.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.1, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.Extended.6.1.1\lib\net451\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EventLogger, Version=1.12.7440.24332, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventLogger.1.12.7440.24332\lib\net48\EventLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="EventLogger.AzureQueue, Version=1.0.7440.24336, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EventLogger.Azure.1.0.7440.24336\lib\net48\EventLogger.AzureQueue.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.Common, Version=4.1.2.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\GleamTech.Common.4.1.2\lib\net40\GleamTech.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.DocumentUltimate, Version=5.0.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\GleamTech.DocumentUltimate.5.2.2\lib\net40\GleamTech.DocumentUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.FileUltimate, Version=7.2.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\GleamTech.FileUltimate.7.3.7\lib\net40\GleamTech.FileUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.ImageUltimate, Version=4.0.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\GleamTech.ImageUltimate.4.1.1\lib\net40\GleamTech.ImageUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="GleamTech.VideoUltimate, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a05198837413a6d8, processorArchitecture=MSIL">
+      <HintPath>..\packages\GleamTech.VideoUltimate.2.1.6\lib\net40\GleamTech.VideoUltimate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImpressionWise, Version=1.1.7451.23269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImpressionWise.1.1.7451.23269\lib\net471\ImpressionWise.dll</HintPath>
+    </Reference>
+    <Reference Include="Integration.NationBuilder, Version=3.7.7440.26840, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Integration-NationBuilder.3.7.7440.26840\lib\net48\Integration.NationBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2019.7.0.21100, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2019.7.0\lib\net40\IronPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronPdf.Core, Version=2019.6.5.41, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDF.Core.2019.6.5.41\lib\netstandard2.0\IronPdf.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.NET-Encryption-Library, Version=1.15.0.0, Culture=neutral, PublicKeyToken=dccbd7ce7d6a58c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\KellermanEncryption.4.0.0.0\lib\net4\KellermanSoftware.NET-Encryption-Library.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kendo.Mvc, Version=2013.2.716.340, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Kendo.2013.2.716.340\lib\net40\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SqlServer, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SqlServer.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=3.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.3.0.4\lib\net461\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net461\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.19\lib\net461\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NServiceBus.Callbacks, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.Callbacks.2.0.2\lib\net452\NServiceBus.Callbacks.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.6.5.8\lib\net452\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.NHibernate, Version=7.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.NHibernate.7.2.5\lib\net452\NServiceBus.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.ObjectBuilder.CastleWindsor, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.CastleWindsor.6.1.1\lib\net452\NServiceBus.ObjectBuilder.CastleWindsor.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Transport.SqlServer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.SqlServer.3.1.4\lib\net452\NServiceBus.Transport.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Serializers.Newtonsoft.Json, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.Newtonsoft.Json.1.5.1\lib\net452\RestSharp.Serializers.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.5.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.8.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UltimateBounceInspector">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateBounceInspector.dll</HintPath>
+    </Reference>
+    <Reference Include="UltimateCommon">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="UltimateEmailValidator">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateEmailValidator.dll</HintPath>
+    </Reference>
+    <Reference Include="UltimateMail">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateMail.dll</HintPath>
+    </Reference>
+    <Reference Include="UltimateProxy">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="UltimateTemplateEngine">
+      <HintPath>..\packages\UltimateUtils.3.0.818.737\lib\net35\UltimateTemplateEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="XVerify, Version=1.1.7451.23270, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XVerify.1.1.7451.23270\lib\net48\XVerify.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared Code\Configuration\ControllerCache.cs">
+      <Link>Configuration\ControllerCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Configuration\ControllersInstaller.cs">
+      <Link>Configuration\ControllersInstaller.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Configuration\RouteValueDictionary Extensions.cs">
+      <Link>Configuration\RouteValueDictionary Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Configuration\WindsorControllerFactory.cs">
+      <Link>Configuration\WindsorControllerFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared Code\Templates\OrderDetailHtml.cs">
+      <Link>Areas\Sales\OrderDetail\OrderDetailHtml.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\BusBootstrapper.cs" />
+    <Compile Include="App_Start\Charge Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\ChargeProcessedEventHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\CallbackHub.cs" />
+    <Compile Include="App_Start\ContainerBootstrapper.cs" />
+    <Compile Include="App_Start\CreateAdminJobCommandBoostrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\CreateDealsForJobCompletedEventHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\ConfigureFtpAccountCommand Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\CreateUsageBillCommandHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Deal Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\FIleLocationsBootstrapper.cs" />
+    <Compile Include="App_Start\InteractiveLogonEvent Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Job Command Boostrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Job Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\LoggingConfig.cs" />
+    <Compile Include="App_Start\LogUserActionCommand Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ModelBinderBootstrapper.cs" />
+    <Compile Include="App_Start\MonitorJobSubmittedEventHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\MvcBootstrapper.cs" />
+    <Compile Include="App_Start\OwinBoot.cs" />
+    <Compile Include="App_Start\ProcessChargeCommandHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\ResetClientHistorgramCommand Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\StoreFileCommandHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Subscription Event Bootstrappers.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\UpdateDealFromProcessingReportCommandBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\UserAlertForJobRequiresAdministrativeActionEventHandlerBootstrapper.cs">
+      <DependentUpon>BusBootstrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Billing\DeleteCreditCard\Messaging\PaymentProfileDeletedEventHandler.cs" />
+    <Compile Include="Areas\Clients\ApiTrialDetail\ApiTrialDetailController.cs" />
+    <Compile Include="Areas\Clients\ChangeOwner\ChangeOwnerController.cs" />
+    <Compile Include="Areas\Clients\ChangeOwner\Models\ChangeOwnerModel.cs" />
+    <Compile Include="Areas\Clients\ContactsApi\ContactsApiController.cs" />
+    <Compile Include="Areas\Clients\LeadWizard\LeadWizardController.cs" />
+    <Compile Include="Areas\Clients\LeadWizard\Models\LeadWizardViewModel.cs" />
+    <Compile Include="Areas\JobProcessing\CustomerFtp\CustomerFtpController.cs" />
+    <Compile Include="Areas\JobProcessing\Summary\SummaryController.cs" />
+    <Compile Include="Areas\JobProcessing\Summary\Models\JobsRequest.cs" />
+    <Compile Include="Areas\SmtpRules\Summary\SummaryController.cs" />
+    <Compile Include="Areas\SmtpRules\UpdateManifestCache\UpdateManifestCacheController.cs" />
+    <Compile Include="Areas\Operations\ClearPoisonEmail\ClearPoisonEmailController.cs" />
+    <Compile Include="Areas\Operations\FilesApi\Controller.cs" />
+    <Compile Include="Areas\Operations\FilesApi\Models\FileDetail.cs" />
+    <Compile Include="Areas\Operations\ResendEmail\ResendEmailController.cs" />
+    <Compile Include="Areas\Operations\ViewEmail\ViewEmailController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\ApiTrialMetricsController.cs" />
+    <Compile Include="Areas\Sales\DealFiles\Controller.cs" />
+    <Compile Include="Areas\Sales\DealFiles\Models\LinkFilesToDeal.cs" />
+    <Compile Include="Areas\Sales\EditRefund\EditRefundController.cs" />
+    <Compile Include="Areas\Accounting\Data\PaymentUpdateFormatter.cs" />
+    <Compile Include="Areas\Accounting\Data\PaymentUpdateTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentUpdateTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Accounting\Data\SubscriptionTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubscriptionTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Accounting\Data\UsageTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsageTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Billing\BillingAreaRegistration.cs" />
+    <Compile Include="Areas\Clients\EditContact\Models\ClientContacts.cs" />
+    <Compile Include="Areas\Clients\EditContact\Models\ContactModel.cs" />
+    <Compile Include="Areas\Clients\LeadDetail\Messages\SendEmailForLeadAssignedEventHandler.cs" />
+    <Compile Include="Areas\Clients\CancelAccount\Models\CancelAccountModel.cs" />
+    <Compile Include="Areas\JobProcessing\LinkJobToDeal\LinkJobToDealController.cs" />
+    <Compile Include="Areas\JobProcessing\LinkJobToDeal\Messages\SyncJobsWithDealEvents.cs" />
+    <Compile Include="Areas\JobProcessing\LinkJobToDeal\Models\AssociateJobModel.cs" />
+    <Compile Include="Areas\SmtpRules\Update\Models\AutoProcessorUserRuleSet.cs" />
+    <Compile Include="Areas\ListBuilder\Controllers\ApiController.cs" />
+    <Compile Include="Areas\Sales\NewDeal\Models\NewDealView.cs" />
+    <Compile Include="Areas\Sales\OrderDetail\OrderDetailHtml.Resource.cs" />
+    <Compile Include="Areas\SmtpRules\DownloadManifest\DownloadManifestController.cs" />
+    <Compile Include="Areas\SmtpRules\SmtpRulesAreaRegistration.cs" />
+    <Compile Include="Areas\Tickets\CreateTicket\CreateTicketController.cs" />
+    <Compile Include="Areas\Tickets\ListTickets\ListTicketsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\LeadChannelMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\AgentMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\MrrMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\UserOperatingMetricController.cs" />
+    <Compile Include="Areas\Sales\AddNoteToDeal\AddNoteToDealController.cs" />
+    <Compile Include="Areas\Clients\AdminFile\AdminFileController.cs" />
+    <Compile Include="Areas\Sales\CreateBill\CreateBillController.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\BasicBillFormatter.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\BillFormatter.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\DefaultBillFormatterFactory.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\HtmlBillFormatter.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\NationBuilderFormatter.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\RefundBillFormatterHtml.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\RefundBillFormatterText.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\SubscriptionBillFormatterHtml.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\TextBillFormatter.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\UsageBillFormatterText.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\SubscriptionBillFormatterText.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Data\UsageBillFormatterHtml.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Models\BillMessage.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Models\BillType.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Models\BillViewModel.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Models\File.cs" />
+    <Compile Include="Areas\Sales\CreateBill\Models\ReviewOrderModel.cs" />
+    <Compile Include="Areas\Sales\DealDetail\DealDetailController.cs" />
+    <Compile Include="Areas\Sales\LedgerReport\Controller.cs" />
+    <Compile Include="Areas\Sales\NewDealFromJob\NewDealFromJobController.cs" />
+    <Compile Include="Areas\Sales\ClientCost\ClientCostController.cs" />
+    <Compile Include="Areas\Billing\ProfileApi\ProfileApiController.cs" />
+    <Compile Include="Areas\Sales\DealActivity\DealActivityController.cs" />
+    <Compile Include="Areas\Sales\DealNotes\DealNotesController.cs" />
+    <Compile Include="Areas\Accounting\Data\ReceiptTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceiptTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Accounting\Data\RefundTemplate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefundTemplate.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Sales\DealsApi\DealsApiController.cs" />
+    <Compile Include="Areas\Sales\OrderDetail\OrderDetailController.cs" />
+    <Compile Include="Areas\Sales\Pricing\PricingController.cs" />
+    <Compile Include="Areas\Sales\RefundDeal\Messaging\RefundProcessedEventhandler.cs" />
+    <Compile Include="Areas\Sales\ReviewDeal\Messaging\PerformAutoChargeForDealApprovedEventHandler.cs" />
+    <Compile Include="Areas\Sales\SendPaymentUpdate\Messages\SendPaymentExpiredLinkCommand.cs" />
+    <Compile Include="Areas\Sales\SendPaymentUpdate\SendPaymentUpdateController.cs" />
+    <Compile Include="Areas\Sales\DealSummary\Models\DealSummaryViewModel.cs" />
+    <Compile Include="Areas\Clients\ApiTrialSummary\ApiTrialSummaryController.cs" />
+    <Compile Include="Areas\Clients\ApiUsage\ApiUsageController.cs" />
+    <Compile Include="Areas\Clients\CancelAccount\CancelAccountController.cs" />
+    <Compile Include="Areas\Billing\ChangePrimaryCard\ChangePrimaryCardController.cs" />
+    <Compile Include="Areas\Clients\ViewNations\ViewNationsController.cs" />
+    <Compile Include="Areas\Clients\EditUser\EditUserController.cs" />
+    <Compile Include="Areas\Clients\UserDetail\UserDetailController.cs" />
+    <Compile Include="Areas\Clients\ContractWizard\ContractWizardController.cs" />
+    <Compile Include="Areas\Billing\CreateCreditCard\CreateCreditCardController.cs" />
+    <Compile Include="Areas\Clients\LeadNotes\LeadNotesController.cs" />
+    <Compile Include="Areas\Billing\DeleteCreditCard\DeleteCreditCardController.cs" />
+    <Compile Include="Areas\Clients\DeleteLead\DeleteLeadController.cs" />
+    <Compile Include="Areas\Clients\LeadDetail\LeadDetailController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\LeadReportsController.cs" />
+    <Compile Include="Areas\Clients\LeadSummary\LeadSummaryController.cs" />
+    <Compile Include="Areas\Clients\SearchClients\SearchClientsController.cs" />
+    <Compile Include="Areas\Sales\ViewBill\Controller.cs" />
+    <Compile Include="Areas\SecurityManagement\UserMustChangePassword\UserMustChangePasswordController.cs" />
+    <Compile Include="Areas\Clients\UserNotes\UserNotesController.cs" />
+    <Compile Include="Areas\Clients\ViewAccounts\ViewAccountsController.cs" />
+    <Compile Include="Areas\Billing\ViewCreditCards\ViewCreditCardsController.cs" />
+    <Compile Include="Areas\Clients\UserSummary\UserSummaryController.cs" />
+    <Compile Include="Areas\Billing\CreateCreditCard\Models\AddCreditCardModel.cs" />
+    <Compile Include="Areas\Billing\Shared\Models\BillingAddressModel.cs" />
+    <Compile Include="Areas\Billing\EditCreditCard\Models\ChangeBillingAddressModel.cs" />
+    <Compile Include="Areas\Clients\ContractWizard\Models\CreatePaidTestModel.cs" />
+    <Compile Include="Areas\Clients\ContractWizard\Models\CreateAccruingModel.cs" />
+    <Compile Include="Areas\Clients\ContractWizard\Models\CreateFixedRateModel.cs" />
+    <Compile Include="Areas\Clients\ContractWizard\Models\CreateSubscriptionModel.cs" />
+    <Compile Include="Areas\Clients\ContractWizard\Models\CreateUsageModel.cs" />
+    <Compile Include="Areas\Clients\LeadDetail\Models\LeadViewModel.cs" />
+    <Compile Include="Areas\Clients\SearchClients\Models\SearchResultModel.cs" />
+    <Compile Include="Areas\Clients\ViewAccounts\Models\ViewAccountsModel.cs" />
+    <Compile Include="Areas\JobProcessing\Dashboard\DashboardController.cs" />
+    <Compile Include="Areas\JobProcessing\DownloadFiles\DownloadFilesController.cs" />
+    <Compile Include="Areas\JobProcessing\MatchReport\MatchReportController.cs" />
+    <Compile Include="Areas\JobProcessing\Manifest\ManifestController.cs" />
+    <Compile Include="Areas\JobProcessing\PreviewJob\PreviewJobController.cs" />
+    <Compile Include="Areas\JobProcessing\Queue\QueueController.cs" />
+    <Compile Include="Areas\JobProcessing\Pause\PauseController.cs" />
+    <Compile Include="Areas\JobProcessing\Resume\ResumeController.cs" />
+    <Compile Include="Areas\ListBuilder\Controllers\BuildListController.cs" />
+    <Compile Include="Areas\ListBuilder\Controllers\CriteriaBuilderController.cs" />
+    <Compile Include="Areas\ListBuilder\Controllers\GenerateListCountController.cs" />
+    <Compile Include="Areas\ListBuilder\ListBuilderAreaRegistration.cs" />
+    <Compile Include="Areas\ListBuilder\Models\ListBuilderDownloadModel.cs" />
+    <Compile Include="Areas\Operations\CustomerFtp\CustomerFtpController.cs" />
+    <Compile Include="Areas\Operations\Pgp\PgpController.cs" />
+    <Compile Include="Areas\Operations\Bus\BusController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\LeadMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\DealMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\AdminUserActivityMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\UserProcessingMetricsController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\OperationMetricsController.cs" />
+    <Compile Include="Areas\Sales\CancelDeal\CancelDealController.cs" />
+    <Compile Include="Areas\Sales\CreateRefund\CreateRefundController.cs" />
+    <Compile Include="Areas\Sales\EditDeal\EditDealController.cs" />
+    <Compile Include="Areas\Sales\EditOrder\EditOrderController.cs" />
+    <Compile Include="Areas\Sales\ExpireDeal\ExpireDealController.cs" />
+    <Compile Include="Areas\Sales\NewDeal\NewDealController.cs" />
+    <Compile Include="Areas\Sales\OrdersApi\OrdersApiController.cs" />
+    <Compile Include="Areas\Sales\ReviewDeal\ReviewDealController.cs" />
+    <Compile Include="Areas\Sales\SubmitCharge\SubmitChargeController.cs" />
+    <Compile Include="Areas\Sales\UpdateOrderFromJob\UpdateOrderFromJobController.cs" />
+    <Compile Include="Areas\Sales\DealDetail\Models\DealDetailView.cs" />
+    <Compile Include="Areas\Sales\EditOrder\Models\EditViewModel.cs" />
+    <Compile Include="Areas\Sales\OrderDetail\Models\OrderDetailView.cs" />
+    <Compile Include="Areas\Sales\Pricing\Models\ClientModel.cs" />
+    <Compile Include="Areas\Sales\Pricing\Models\CostModel.cs" />
+    <Compile Include="Areas\Sales\Pricing\Models\RateCardModel.cs" />
+    <Compile Include="Areas\Sales\SalesAreaRegistration.cs" />
+    <Compile Include="Areas\SecurityManagement\SecurityAreaRegistration.cs" />
+    <Compile Include="Areas\Tickets\CreateTicket\Models\ContactModel.cs" />
+    <Compile Include="Areas\Tickets\CreateTicket\Models\Checkboxes.cs" />
+    <Compile Include="Areas\Tickets\CreateTicket\Models\CreateTicketViewModel.cs" />
+    <Compile Include="Areas\Tickets\ListTickets\Models\PageSettings.cs" />
+    <Compile Include="Areas\Tickets\TicketsApi\TicketsApiController.cs" />
+    <Compile Include="Areas\Tickets\TicketsAreaRegistration.cs" />
+    <Compile Include="Controller Extensions.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="EventManagerBridgeFacility.cs" />
+    <Compile Include="Messages\Sales\RecorrelateFilesForDealEvents.cs" />
+    <Compile Include="TempDataExtensions\Message.cs" />
+    <Compile Include="TempDataExtensions\TempDataExtensions.cs" />
+    <Compile Include="FTPAdministration\AccountSetupResult.cs" />
+    <Compile Include="FTPAdministration\IFtpHost.cs" />
+    <Compile Include="FTPAdministration\TitanFacade.cs" />
+    <Compile Include="FTPAdministration\Titan\SrcComWrapper.cs" />
+    <Compile Include="FTPAdministration\Titan\TitanXml.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Messages\Accounts\BillingPeriodClosedTimeout.cs" />
+    <Compile Include="Messages\Accounts\CreateSubscriptionBillCommand.cs" />
+    <Compile Include="Messages\Accounts\CreateUsageBillCommandHandler.cs" />
+    <Compile Include="Messages\Accounts\CreateUsageBillCommand.cs" />
+    <Compile Include="Messages\Accounts\SubscriptionBillingData.cs" />
+    <Compile Include="Messages\Accounts\SubscriptionBillingSaga.cs" />
+    <Compile Include="Messages\Accounts\OverageBillingData.cs" />
+    <Compile Include="Messages\Accounts\UsageBillingData.cs" />
+    <Compile Include="Messages\Accounts\OverageBillingSaga.cs" />
+    <Compile Include="Messages\Accounts\UsageBillingSaga.cs" />
+    <Compile Include="Areas\Sales\SendPaymentUpdate\Messages\SendPaymentUpdateLinkCommand.cs" />
+    <Compile Include="Areas\Sales\SendPaymentUpdate\Messages\EmailUpdateLinkCommandHandler.cs" />
+    <Compile Include="Messages\ConfigureFtpAccountCommandHandler.cs" />
+    <Compile Include="Messages\Accounts\CreateSubscriptionBillCommandHandler.cs" />
+    <Compile Include="Messages\JobProcessing\MonitorJobSubmittedEventHandler.cs" />
+    <Compile Include="Messages\Admin\InteractiveLogonEvent.cs" />
+    <Compile Include="Messages\Admin\PushNotificationForInteractiveLogonEventHandler.cs" />
+    <Compile Include="Areas\Sales\SubmitCharge\Messaging\ChargeProcessedEventHandler.cs" />
+    <Compile Include="Messages\Sales\CreateDealsForJobCompletedEventHandler.cs" />
+    <Compile Include="Messages\JobProcessing\UserAlertForJobRequiresAdministrativeActionEventHandler.cs" />
+    <Compile Include="Messages\Sales\SendBillEmailForDealEventsHandler.cs" />
+    <Compile Include="Areas\Sales\UpdateOrderFromJob\Messaging\UpdateDealFromProcessingReportCommandHandler.cs" />
+    <Compile Include="Navigator\ListTicketsNavigator.cs" />
+    <Compile Include="Navigator\ReportingNavigator.cs" />
+    <Compile Include="Navigator\UsersStatusNavigator.cs" />
+    <Compile Include="Areas\SmtpRules\Update\UpdateController.cs" />
+    <Compile Include="Areas\Clients\UserFileDetail\UserFileDetailController.cs" />
+    <Compile Include="Areas\Clients\DeleteUserFile\DeleteUserFileController.cs" />
+    <Compile Include="Areas\Clients\DownloadUserFile\DownloadUserFileController.cs" />
+    <Compile Include="Areas\Clients\UserFiles\UserFilesController.cs" />
+    <Compile Include="Areas\JobProcessing\Reports\ReportsController.cs" />
+    <Compile Include="Areas\SmtpRules\Delete\DeleteContoller.cs" />
+    <Compile Include="Areas\JobProcessing\Reassign\ReassignController.cs" />
+    <Compile Include="Areas\SmtpRules\Update\Models\AutoProcessorUserRule.cs" />
+    <Compile Include="Areas\NationBuilder\Controllers\CancelController.cs" />
+    <Compile Include="Areas\NationBuilder\Controllers\ListController.cs" />
+    <Compile Include="Areas\NationBuilder\Controllers\ResumeController.cs" />
+    <Compile Include="Areas\NationBuilder\NationBuilderAreaRegistration.cs" />
+    <Compile Include="Areas\Operations\Alerts\AlertsController.cs" />
+    <Compile Include="Areas\Operations\JobConfiguration\JobConfigurationController.cs" />
+    <Compile Include="Areas\Operations\CreateAdminUser\CreateAdminUserController.cs" />
+    <Compile Include="Areas\Operations\Dashboard\DashboardController.cs" />
+    <Compile Include="Areas\Operations\Systems\SystemsController.cs" />
+    <Compile Include="Areas\Operations\UploadSuppression\UploadSuppressionController.cs" />
+    <Compile Include="Areas\Operations\Message\Models\MessagesView.cs" />
+    <Compile Include="Areas\Operations\OperationsAreaRegistration.cs" />
+    <Compile Include="Areas\Reporting\Controllers\ApiMetricsController.cs" />
+    <Compile Include="Areas\Sales\ChargeEventSummary\Models\ClientModel.cs" />
+    <Compile Include="Areas\JobProcessing\JobAreaRegistration.cs" />
+    <Compile Include="Areas\JobProcessing\Detail\DetailController.cs" />
+    <Compile Include="Areas\JobProcessing\Detail\Models\JobDetail.cs" />
+    <Compile Include="Areas\Reporting\Controllers\JobMetricsController.cs" />
+    <Compile Include="Areas\SecurityManagement\LogInAsClient\LogInAsClientController.cs" />
+    <Compile Include="Areas\Reporting\ReportingAreaRegistration.cs" />
+    <Compile Include="Areas\Clients\ClientsAreaRegistration.cs" />
+    <Compile Include="Areas\Sales\ChargeEventSummary\ChargeEventSummaryController.cs" />
+    <Compile Include="Areas\JobProcessing\ChangeJobPriority\ChangeJobPriorityController.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\BatchController.cs" />
+    <Compile Include="Areas\Clients\EditContact\EditContactController.cs" />
+    <Compile Include="Areas\Operations\UserStatus\UserStatusController.cs" />
+    <Compile Include="Areas\Sales\DownloadDeals\DownloadDealsController.cs" />
+    <Compile Include="Areas\Sales\DownloadUsage\DownloadUsageController.cs" />
+    <Compile Include="Areas\JobProcessing\Reset\ResetController.cs" />
+    <Compile Include="Areas\JobProcessing\DeleteJob\DeleteJobController.cs" />
+    <Compile Include="Areas\Sales\RefundDeal\RefundDealController.cs" />
+    <Compile Include="Areas\JobProcessing\Review\ReviewController.cs" />
+    <Compile Include="Messages\ResetClientHistorgramCommandHandler.cs" />
+    <Compile Include="Messages\Admin\LogUserActionCommandHandler.cs" />
+    <Compile Include="FileContext.cs" />
+    <Compile Include="Navigator\ChargeEventNavigator.cs" />
+    <Compile Include="Navigator\OperationsNavigator.cs" />
+    <Compile Include="Navigator\UserFilesNavigator.cs" />
+    <Compile Include="Navigator\CreateBillNavigator.cs" />
+    <Compile Include="Navigator\EditContactNavigator.cs" />
+    <Compile Include="Navigator\AdminFileNavigator.cs" />
+    <Compile Include="Navigator\ListBuilderNavigator.cs" />
+    <Compile Include="Navigator\EditOrderNavigator.cs" />
+    <Compile Include="Navigator\HtmlHelper Extensions.cs" />
+    <Compile Include="Navigator\NationBuilderNavigator.cs" />
+    <Compile Include="Navigator\ReviewJobNavigator.cs" />
+    <Compile Include="Navigator\PricingNavigator.cs" />
+    <Compile Include="SecurityExtensions.cs" />
+    <Compile Include="UnifiedDataContext.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="AccountMembershipService.cs" />
+    <Compile Include="AccountRoleService.cs" />
+    <Compile Include="Controllers\ActivityLoggingController.cs" />
+    <Compile Include="Areas\Operations\Authentication\AuthenticationController.cs" />
+    <Compile Include="Controllers\ContextBoundController.cs" />
+    <Compile Include="Areas\Reporting\Controllers\OperatingMetricsController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Areas\Sales\DealSummary\DealSummaryController.cs" />
+    <Compile Include="Areas\Operations\Email\EmailController.cs" />
+    <Compile Include="Areas\Operations\EventLog\EventLogController.cs" />
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="Areas\Operations\Message\MessageController.cs" />
+    <Compile Include="Areas\Billing\EditCreditCard\EditCreditCardController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Entities\BatchJobRequest.cs" />
+    <Compile Include="Entities\BatchJobRequestField.cs" />
+    <Compile Include="Entities\BatchJobRequestFile.cs" />
+    <Compile Include="Entities\BatchJobRequestProduct.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Filters\HandleErrorWithAjaxFilter.cs" />
+    <Compile Include="Navigator\ActionNavigator.cs" />
+    <Compile Include="Navigator\AuthenticationNavigator.cs" />
+    <Compile Include="Navigator\ChargeCardNavigator.cs" />
+    <Compile Include="Navigator\MenuNavigator.cs" />
+    <Compile Include="Navigator\CreditCardNavigator.cs" />
+    <Compile Include="Navigator\MessageNavigator.cs" />
+    <Compile Include="Navigator\EventLogNavigator.cs" />
+    <Compile Include="Navigator\NoteNavigator.cs" />
+    <Compile Include="Navigator\OrderNavigator.cs" />
+    <Compile Include="Navigator\JobNavigator.cs" />
+    <Compile Include="Navigator\FilesNavigator.cs" />
+    <Compile Include="Navigator\DealsNavigator.cs" />
+    <Compile Include="Navigator\LeadsNavigator.cs" />
+    <Compile Include="Navigator\UrlBuilder.cs" />
+    <Compile Include="Navigator\UsersNavigator.cs" />
+    <Compile Include="Navigator\IAdapter.cs" />
+    <Compile Include="Navigator\Navigator Extensions.cs" />
+    <Compile Include="Navigator\ActionRenderer.cs" />
+    <Compile Include="Navigator\ViewNavigator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="Messages\Admin\LogUserActionCommand.cs" />
+    <Compile Include="Validation Attributes.cs" />
+    <Compile Include="ViewModels\Authentication\LogonModel.cs" />
+    <Compile Include="ViewModels\Common\AddressModel.cs" />
+    <Compile Include="Areas\Sales\SubmitCharge\Models\Charge.cs" />
+    <Compile Include="ViewModels\Common\Party.cs" />
+    <Compile Include="Areas\Operations\EventLog\Models\EventsRequest.cs" />
+    <Compile Include="Areas\Clients\UserFiles\Models\FilesRequest.cs" />
+    <Compile Include="Areas\Operations\Message\Models\Attachment.cs" />
+    <Compile Include="Areas\Operations\Message\Models\MessageDetail.cs" />
+    <Compile Include="Areas\Operations\Message\Models\MessageListViewModel.cs" />
+    <Compile Include="Areas\Billing\CreateCreditCard\Models\CreditCardModel.cs" />
+    <Compile Include="Areas\Billing\ViewCreditCards\Models\ViewCreditCardModel.cs" />
+    <Compile Include="Views\AdminUserCache.cs" />
+    <Compile Include="Views\ProductCache.cs" />
+    <Compile Include="Views\HtmlHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Attributes formatted in TypeScript but not used in scripts.txt">
+      <Link>Areas\ListBuilder\Scripts\Attributes formatted in TypeScript but not used in scripts.txt</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\DemographicsTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Enums.js">
+      <Link>Areas\ListBuilder\Scripts\Enums.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\FinancesTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\GeographyTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Index.js">
+      <Link>Areas\ListBuilder\Scripts\Index.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\InterestsTabViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js">
+      <Link>Areas\ListBuilder\Scripts\ListCriteriaViewModel.js</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Objects.js">
+      <Link>Areas\ListBuilder\Scripts\Objects.js</Link>
+    </Content>
+    <Content Include="App_Data\_donotdelete.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Clients\ApiTrialDetail\Scripts\ApiTrialDetail.js" />
+    <Content Include="Areas\Clients\ApiTrialDetail\Views\Index.aspx" />
+    <Content Include="Areas\Clients\ChangeOwner\Views\Lead.aspx" />
+    <Content Include="Areas\Clients\LeadWizard\Scripts\LeadWizard.js" />
+    <Content Include="Areas\Clients\LeadWizard\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\CustomerFtp\Views\Root.cshtml" />
+    <Content Include="Areas\JobProcessing\CustomerFtp\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\Summary\Scripts\Index.js" />
+    <Content Include="Areas\JobProcessing\Summary\Scripts\JobModel.js" />
+    <Content Include="Areas\JobProcessing\Summary\Scripts\JobReportModel.js" />
+    <Content Include="Areas\JobProcessing\Summary\Scripts\NationBuilderModel.js" />
+    <Content Include="Areas\JobProcessing\Summary\Scripts\OperationReportModel.js" />
+    <Content Include="Areas\JobProcessing\Summary\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\LinkJobToDeal\Views\Select.aspx" />
+    <Content Include="Areas\Clients\UserDetail\Scripts\UserDetail.js" />
+    <Content Include="Areas\Clients\CancelAccount\Views\Index.aspx" />
+    <Content Include="Areas\Clients\UserDetail\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\LinkJobToDeal\Views\Display.aspx" />
+    <Content Include="Areas\Operations\CustomerFtp\Views\Index.aspx" />
+    <Content Include="Areas\Operations\JobConfiguration\Views\Validate.aspx" />
+    <Content Include="Areas\Operations\Message\Views\Index.aspx" />
+    <Content Include="Areas\Operations\Systems\Views\Index.aspx" />
+    <Content Include="Areas\Reporting\Scripts\Dashboard.js" />
+    <Content Include="Areas\Sales\CreateBill\Views\AttachFiles.aspx" />
+    <Content Include="Areas\Sales\CreateBill\Views\Draft.aspx" />
+    <Content Include="Areas\Sales\CreateBill\Views\ReviewOrder.aspx" />
+    <Content Include="Areas\Sales\DealDetail\Views\Index.aspx" />
+    <Content Include="Areas\Sales\DealFiles\Views\Index.aspx" />
+    <Content Include="Areas\Sales\EditOrder\Views\Index.aspx" />
+    <Content Include="Areas\Sales\LedgerReport\Views\Index.aspx" />
+    <Content Include="Areas\Sales\NewDeal\Views\UploadFile.aspx" />
+    <Content Include="Areas\Sales\OrderDetail\Views\Index.aspx" />
+    <Content Include="Areas\Sales\Pricing\Views\CostRow.ascx" />
+    <Content Include="Areas\Sales\Pricing\Views\EditCost.aspx" />
+    <Content Include="Areas\Sales\Pricing\Views\Index.aspx" />
+    <Content Include="Areas\Sales\RefundDeal\Views\Processing.aspx" />
+    <Content Include="Areas\Sales\Shared\DealDetail.ascx" />
+    <Content Include="Areas\Sales\Shared\PrintableOrderDetail.ascx" />
+    <Content Include="Areas\Sales\SubmitCharge\Views\Wallet.ascx" />
+    <Content Include="Areas\Sales\Shared\OrderItems.ascx" />
+    <Content Include="Areas\Sales\Shared\OrderDetail.ascx" />
+    <Content Include="Areas\Billing\EditCreditCard\Views\DisplayForm.aspx" />
+    <Content Include="Areas\Billing\EditCreditCard\Views\CimStart.aspx" />
+    <Content Include="Areas\ListBuilder\Views\CriteriaBuilder\LoadFromFile.aspx" />
+    <Content Include="Areas\Operations\Bus\Views\Failed.aspx" />
+    <Content Include="Areas\Sales\ChargeEventSummary\Views\Index.aspx" />
+    <Content Include="Areas\Clients\ApiUsage\Views\Index.aspx" />
+    <Content Include="Areas\Clients\ContractWizard\Views\PaidTestDetail.aspx" />
+    <Content Include="Areas\Clients\ContractWizard\Views\FixedRateDetail.aspx" />
+    <Content Include="Areas\Clients\ContractWizard\Views\AccuralDetail.aspx" />
+    <Content Include="Areas\Clients\ContractWizard\Views\UsageDetail.aspx" />
+    <Content Include="Areas\Clients\ContractWizard\Views\SubscriptionDetail.aspx" />
+    <Content Include="Areas\Clients\ContractWizard\Views\Start.aspx" />
+    <Content Include="Areas\Billing\EditCreditCard\Views\ChangeBillingAddress.aspx" />
+    <Content Include="Areas\Clients\LeadDetail\Views\Detail.aspx" />
+    <Content Include="Areas\Clients\LeadSummary\Views\Index.aspx" />
+    <Content Include="Areas\Clients\SearchClients\Views\Index.aspx" />
+    <Content Include="Areas\Clients\ViewAccounts\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\Dashboard\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\PreviewJob\Views\Index.aspx" />
+    <Content Include="Areas\JobProcessing\PreviewJob\Views\ColumnReport.ascx" />
+    <Content Include="Areas\JobProcessing\Web.config" />
+    <Content Include="Areas\ListBuilder\Views\CriteriaBuilder\Index.aspx" />
+    <Content Include="Areas\Operations\CreateAdminUser\Views\Index.aspx" />
+    <Content Include="Areas\Operations\Dashboard\Views\Index.aspx" />
+    <Content Include="Areas\Operations\JobConfiguration\Views\Scheduling.aspx" />
+    <Content Include="Areas\Operations\ResendEmail\Views\Index.aspx" />
+    <Content Include="Areas\Operations\UploadSuppression\Views\Index.aspx" />
+    <Content Include="Areas\Operations\UserStatus\Views\Index.aspx" />
+    <Content Include="Areas\Operations\Web.config" />
+    <Content Include="Areas\Reporting\Views\Dashboard\Index.aspx" />
+    <Content Include="Areas\Reporting\Views\Web.config" />
+    <Content Include="Areas\Sales\EditDeal\Views\Index.aspx" />
+    <Content Include="Areas\Sales\NewDeal\Views\Create.aspx" />
+    <Content Include="Areas\Sales\SubmitCharge\Views\Process.aspx" />
+    <Content Include="Areas\SmtpRules\Summary\Scripts\Index.js" />
+    <Content Include="Areas\SmtpRules\Summary\Views\Index.aspx" />
+    <Content Include="Areas\Tickets\ListTickets\Views\Index.aspx" />
+    <Content Include="Areas\Tickets\ListTickets\Scripts\ListTickets.js" />
+    <Content Include="Areas\Tickets\CreateTicket\Views\Index.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\styles.css" />
+    <Content Include="Content\custom-buttons.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\form.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\smoothness\ui.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\tab.css" />
+    <Content Include="Content\table.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Areas\Reporting\Scripts\Dashboard.js.map" />
+    <Content Include="Areas\Clients\UserDetail\Scripts\UserDetail.js.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Clients\Web.config" />
+    <Content Include="Areas\SecurityManagement\Web.config" />
+    <Content Include="Areas\Billing\Web.config" />
+    <Content Include="Areas\Clients\ApiTrialDetail\Scripts\ApiTrialDetail.js.map" />
+    <Content Include="Configuration\Charge Context Components.config" />
+    <Content Include="Areas\Tickets\ListTickets\Scripts\ListTickets.js.map" />
+    <Content Include="Areas\Tickets\web.config" />
+    <Content Include="Configuration\Operations Context Components.config" />
+    <Content Include="Areas\Clients\LeadWizard\Scripts\LeadWizard.js.map" />
+    <Content Include="..\Shared Code\Templates\OrderDetail.html.config">
+      <Link>Areas\Sales\OrderDetail\Templates\OrderDetail.html.config</Link>
+    </Content>
+    <Content Include="Areas\SmtpRules\web.config" />
+    <None Include="FTPAdministration\Titan\Resources\srxCOM.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\action_delete.png" />
+    <Content Include="Images\bg-triangles.jpg" />
+    <Content Include="Images\circular loading.gif" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\load2.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Castle.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\NationBuilder\Views\Web.config" />
+    <Content Include="Messaging.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Messaging.Debug.config">
+      <DependentUpon>Messaging.config</DependentUpon>
+    </Content>
+    <Content Include="Messaging.Release.config">
+      <DependentUpon>Messaging.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\Sales\Web.config" />
+    <Content Include="Areas\Operations\Pgp\Views\Upload.aspx" />
+    <Content Include="Areas\ListBuilder\Views\web.config" />
+    <Content Include="..\Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\DemographicsTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Enums.js.map">
+      <Link>Areas\ListBuilder\Scripts\Enums.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\FinancesTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\FinancesTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\GeographyTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\GeographyTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Index.js.map">
+      <Link>Areas\ListBuilder\Scripts\Index.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\InterestsTabViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\InterestsTabViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.js.map">
+      <Link>Areas\ListBuilder\Scripts\ListCriteriaViewModel.js.map</Link>
+    </Content>
+    <Content Include="..\Shared Code\ListBuilder\Scripts\Objects.js.map">
+      <Link>Areas\ListBuilder\Scripts\Objects.js.map</Link>
+    </Content>
+    <None Include="Castle.Admin.config">
+      <DependentUpon>Castle.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Castle.Debug.config">
+      <DependentUpon>Castle.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Castle.Release.config">
+      <DependentUpon>Castle.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Content Include="Scripts\AccurateAppend.DynamicAppend.BuildManifest.js" />
+    <Content Include="Scripts\AccurateAppend.DynamicAppend.Objects.js" />
+    <Content Include="Scripts\AccurateAppend.DynamicAppend.Strategies.js" />
+    <Content Include="Scripts\AccurateAppend.Enums.js" />
+    <Content Include="Scripts\AccurateAppend.Ui.js" />
+    <Content Include="Scripts\AccurateAppend.Util.js" />
+    <Content Include="Scripts\app.bootstrap.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
+    <Content Include="Scripts\jquery.signalR.version.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
+    <Content Include="Scripts\web.config" />
+    <Content Include="Scripts\underscore.min.map" />
+    <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\DemographicsTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\DemographicsTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\Enums.ts">
+      <Link>Areas\ListBuilder\Scripts\Enums.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\FinancesTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\FinancesTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\GeographyTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\GeographyTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\Index.ts">
+      <Link>Areas\ListBuilder\Scripts\Index.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\InterestsTabViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\InterestsTabViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\ListCriteriaViewModel.ts">
+      <Link>Areas\ListBuilder\Scripts\ListCriteriaViewModel.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="..\Shared Code\ListBuilder\Scripts\Objects.ts">
+      <Link>Areas\ListBuilder\Scripts\Objects.ts</Link>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Areas\Clients\ApiTrialDetail\Scripts\ApiTrialDetail.ts" />
+    <TypeScriptCompile Include="Areas\Clients\LeadWizard\Scripts\LeadWizard.ts" />
+    <TypeScriptCompile Include="Areas\Clients\UserDetail\Scripts\UserDetail.ts" />
+    <TypeScriptCompile Include="Areas\JobProcessing\Summary\Scripts\JobModel.ts" />
+    <TypeScriptCompile Include="Areas\JobProcessing\Summary\Scripts\JobReportModel.ts" />
+    <TypeScriptCompile Include="Areas\JobProcessing\Summary\Scripts\NationBuilderModel.ts" />
+    <TypeScriptCompile Include="Areas\JobProcessing\Summary\Scripts\OperationReportModel.ts" />
+    <TypeScriptCompile Include="Areas\JobProcessing\Summary\Scripts\Index.ts" />
+    <TypeScriptCompile Include="Areas\SmtpRules\Summary\Scripts\Index.ts" />
+    <TypeScriptCompile Include="Areas\Tickets\ListTickets\Scripts\ListTickets.ts" />
+    <TypeScriptCompile Include="Areas\Reporting\Scripts\Dashboard.ts" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.DynamicAppend.BuildManifest.ts" />
+    <TypeScriptCompile Include="Scripts\app.bootstrap.ts" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.Util.ts" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.Ui.ts" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\core.manifest.js" />
+    <Content Include="Configuration\Controllers.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Data Components.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Bus.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Sales Context Components.config" />
+    <None Include="FTPAdministration\Titan\Resources\Titan-Print.pdf" />
+    <None Include="Properties\PublishProfiles\PROD.pubxml" />
+    <Content Include="Scripts\AccurateAppend.DynamicAppend.BuildManifest.js.map" />
+    <Content Include="Scripts\AccurateAppend.DynamicAppend.Objects.js.map" />
+    <Content Include="Scripts\AccurateAppend.DynamicAppend.Strategies.js.map" />
+    <Content Include="Scripts\AccurateAppend.Enums.js.map" />
+    <Content Include="Scripts\AccurateAppend.Ui.js.map" />
+    <Content Include="Scripts\AccurateAppend.Util.js.map" />
+    <Content Include="Scripts\app.bootstrap.js.map" />
+    <Content Include="Scripts\app.js.map" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-confirm.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.dateTime.js" />
+    <Content Include="Scripts\jquery.tmpl.min.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\kendo.all.min.intellisense.js" />
+    <None Include="Scripts\kendo.dataviz.min.intellisense.js" />
+    <None Include="Scripts\kendo.mobile-vsdoc.js" />
+    <None Include="Scripts\kendo.mobile.min.intellisense.js" />
+    <None Include="Scripts\kendo.web-vsdoc.js" />
+    <None Include="Scripts\kendo.web.min.intellisense.js" />
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <None Include="Scripts\kendo.all-vsdoc.js" />
+    <None Include="Scripts\kendo.dataviz-vsdoc.js" />
+    <Content Include="Scripts\app.ts" />
+    <Content Include="Scripts\loading-overlay\loading.gif" />
+    <Content Include="Scripts\loading-overlay\loadingoverlay.js" />
+    <Content Include="Scripts\loading-overlay\loadingoverlay.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\typings\requirejs\require.d.ts" />
+    <Content Include="Areas\Operations\Authentication\Views\LogOn.aspx" />
+    <Content Include="Views\Batch\FileDisplay.ascx" />
+    <Content Include="Views\Batch\DynamicAppend.aspx" />
+    <Content Include="Views\Batch\IdentifyColumns.aspx" />
+    <Content Include="Views\Batch\UploadFile.aspx" />
+    <Content Include="Areas\Sales\DealSummary\Views\Index.aspx" />
+    <Content Include="Areas\Clients\EditContact\Views\ContactRow.ascx" />
+    <Content Include="Areas\Clients\EditContact\Views\Index.aspx" />
+    <Content Include="Areas\Operations\EventLog\Views\Index.aspx" />
+    <Content Include="Areas\Clients\UserFiles\Views\Index.aspx" />
+    <Content Include="Views\Files\Close.aspx" />
+    <Content Include="Areas\Clients\SearchClients\Views\LeadsSummary.ascx" />
+    <Content Include="Areas\Sales\EditRefund\Views\Draft.aspx" />
+    <Content Include="Areas\Sales\RefundDeal\Views\Index.aspx" />
+    <Content Include="Areas\Sales\RefundDeal\Views\OrderItemRow.ascx" />
+    <Content Include="Areas\Sales\ReviewDeal\Views\Index.aspx" />
+    <Content Include="Areas\Sales\EditOrder\Views\OrderItemRow.ascx" />
+    <Content Include="Areas\Sales\SubmitCharge\Views\Index.aspx" />
+    <Content Include="Views\Shared\bootstrap3.Sidebar.ascx" />
+    <Content Include="Areas\Sales\Shared\PrintablePartyDetail.ascx" />
+    <Content Include="Views\Shared\LeadDetail.ascx" />
+    <Content Include="Views\Shared\PartyDetail2.ascx" />
+    <Content Include="Views\Shared\Note.ascx" />
+    <Content Include="Views\Shared\MessageBox.ascx" />
+    <Content Include="Areas\Clients\SearchClients\Views\UserSummary.ascx" />
+    <Content Include="Views\Shared\CardDetail.ascx" />
+    <Content Include="Areas\Billing\CreateCreditCard\Views\Index.aspx" />
+    <Content Include="Areas\Billing\ViewCreditCards\Views\Index.aspx" />
+    <Content Include="Areas\Clients\UserSummary\Views\Index.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\bootstrap3.Master" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.DynamicAppend.Strategies.ts" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.Enums.ts" />
+    <TypeScriptCompile Include="Scripts\AccurateAppend.DynamicAppend.Objects.ts" />
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.cookie\jquery.cookie.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\kendo-ui\kendo-ui.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\knockout\tests\jasmine.extensions.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment-node.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\moment\moment.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\underscore\underscore.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Clients\ApiTrialDetail\Views\LeadWizard\" />
+    <Folder Include="Areas\JobProcessing\CustomerFtp\Views\Jobs\" />
+    <Folder Include="Areas\ListBuilder\Views\Shared\" />
+    <Folder Include="ViewModels\UserCreditCard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain Model\Domain Model.csproj">
+      <Project>{c9215a3f-d551-4d8f-917a-059cd7fef197}</Project>
+      <Name>Domain Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ListBuilder\ListBuilder.csproj">
+      <Project>{550c8250-071f-4742-bdef-1f77f50b423b}</Project>
+      <Name>ListBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sales.Contracts\Sales.Contracts.csproj">
+      <Project>{807e31ef-d930-4ec0-a06c-06096e1eb59d}</Project>
+      <Name>Sales.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sales.Handlers\Sales.Handlers.csproj">
+      <Project>{cf1fef2a-98ff-4b6f-97ba-c1999e91f25b}</Project>
+      <Name>Sales.Handlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sales\Sales.csproj">
+      <Project>{c0f0b875-9e8d-43c1-99aa-d050fe6256be}</Project>
+      <Name>Sales</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\Accounting\Data\PaymentUpdateTemplate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentUpdateTemplate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Accounting\Data\ReceiptTemplate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReceiptTemplate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Accounting\Data\RefundTemplate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RefundTemplate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Accounting\Data\SubscriptionTemplate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubscriptionTemplate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Accounting\Data\UsageTemplate.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UsageTemplate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\NServiceBus.6.5.8\analyzers\dotnet\cs\NServiceBus.Core.Analyzer.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60920</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60930</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Label="SlowCheetah">
+    <SlowCheetahToolsPath>$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\SlowCheetah.2.5.14\tools\))</SlowCheetahToolsPath>
+    <SlowCheetah_EnableImportFromNuGet Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='' ">true</SlowCheetah_EnableImportFromNuGet>
+    <SlowCheetah_NuGetImportPath Condition=" '$(SlowCheetah_NuGetImportPath)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\Properties\SlowCheetah\SlowCheetah.Transforms.targets ))</SlowCheetah_NuGetImportPath>
+    <SlowCheetahTargets Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='true' and Exists('$(SlowCheetah_NuGetImportPath)') ">$(SlowCheetah_NuGetImportPath)</SlowCheetahTargets>
+  </PropertyGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\DQS.2.0.7457.22842\build\DQS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DQS.2.0.7457.22842\build\DQS.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)Shared Code\ListBuilder\Scripts\*.js" "$(SolutionDir)Admin\Areas\ListBuilder\Scripts"
+copy "$(SolutionDir)Shared Code\Templates\*.config" "$(SolutionDir)Admin\Areas\Sales\OrderDetail\Templates"
+REM exit 0 &amp;::Force RC 0. in some environments these files dont exist</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets" Condition="Exists('..\packages\CodeContracts.MSBuild.1.12.0\build\CodeContracts.MSBuild.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\DQS.2.0.7457.22842\build\DQS.targets" Condition="Exists('..\packages\DQS.2.0.7457.22842\build\DQS.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

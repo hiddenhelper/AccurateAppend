@@ -1,0 +1,39 @@
+﻿@model AccurateAppend.Websites.Clients.Areas.Shared.Models.NewOrderModel
+
+<div class="table-block order-summary">
+  <div class="heading-box">
+    <h2>Order Summary</h2>
+  </div>
+  <div class="main-table">
+    <table>
+      <thead>
+      <tr>
+        <th>Description</th>
+        <th>Estimated Matches</th>
+        <th>Cost</th>
+      </tr>
+      </thead>
+      <tbody>
+      @{
+        foreach (var product in this.Model.Products)
+        {
+          <tr>
+            <td>
+              @product.Title
+            </td>
+            <td>@($"{product.EstMatches:0,0}")&nbsp;@@ @($"{product.Cost:c}")/Match</td>
+            <td>@($"{product.Total:c}")</td>
+          </tr>
+        }
+      }
+      <tr>
+        <td colspan="2">Estimated Total</td>
+        <td class="text-center" id="order-total"><span>@($"{this.Model.Total:c}")</span></td>
+      </tr>
+          
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

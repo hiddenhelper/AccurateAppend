@@ -1,0 +1,23 @@
+﻿<div class="carousel">
+  <div class="container">
+    <ul class="slides">
+      <li>
+        <div class="block fixed">
+
+          <div class="order-header">
+            <h1>Order Received. Thank you for your business.</h1>
+            <h2>What happens next?</h2>
+            <ul class="ticks">
+              <li style="margin-bottom: 10px;">We will shortly begin to prepare your list for processing in Accurate Append's state of the art appending services. Processing can take anywhere from a few minutes to several hours depending on the number of records and the products you selected.</li>
+              <li style="margin-bottom: 10px;">When processing is complete we will bill your credit card for the exact number of matches and notify you via email with a receipt.</li>
+              <li style="margin-bottom: 10px;">When billing is complete your results will be available to download from the orders page.</li>
+            </ul>
+            @this.Html.ActionLink("View your orders", "Index", "Current", new {area="Order"}, new { @class="btn btn-default" })
+            @this.Html.ActionLink("Submit another order ", "Index", "CriteriaBuilder", new {area= "ListBuilder" }, new { @class="btn btn-default" })
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

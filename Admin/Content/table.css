@@ -1,0 +1,89 @@
+/* Table Style */
+
+table {
+	width: 99%;
+	height: 100%;
+	margin: 0 0 15px;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+table thead,
+table tfoot {
+	background: url(../images/background-table.gif) repeat-x;
+}
+
+table th {
+	font-weight: bold;
+	padding: 3px 4px 1px 7px;
+	color: #444;
+	height: 28px;
+}
+
+table th.label
+{
+	background-color: #e0e0e0;
+	width: 150px;
+	white-space: nowrap;
+}
+
+table td {
+	padding: 6px 0 6px 4px;
+	color: #444;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+table td span.active { color: #55a34a;}
+table td span.pending { color: #c5a059;}
+table td span.closed { color: #a02b2b;}
+
+table .odd {
+	background: #f6f6f6; 
+}
+
+/*  AJAX Uploader Specific Styles  */
+
+div#ajaxuploader table
+{
+	border: none;
+	margin: 0;
+}
+
+div#ajaxuploader table td 
+{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+div#ajaxuploader input[type=submit], input[type=button]
+{
+	background-color:#D0D0D0;
+	border:1px solid #dedede;
+	border-top:1px solid #eee;
+	border-left:1px solid #eee;
+	color: #404040;
+	font-size:10px;
+	padding: 5px;
+	font-weight: bold;
+}
+
+div#ajaxuploader input[type=submit]
+{
+	margin: 10px 0 10px 0;
+}
+
+div#ajaxuploader input[type=button]
+{
+	margin: 0 0 0 10px;
+}
+
+div#ajaxuploader input[type=submit]:hover, input[type=button]:hover
+{
+	background-color:#D0D0D0;
+	border:1px solid #dedede;
+	color:#404040;
+	cursor: pointer;
+}
+
+/*  AJAX Uploader Specific Styles  */

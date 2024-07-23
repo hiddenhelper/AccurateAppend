@@ -1,0 +1,100 @@
+﻿@using AccurateAppend.Core.Definitions
+@using AccurateAppend.Websites.Clients.HtmlHelpers.Styles
+@using DomainModel.Html
+@model AccurateAppend.Websites.Clients.Areas.Order.Csv.Models.MapColumnsViewPresenter
+
+@Html.Layout().Promo("Append a List")
+
+@Html.Layout().Steps(
+  new PageLayoutHtmlHelper.Step("Choose List"),
+  new PageLayoutHtmlHelper.Step("Cost Estimate"),
+  new PageLayoutHtmlHelper.Step("Map Your File", true),
+  new PageLayoutHtmlHelper.Step("Finalize Order"),
+  new PageLayoutHtmlHelper.Step("Order Confirmation"))
+
+<div class="main-holder">
+  <div class="container">
+    <div id="alert"></div>
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <a href="#" class="btn btn-primary large" name="next" disabled="disabled" style="margin-bottom: 20px;">
+          <span>Next</span><i class="icon-arrow-right" style="margin-left: 7px;"></i>
+        </a>
+        <div class="table-block select-columns">
+          @*<div class="heading-box">
+            <h3>Select Columns</h3>
+          </div>*@
+          <div class="main-table">
+            @using (Html.BeginForm(Model.Postback.ActionName, Model.Postback.ControllerName, new {Area = Model.Postback.AreaName}, FormMethod.Post, new {style = "margin: 0;"}))
+            {
+              <table id="mappings">
+
+                @{
+                  if (Model.Order.HasHeaderRow)
+                  {
+                    <tr>
+                      <th style="color: #ffffff;">Your File: COLUMN NAME</th>
+                      <th style="color: #ffffff;">Your File: SAMPLE DATA</th>
+                      <th style="color: #ffffff;">Map to: ACCURATE APPEND FIELD</th>
+                    </tr>
+
+                    for (var i = 1; i <= Model.ColumnSamples.Count; i++)
+                    {
+                      var columnName = Model.ColumnSamples[i].Any() ? Model.ColumnSamples[i][0] : string.Empty;
+                    <tr>
+                        <td>@columnName</td> <!-- column name -->
+                        <td style="font-style: italic;">@string.Join(", ", Model.ColumnSamples[i].Select(a => a.Trim()).Skip(1))</td> <!-- comma delimited sample -->
+                    <td style="width: 220px;">@RequiredFieldMapping.BuildRequiredFieldsDropDown(this.Model.InputFields, i)</td> <!-- select needs column id as name -->
+                    </tr>
+                    }
+                  }
+                  else
+                  {
+                    <tr>
+                        <th>Your File: SAMPLE DATA</th>
+                        <th style="color: #ffffff;">Map to: ACCURATE APPEND FIELD</th>
+                    </tr>
+
+                     for (var i = 1; i <= Model.ColumnSamples.Count; i++)
+                     {
+                      <tr>
+                        <td style="font-style: italic;">@string.Join(", ", Model.ColumnSamples[i].Select(a => a.Trim()).Skip(1))</td> <!-- comma delimited sample -->
+                        <td style="width: 220px;">@RequiredFieldMapping.BuildRequiredFieldsDropDown(this.Model.InputFields, i)</td> <!-- select needs column id as name -->
+                      </tr>
+                    }
+                  }
+                }
+
+              </table>
+
+              
+            }
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary large" name="next" disabled="disabled" style="margin-top: 20px;">
+          <span>Next</span><i class="icon-arrow-right" style="margin-left: 7px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var requiredFields = @(new MvcHtmlString(Model.RequiredFields));
+  var FieldName_Unknown = '@FieldName.Unknown';
+  var orderModel = {
+    order: {
+      products: @Html.Raw(Json.Encode(Model.Order.Products)),
+      orderId: '@Model.Order.OrderId',
+      listName: '@Model.Order.ListName.ToUpper()',
+      recordCount: '@Model.Order.RecordCount',
+      FileDelimiter: '@Model.Order.FileDelimiter',
+      systemFileName: '@Model.Order.SystemFileName',
+      hasHeaderRow: '@Model.Order.HasHeaderRow'
+    }
+  };
+
+</script>
+
+<script src="@Url.Content("~/Areas/Order/Shared/Scripts/IdentifyColumns.js")"></script>

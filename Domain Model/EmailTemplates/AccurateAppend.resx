@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BodyFooter" xml:space="preserve">
+    <value>&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;!-- footer --&gt;
+&lt;tr&gt;
+ &lt;td bgcolor="#fafafa"&gt;
+  &lt;table class="w-100p" width="600" align="center" style="max-width:600px; margin:0 auto;" cellpadding="0" cellspacing="0"&gt;
+   &lt;tr&gt;
+    &lt;td style="padding:32px 18px;"&gt;
+     &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+      &lt;tr&gt;
+       &lt;td style="padding:0 0 33px; border-bottom:2px solid #eee;"&gt;
+        &lt;table align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0"&gt;
+         &lt;tr&gt;
+          &lt;td class="active-i"&gt;
+           &lt;a style="text-decoration:none;" href="http://link"&gt;
+            &lt;img src="https://clients.accurateappend.com/Content/AccurateAppend_v7/images/Receipts/ico-facebook.png" width="24" style="font:12px/14px Arial, Helvetica, sans-serif; color:#537bbe; vertical-align:top;" alt="fb" /&gt;
+           &lt;/a&gt;
+          &lt;/td&gt;
+          &lt;td width="29"&gt;&lt;/td&gt;
+          &lt;td class="active-i"&gt;
+           &lt;a style="text-decoration:none;" href="http://link"&gt;
+            &lt;img src="https://clients.accurateappend.com/Content/AccurateAppend_v7/images/Receipts/ico-03.png" width="24" style="font:12px/14px Arial, Helvetica, sans-serif; color:#54be93; vertical-align:top;" alt="" /&gt;
+           &lt;/a&gt;
+          &lt;/td&gt;
+         &lt;/tr&gt;
+        &lt;/table&gt;
+       &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+       &lt;td class="l-grey" align="center" style="padding:34px 0 0; font:12px/18px Arial, Helvetica, sans-serif; color:#666;"&gt;
+        &lt;i&gt;Copyright &amp;copy; *|{0}|* *|{1}|*, All rights reserved&lt;/i&gt;.&lt;br /&gt;
+        &lt;b&gt;Our mailing address is:&lt;/b&gt;&lt;br /&gt;
+        {2} &lt;br /&gt;
+        {3}, {4} {5} &lt;br /&gt;&lt;br /&gt;
+       &lt;/td&gt;
+      &lt;/tr&gt;
+     &lt;/table&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;
+ &lt;/td&gt;
+&lt;/tr&gt;
+
+ &lt;/table&gt;
+
+&lt;/body&gt;</value>
+    <comment>Closes the framing tables and body</comment>
+  </data>
+  <data name="BodyHeader" xml:space="preserve">
+    <value>&lt;body bgcolor="#ffffff" style="margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"&gt;
+
+ &lt;table class="gmail-fix" bgcolor="#ffffff" width="100%" style="min-width:320px;" cellspacing="0" cellpadding="0"&gt;
+  &lt;!-- header --&gt;
+  &lt;tr&gt;
+   &lt;td bgcolor="#5cb4e3"&gt;
+    &lt;table class="w-100p" width="600" align="center" style="max-width:600px; margin:0 auto;" cellpadding="0" cellspacing="0"&gt;
+     &lt;tr&gt;
+      &lt;td class="plr-10" style="padding:12px 18px 23px;"&gt;
+       &lt;a style="text-decoration:none;" href="https://www.accurateappend.com/"&gt;
+        &lt;img src="https://clients.accurateappend.com/Content/AccurateAppend_v7/images/Receipts/logo-01.png" width="200" style="font:italic 20px/24px Arial, Helvetica, sans-serif; color:#fff; vertical-align:top;" alt="Accurate Append" /&gt;
+       &lt;/a&gt;
+      &lt;/td&gt;
+     &lt;/tr&gt;
+    &lt;/table&gt;
+   &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+  &lt;td style="padding: 0 10px;"&gt;</value>
+    <comment>Opens the body and established the framing tables</comment>
+  </data>
+  <data name="ContentCustomerCareBlock" xml:space="preserve">
+    <value>&lt;!-- START customer care block --&gt;
+  &lt;tr&gt;
+   &lt;td bgcolor="#437fa2" style="padding: 4px;"&gt;
+    &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+     &lt;tr&gt;
+      &lt;td class="plr-10 fs-16 lh-20" bgcolor="#5cb4e3" align="center" style="padding: 16px 30px 20px; font: 20px/23px Arial, Helvetica, sans-serif; color: #fff;"&gt;
+       Call customer care &lt;b&gt;&lt;a style="color: #fff; text-decoration: underline;" href="tel:{0}"&gt;{0}&lt;/a&gt;&lt;/b&gt; or&amp;nbsp;email &lt;b&gt;&lt;a style="color: #fff; text-decoration: underline;" href="mailto:{1}"&gt;{1}&lt;/a&gt;&lt;/b&gt; to&amp;nbsp;learn&amp;nbsp;more.
+      &lt;/td&gt;
+     &lt;/tr&gt;
+    &lt;/table&gt;
+   &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="padding: 52px 0 32px;"&gt;
+    &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+     &lt;tr&gt;
+      &lt;th class="flex" width="270" align="left" style="vertical-align: top;"&gt;
+       &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+        &lt;tr&gt;
+         &lt;td style="padding: 0 0 21px;"&gt;
+          &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+           &lt;tr&gt;
+            &lt;td width="53"&gt;
+             &lt;img src="https://clients.accurateappend.com/Content/AccurateAppend_v7/images/Receipts/ico-01.png" width="46" style="vertical-align: top;" alt=""/&gt;
+            &lt;/td&gt;
+            &lt;td style="font: bold 20px/25px Arial, Helvetica, sans-serif; color: #000;"&gt;
+             Amazing support&lt;br/&gt;
+             from our experts
+            &lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+         &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+         &lt;td style="padding: 0 0 12px; font: 12px/21px Arial, Helvetica, sans-serif; color: #000; text-align: justify;"&gt;
+          All {2} products are backed by our experienced team of experts who are passionate about helping our customers get the very most out of our products.
+         &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+         &lt;td style="padding: 0 0 0 10px;"&gt;
+          &lt;table cellpadding="0" cellspacing="0"&gt;
+           &lt;tr&gt;
+            &lt;td valign="top"&gt;
+             &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+              &lt;tr&gt;
+               &lt;td align="center" style="padding: 0 0 10px;"&gt;
+                &lt;img src="https://clients.accurateappend.com/Content/Shared/images/Chris.png" width="60" style="vertical-align: top;" alt=""/&gt;
+               &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+               &lt;td align="center" style="font: 20px/24px Arial, Helvetica, sans-serif; color: #222;"&gt;
+                Chris
+               &lt;/td&gt;
+              &lt;/tr&gt;
+             &lt;/table&gt;
+            &lt;/td&gt;
+            &lt;td width="20"&gt;&lt;/td&gt;
+            &lt;td valign="top"&gt;
+             &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+              &lt;tr&gt;
+               &lt;td align="center" style="padding: 0 0 10px;"&gt;
+                &lt;img src="https://clients.accurateappend.com/Content/Shared/images/Jimmy.png" width="60" style="vertical-align: top;" alt=""/&gt;
+               &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+               &lt;td align="center" style="font: 20px/24px Arial, Helvetica, sans-serif; color: #222;"&gt;
+                Jimmy
+               &lt;/td&gt;
+              &lt;/tr&gt;
+             &lt;/table&gt;
+            &lt;/td&gt;
+            &lt;td width="20"&gt;&lt;/td&gt;
+            &lt;td valign="top"&gt;
+             &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+              &lt;tr&gt;
+               &lt;td align="center" style="padding: 0 0 10px;"&gt;
+                &lt;img src="https://clients.accurateappend.com/Content/Shared/images/Steve.png" width="60" style="vertical-align: top;" alt=""/&gt;
+               &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+               &lt;td align="center" style="font: 20px/24px Arial, Helvetica, sans-serif; color: #222;"&gt;
+                Steve
+               &lt;/td&gt;
+              &lt;/tr&gt;
+             &lt;/table&gt;
+            &lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+         &lt;/td&gt;
+        &lt;/tr&gt;
+       &lt;/table&gt;
+      &lt;/th&gt;
+      &lt;th class="flex" width="30" height="30"&gt;&lt;/th&gt;
+      &lt;th class="flex" align="left" style="vertical-align: top;"&gt;
+       &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+        &lt;tr&gt;
+         &lt;td style="padding: 0 0 21px;"&gt;
+          &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+           &lt;tr&gt;
+            &lt;td width="53"&gt;
+             &lt;img src="https://clients.accurateappend.com/Content/AccurateAppend_v7/images/Receipts/ico-02.png" width="46" style="vertical-align: top;" alt=""/&gt;
+            &lt;/td&gt;
+            &lt;td style="font: bold 20px/25px Arial, Helvetica, sans-serif; color: #000;"&gt;
+             Our mailing&lt;br/&gt;
+             address
+            &lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+         &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+         &lt;td class="ns" style="padding: 0 0 20px; font: italic 16px/20px Arial, Helvetica, sans-serif; color: #000;"&gt;
+          {2}&lt;br/&gt;
+          {3}&lt;br/&gt;
+          {4}, {5} {6}&lt;br/&gt;
+          Toll Free &lt;b&gt;&lt;a style="color: #5cb4e3; text-decoration: underline;" href="tel:{0}"&gt;{0}&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;
+          &lt;b&gt;&lt;a style="color: #5cb4e3; text-decoration: underline;" href="{7}"&gt;{7}&lt;/a&gt;&lt;/b&gt;&lt;br/&gt;
+          &lt;b&gt;&lt;a style="color: #5cb4e3; text-decoration: underline;" href="https://www.accurateappend.com/customer-satisfaction-survey"&gt;Take our satisfaction survey&lt;/a&gt;&lt;/b&gt;
+         &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+         &lt;td&gt;
+          &lt;table cellpadding="0" cellspacing="0"&gt;
+           &lt;tr&gt;
+            &lt;td&gt;
+             &lt;a style="text-decoration: none;" href="http://link"&gt;
+              &lt;img src="https://clients.accurateappend.com/Content/AccurateAppend_v7/images/Receipts/logo-02.png" width="150" style="font: 14px/18px Arial, Helvetica, sans-serif; color: #000; vertical-align: top;" alt="BBB | ACCREDITED BUSINESS"/&gt;
+             &lt;/a&gt;
+            &lt;/td&gt;
+           &lt;/tr&gt;
+           &lt;tr&gt;
+            &lt;td align="center" style="font: bold 10px/12px Arial, Helvetica, sans-serif; color: #000;"&gt;
+             Rating: A+
+            &lt;/td&gt;
+           &lt;/tr&gt;
+          &lt;/table&gt;
+         &lt;/td&gt;
+        &lt;/tr&gt;
+       &lt;/table&gt;
+      &lt;/th&gt;
+     &lt;/tr&gt;
+    &lt;/table&gt;
+   &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;!-- END customer care block --&gt;</value>
+    <comment>Help and Support</comment>
+  </data>
+  <data name="ContentEnd" xml:space="preserve">
+    <value>  &lt;/table&gt;
+  &lt;!-- END content area --&gt;</value>
+    <comment>Closes the wrapped email content</comment>
+  </data>
+  <data name="ContentStart" xml:space="preserve">
+    <value>  &lt;!-- START content area --&gt;
+  &lt;table class="w - 100p" width="600" align="center" style="max - width: 600px; margin: 0 auto;" cellpadding="0" cellspacing="0"&gt;</value>
+    <comment>Wraps the email content</comment>
+  </data>
+  <data name="ContentTac" xml:space="preserve">
+    <value>&lt;!-- START terms block --&gt;
+    &lt;tr&gt;
+        &lt;td style="padding: 25px 0 20px; border-top: 2px solid #eaeaea;"&gt;
+            &lt;table width="100%" cellpadding="0" cellspacing="0"&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        1. CONFIDENTIALITY
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        {0} and Customer mutually agree to keep all business dealings confidential, including but not limited to pricing, products, services, systems used by {0} to perform or provide services to Customer. Customer further agrees to keep confidential {0} as Customer's source for any services performed and provided to Customer. All Customer files, data, and other communication by Customer to {0} will be kept strictly confidential by {0}, except as necessary to perform or provide services ordered by Customer.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        2. PRIVACY OF CUSTOMER DATA
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        {0} does not cache any customer data and customer data is never made available to any third party or used for any purpose other than to complete the services ordered by Customer. All Customer files, both input and output are deleted 30 (thirty) days after files are completed, except Customer may request and {0} shall set an automatic or manual deletion of all files after completion to comply with secure information or HIPPA information processing guidelines.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        3. NO WARRANTY
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        {0} provides all data, content, information and services on an &amp;#8220;as is&amp;#8221; basis, with no warranties, including without limitation, merchantability and quality, fitness for a particular purpose, title and non-infringement. {0} does not warrant that access to its data, content, information, and services will be uninterrupted or error-free, or that any errors will be corrected.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        4. LIMITATION OF LIABILITY
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        In no event shall either party, its officers, directors, employees or agents be liable for any indirect, special, incidental, exemplary or consequential damages (including damages for loss of business, loss of profits, or the like), whether based on breach of contract, tort (including negligence), strict liability, breach of warranty or otherwise, even if the other party has been advised of the possibility of such damages and even if a remedy set forth herein is found to have failed of its essential purpose either party&amp;#8217;s aggregate liability shall not exceed the total fee paid or payable to {0}.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        5. INDEMNIFICATION
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        Customer shall indemnify and hold harmless {0}, its officers, directors, employees and agents from any and all third party claims, liabilities, losses, damages, expenses or costs (including but not limited to defense costs and attorney&amp;#8217;s fees) arising out of Customers use of any data, content, information or services provided to Customer by {0}. {0} shall indemnify and hold harmless Customer and its affiliates and suppliers against all claims, losses, damages, liabilities, costs and expenses, including reasonable attorneys&amp;#8217; fees, which Customer may incur as a result of claims relating to the infringement by {0} of any third party patent, copyright, trademark or trade secret.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        6. LAWFUL USE
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        Customer acknowledges their sole responsibility to comply with any and all laws or regulations, Federal, State or otherwise, for the lawful use of any data, content, information or services provided to Customer by {0}, including but not limited to any Mobile telephone numbers provided to Customer.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: bold 12px/16px Arial, Helvetica, sans-serif; color: #000; text-transform: uppercase;"&gt;
+                        7. DO NOT CALL/DO NOT MARKET
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td style="padding: 0 0 9px; font: 12px/14px Arial, Helvetica, sans-serif; color: #999; text-align: justify;"&gt;
+                        {0} does not process its databases, appended data or other content provisioned or provided to Customer, including no processing of Customer data against the National Do Not Call Registry, State Phone Suppression files and DMA Phone Suppression files, herein collectively called &amp;#8220;Telephone Number Suppression files&amp;#8221; and any Do Not Market suppression files. Customer acknowledges their sole responsibility to comply with all Do Not Call and / or Do Not Market laws and regulations, including that Customer will either obtain access to the Do Not Call Registry and other Telephone Number Suppression files on its own behalf, or if Customer will not obtain access to Telephone Number Suppression files, Customer will only make calls for purposes permitted by law. Customer also acknowledges their sole responsibility to comply with the CAN SPAM ACT for all electronic messaging.
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- END terms block --&gt;</value>
+    <comment>Terms and Conditions</comment>
+  </data>
+  <data name="Head" xml:space="preserve">
+    <value>&lt;head&gt;
+ &lt;title&gt;AccurateAppend_email&lt;/title&gt;
+ &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+ &lt;style type="text/css"&gt;
+  a {
+   outline: none;
+   color: #000;
+   text-decoration: underline;
+  }
+
+   a:hover {
+    text-decoration: none !important;
+   }
+
+  .h-u a {
+   text-decoration: none;
+  }
+
+   .h-u a:hover {
+    text-decoration: underline !important;
+   }
+
+  a[x-apple-data-detectors] {
+   color: inherit !important;
+   text-decoration: none !important;
+  }
+
+  a[href^="tel"]:hover {
+   text-decoration: none !important;
+  }
+
+  .active-i a:hover,
+  .active-t:hover {
+   opacity: 0.8;
+  }
+
+  .active-i a,
+  .active-t {
+   transition: all 0.3s ease;
+  }
+
+  a img {
+   border: none;
+  }
+
+  b, strong {
+   font-weight: 700;
+  }
+
+  th {
+   padding: 0;
+  }
+
+  table td {
+   mso-line-height-rule: exactly;
+  }
+
+  .ns span {
+   color: inherit !important;
+   border: none !important;
+  }
+
+  [owa] div {
+   display: block !important;
+   font-size: 1px;
+   line-height: 1px;
+  }
+
+   [owa] div button {
+    display: block;
+    font-size: 1px;
+    line-height: 1px;
+   }
+
+  .l-grey a {
+   color: #666;
+  }
+
+  @media only screen and (max-width:375px) and (min-width:374px) {
+   .gmail-fix {
+    min-width: 374px !important;
+   }
+  }
+
+  @media only screen and (max-width:414px) and (min-width:413px) {
+   .gmail-fix {
+    min-width: 413px !important;
+   }
+  }
+
+  @media only screen and (max-width:637px) {
+   /* default style */
+   .w-100p {
+    width: 100% !important;
+   }
+
+   .flex {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+   }
+
+   .w-70 {
+    width: 70px !important;
+   }
+
+   .w-100 {
+    width: 100px !important;
+   }
+
+   .w-110 {
+    width: 110px !important;
+   }
+
+   .plr-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+   }
+
+   .plr-5 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+   }
+
+   .plr-10 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+   }
+
+   .pt-35 {
+    padding-top: 35px !important;
+   }
+
+   .pb-30 {
+    padding-bottom: 30px !important;
+   }
+
+   .fs-12 {
+    font-size: 12px !important;
+   }
+
+   .fs-16 {
+    font-size: 16px !important;
+   }
+
+   .fs-18 {
+    font-size: 18px !important;
+   }
+
+   .lh-20 {
+    line-height: 20px !important;
+   }
+   /* custom style */
+  }
+ &lt;/style&gt;
+&lt;/head&gt;</value>
+    <comment>HTML head element content</comment>
+  </data>
+  <data name="HtmlDeclaration" xml:space="preserve">
+    <value>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"&gt;</value>
+    <comment>Doctype and opens the html element</comment>
+  </data>
+  <data name="HtmlEnd" xml:space="preserve">
+    <value>&lt;/html&gt;</value>
+    <comment>Final part to close the html element</comment>
+  </data>
+</root>

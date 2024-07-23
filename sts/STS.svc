@@ -1,0 +1,1 @@
+﻿<%@ServiceHost Factory="Microsoft.IdentityModel.Protocols.WSTrust.WSTrustServiceHostFactory" Service="AccurateAppend.SecurityTokenServer.TokenServiceConfiguration"%>
